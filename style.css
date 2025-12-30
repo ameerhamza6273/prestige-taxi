@@ -1,0 +1,420 @@
+        :root {
+            --gold: #FFCC00;
+            --dark: #111111;
+            --radius: 12px;
+    --shadow: 0 10px 30px rgba(17, 24, 39, 0.06);
+        }
+
+        body {
+            font-family: 'Segoe UI', Roboto, sans-serif;
+            overflow-x: hidden;
+        }
+
+        /* Custom Styles */
+        .bg-gold {
+            background-color: var(--gold);
+        }
+
+        .text-gold {
+            color: var(--gold);
+        }
+
+        .btn-gold {
+            background-color: var(--gold);
+            color: #000;
+            font-weight: bold;
+            border: none;
+        }
+
+        .btn-gold:hover {
+            background-color: #e6b800;
+            color: #000;
+        }
+
+        /* Header & Nav */
+        .navbar {
+            background-color: #000 !important;
+        }
+
+        .nav-link {
+            color: #fff !important;
+            font-weight: 500;
+            text-transform: uppercase;
+            font-size: 0.9rem;
+            margin: 0 10px;
+        }
+
+        .nav-link:hover {
+            color: var(--gold) !important;
+        }
+
+        /* Hero Section */
+        .hero-section {
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('images/new-hero-image.png');
+            background-size: cover;
+            background-position: center;
+            padding: 80px 0;
+            color: #fff;
+        }
+
+        /* Booking Widget */
+        .booking-card {
+            border-radius: 12px;
+            border: none;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        .nav-tabs .nav-link {
+            border: none;
+            color: #666;
+            font-weight: bold;
+            padding: 15px;
+            background: #eee;
+        }
+
+        .nav-tabs .nav-link.active {
+            background: var(--gold);
+            color: #000;
+            border: none;
+        }
+
+        /* Welcome Images (Overlapping Design) */
+        .welcome-images {
+            position: relative;
+            height: 380px;
+            width: 100%;
+        }
+
+        .welcome-images img {
+            border-radius: 10px;
+            position: absolute;
+            border: 5px solid #fff;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+            object-fit: cover;
+        }
+
+        .img1 {
+            width: 75%;
+            height: 250px;
+            left: 0;
+            top: 0;
+            z-index: 1;
+        }
+
+        .img2 {
+            width: 75%;
+            height: 250px;
+            right: 0;
+            bottom: 0;
+            z-index: 2;
+        }
+
+        /* Why Choose Cards */
+        .why-card {
+            border: none;
+            border-bottom: 4px solid var(--gold);
+            transition: 0.3s;
+            height: 100%;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            text-align: center;
+            padding: 30px;
+        }
+
+        .why-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .icon-box {
+            font-size: 2.5rem;
+            color: var(--gold);
+            margin-bottom: 15px;
+        }
+
+        /* Book Now Section Before Footer */
+        .book-now-cta {
+            background: #000;
+            color: #fff;
+            padding: 60px 0;
+            border-top: 4px solid var(--gold);
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--dark);
+            color: #bbb;
+            padding-top: 60px;
+        }
+
+        footer h5 {
+            color: #fff;
+            margin-bottom: 25px;
+            border-left: 4px solid var(--gold);
+            padding-left: 10px;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid #333;
+            padding: 20px 0;
+            margin-top: 50px;
+        }
+
+        /* Responsive Fix for Overlapping Images */
+        @media (max-width: 768px) {
+            .welcome-images {
+                height: 300px;
+                margin-top: 30px;
+            }
+
+            .img1,
+            .img2 {
+                height: 180px;
+            }
+        }
+
+        .page-header {
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1449965408869-eaa3f722e40d?q=80&w=1600');
+            background-size: cover;
+            background-position: center;
+            padding: 80px 0;
+            color: #fff;
+            text-align: center;
+        }
+
+        .service-card {
+            background: #fff;
+            border: none;
+            border-radius: 12px;
+            overflow: hidden;
+            transition: 0.3s;
+            height: 100%;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .service-img {
+            height: 220px;
+            object-fit: cover;
+            width: 100%;
+        }
+
+        .service-content {
+            padding: 25px;
+        }
+
+        .service-content h4 {
+            font-weight: 700;
+            margin-bottom: 15px;
+            border-bottom: 2px solid var(--gold);
+            display: inline-block;
+            padding-bottom: 5px;
+        }
+
+        .service-content p {
+            color: #666;
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        .features-section {
+            background-color: #111111;
+            /* Top bar jaisa dark background */
+            padding: 50px 0;
+            color: #ffffff;
+        }
+
+        .feature-item {
+            text-align: center;
+            padding: 10px;
+            transition: transform 0.3s ease;
+        }
+
+        /* Hover effect */
+        .feature-item:hover {
+            transform: translateY(-10px);
+        }
+
+        .icon-wrapper {
+            width: 80px;
+            height: 80px;
+            background-color: rgba(255, 204, 0, 0.1);
+            /* Light gold tint */
+            border: 2px solid #FFCC00;
+            /* Gold color */
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 25px;
+            font-size: 32px;
+            color: #FFCC00;
+            /* Gold color */
+        }
+
+        .feature-title {
+            font-weight: 700;
+            font-size: 1.10rem;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .feature-text {
+            color: #bbbbbb;
+            /* Soft gray for readability */
+            font-size: 0.95rem;
+            line-height: 1.6;
+            margin-bottom: 0;
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .features-section {
+                padding: 50px 0;
+            }
+
+            .feature-item {
+                margin-bottom: 30px;
+            }
+        }
+        /* Section wrapper */
+.fleet-section {
+    padding: 60px 10px;
+    color: var(--gray-900);
+}
+
+.fleet-title {
+    text-align: center;
+    font-size: 28px;
+    margin-bottom: 28px;
+    letter-spacing: -0.2px;
+    font-weight: 700;
+}
+
+/* Grid */
+.fleet-grid {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+
+/* Card */
+.vehicle-card {
+    background: var(--card-bg);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    transition: transform .25s cubic-bezier(.2, .9, .3, 1), box-shadow .25s;
+    border: 1px solid rgba(17, 24, 39, 0.04);
+}
+
+.vehicle-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 18px 40px rgba(17, 24, 39, 0.08);
+}
+
+/* Media area (image + price) */
+.vehicle-media {
+    position: relative;
+    height: 270px;
+    overflow: hidden;
+    background: linear-gradient(90deg, #ffcc00bf, rgba(255, 255, 255, 0));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.vehicle-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transform-origin: center;
+    transition: transform .6s ease;
+}
+
+/* Slight zoom on hover */
+.vehicle-card:hover .vehicle-img {
+    transform: scale(1.05);
+}
+
+/* Price badge */
+.price-badge {
+    position: absolute;
+    right: 14px;
+    bottom: 12px;
+    background: linear-gradient(90deg, #ffcc00, #ffcc00);
+    color: white;
+    padding: 8px 12px;
+    border-radius: 999px;
+    font-weight: 700;
+    font-size: 13px;
+    box-shadow: 0 6px 18px rgba(217, 119, 6, 0.18);
+}
+
+/* Body */
+.vehicle-body {
+    padding: 18px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.vehicle-title {
+    font-size: 18px;
+    margin: 0;
+    color: var(--gray-900);
+    font-weight: 700;
+}
+
+.vehicle-sub {
+    margin: 0;
+    font-size: 14px;
+    color: var(--gray-800);
+    opacity: 0.95;
+}
+
+/* Specs */
+.vehicle-specs {
+    list-style: none;
+    padding: 0;
+    margin: 6px 0 0 0;
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+    font-size: 13px;
+    color: var(--muted);
+}
+
+.vehicle-specs li {
+    background: rgba(31, 41, 55, 0.04);
+    padding: 6px 8px;
+    border-radius: 8px;
+}
+/* CTA */
+.btn-cta {
+    margin-top: 8px;
+    align-self: flex-start;
+    text-decoration: none;
+    display: inline-block;
+    padding: 10px 14px;
+    border-radius: 10px;
+    background: transparent;
+    color: var(--amber-600);
+    font-weight: 700;
+    border: 1.5px solid #ffcc00bf;
+    transition: background .18s, color .18s, transform .12s;
+}
+
+.btn-cta:hover {
+    background: linear-gradient(90deg, #ffcc00bf, rgba(255, 166, 38, 0.06));
+    transform: translateY(-2px);
+}
