@@ -1,301 +1,830 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Prestige Taxi Crewe | Reliable & Luxury Travel</title>
+    <title>Easy Express Airport Transfers Ltd | Luxury Chauffeur</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
-    <link rel="stylesheet" href="style.css">
-    
-</head>
-<body>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-dark: #1a2b2c;
+            --accent-gold: #a68a56;
+            --light-bg: #f4f7f6;
+            --text-muted: #666;
+        }
 
-    <div class="bg-dark text-white py-2 d-none d-md-block">
-        <div class="container d-flex justify-content-between align-items-center">
-            <div class="small">
-                <span class="me-3"><i class="fas fa-phone text-gold me-1"></i> 01270 444009</span>
-                <span><i class="fas fa-envelope text-gold me-1"></i> Infoprestigetaxi@yahoo.com</span>
-            </div>
-            <div class="small">
-                <i class="fab fa-facebook-f mx-2"></i>
-                <i class="fab fa-whatsapp mx-2"></i>
-            </div>
-        </div>
-    </div>
+        .text-gold {
+            color: var(--accent-gold);
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            color: #333;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        .section-padding {
+            padding: 80px 0;
+        }
+
+        /* Navbar */
+        .navbar {
+            background: white;
+            padding: 15px 0;
+            border-bottom: 1px solid #eee;
+        }
+
+        .btn-gold {
+            background-color: var(--accent-gold);
+            color: white !important;
+            border-radius: 0;
+            padding: 12px 30px;
+            border: none;
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: 0.3s;
+        }
+
+        .btn-gold:hover {
+            background-color: #8e7545;
+        }
+
+        /* Hero Section Fix */
+        .hero {
+            /* High-end S-Class Interior/Lifestyle Image */
+            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.7)),
+                url('https://images.unsplash.com/photo-1618843479313-40f8afb4b4d8?q=80&w=2000') center/cover no-repeat;
+            height: 100vh;
+            /* Claremont full height use karta hai */
+            display: flex;
+            align-items: center;
+            color: white;
+            text-align: center;
+            background-attachment: fixed;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 800px;
+            margin: 0 auto 30px;
+            font-weight: 300;
+        }
+
+        /* Services Styling */
+        .service-card {
+            position: relative;
+            overflow: hidden;
+            border: none;
+            height: 350px;
+        }
+
+        .service-card img {
+            height: 100%;
+            width: 100%;
+            object-fit: cover;
+            transition: 0.5s;
+        }
+
+        .service-card:hover img {
+            transform: scale(1.1);
+        }
+
+        .service-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            padding: 20px;
+            background: linear-gradient(transparent, rgba(26, 43, 44, 0.9));
+            color: white;
+            text-align: center;
+        }
+
+        /* About Section */
+        .about-img-box {
+            border-left: 10px solid var(--accent-gold);
+            padding-left: 20px;
+        }
+
+        .divider {
+            width: 80px;
+            height: 3px;
+            background: var(--accent-gold);
+            margin: 15px 0;
+        }
+
+        .divider.center {
+            margin: 15px auto;
+        }
+
+        /* Fleet Section */
+        .fleet-card {
+            background: #fff;
+            border: 1px solid #eef0f2;
+            padding: 30px;
+            text-align: center;
+            transition: all 0.5s ease;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .fleet-card:hover {
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.08);
+            border-color: var(--accent-gold);
+            transform: translateY(-5px);
+        }
+
+        .fleet-card img {
+            transition: transform 0.5s ease;
+            max-height: 140px;
+            width: auto;
+            margin: 20px auto;
+        }
+
+        .fleet-card:hover img {
+            transform: scale(1.08);
+        }
+
+        .fleet-card h6 {
+            color: var(--accent-gold);
+            font-size: 0.75rem;
+            letter-spacing: 3px;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+
+        .fleet-card h5 {
+            font-size: 1.1rem;
+            font-weight: 900;
+            margin-bottom: 20px;
+        }
+
+        .fleet-specs {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            border-top: 1px solid #f0f0f0;
+            padding-top: 20px;
+            margin-bottom: 25px;
+            color: #666;
+            font-size: 0.9rem;
+        }
+
+        .btn-book {
+            background-color: var(--primary-dark);
+            color: white;
+            border-radius: 0;
+            padding: 12px;
+            font-weight: 700;
+            font-size: 0.8rem;
+            letter-spacing: 1px;
+            transition: 0.3s;
+            text-transform: uppercase;
+            text-decoration: none;
+        }
+
+        .btn-book:hover {
+            background-color: var(--accent-gold);
+            color: white;
+        }
+
+        /* Advantages */
+        .advantages-section {
+            background-color: var(--light-bg);
+        }
+
+        .adv-card {
+            background: #ffffff;
+            padding: 40px 25px;
+            height: 100%;
+            border: 1px solid #f0f0f0;
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .adv-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.05);
+            border-color: var(--accent-gold);
+        }
+
+        .icon-box {
+            width: 70px;
+            height: 70px;
+            background: var(--light-bg);
+            color: var(--accent-gold);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8rem;
+            margin: 0 auto 25px;
+            border-radius: 50%;
+            /* Circle look */
+            transition: 0.3s;
+        }
+
+        .adv-card:hover .icon-box {
+            background: var(--accent-gold);
+            color: #fff;
+        }
+
+        .adv-card h4 {
+            font-size: 0.95rem;
+            font-weight: 700;
+            letter-spacing: 1px;
+            margin-bottom: 15px;
+            color: var(--primary-dark);
+        }
+
+        .adv-card p {
+            color: var(--text-muted);
+            font-size: 0.85rem;
+            line-height: 1.5;
+        }
+
+        /* Corporate Inquiry Form */
+        .inquiry-box {
+            background: white;
+            padding: 40px;
+            border: 1px solid #eee;
+        }
+
+        .img-fluid {
+            width: 100%;
+            height: auto;
+            max-height: 350px;
+            object-fit: cover;
+        }
+
+        /* Testimonial Section */
+        /* Testimonial Slider Styles */
+        .testimonial-sec {
+            background: var(--primary-dark);
+            /* Deep dark background */
+            padding: 100px 0;
+            color: white;
+        }
+
+        .quote-icon {
+            font-size: 3rem;
+            color: var(--accent-gold);
+            margin-bottom: 30px;
+            opacity: 0.6;
+        }
+
+        .testimonial-text {
+            font-size: 1.6rem;
+            font-weight: 300;
+            font-style: italic;
+            max-width: 900px;
+            margin: 0 auto;
+            line-height: 1.5;
+            font-family: 'Lato', sans-serif;
+        }
+
+        .client-name {
+            color: var(--accent-gold);
+            letter-spacing: 3px;
+            font-weight: 700;
+            margin-top: 30px;
+            text-transform: uppercase;
+        }
+
+        /* Slider Controls Customization */
+        .carousel-indicators [data-bs-target] {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background-color: var(--accent-gold);
+        }
+
+        /* Contact CTA Section */
+        .cta-section {
+            background: linear-gradient(rgba(26, 43, 44, 0.95), rgba(26, 43, 44, 0.95)),
+                url('https://images.unsplash.com/photo-1449965408869-eaa3f722e40d?q=80&w=2000') center/cover no-repeat;
+            padding: 80px 0;
+            color: white;
+        }
+
+        .cta-box {
+            border: 1px solid rgba(166, 138, 86, 0.3);
+            padding: 40px;
+            background: rgba(255, 255, 255, 0.03);
+        }
+
+        .call-link {
+            font-size: 2.2rem;
+            color: var(--accent-gold);
+            text-decoration: none;
+            font-weight: 700;
+            display: block;
+            margin: 20px 0;
+            transition: 0.3s;
+        }
+
+        .call-link:hover {
+            color: white;
+            transform: scale(1.05);
+        }
+
+        .cta-form .form-control {
+            background: transparent;
+            border: none;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 0;
+            color: white;
+            padding: 12px 0;
+            margin-bottom: 20px;
+        }
+
+        .cta-form .form-control:focus {
+            background: transparent;
+            box-shadow: none;
+            border-color: var(--accent-gold);
+            color: white;
+        }
+
+        .cta-form .form-control::placeholder {
+            color: #999;
+            font-size: 0.9rem;
+        }
+
+        footer {
+            background: #0f1a1b;
+            color: #999;
+            padding: 80px 0 20px;
+        }
+
+        footer h5 {
+            color: white;
+            margin-bottom: 25px;
+            border-left: 4px solid var(--accent-gold);
+            padding-left: 10px;
+        }
+
+        footer a {
+            color: #999;
+            text-decoration: none;
+            transition: 0.3s;
+        }
+
+        footer a:hover {
+            color: var(--accent-gold);
+        }
+    </style>
+</head>
+
+<body>
 
     <nav class="navbar navbar-expand-lg sticky-top">
         <div class="container">
-            <a class="navbar-brand text-white fw-bold fs-3" href="#">PRESTIGE <span class="text-gold">TAXI</span></a>
-            <button class="navbar-toggler bg-gold" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+            <a class="navbar-brand fw-bold" href="#" style="color: var(--primary-dark); font-size: 1.5rem;">EASY
+                EXPRESS</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
-                    <li class="nav-item"><a class="nav-link" href="services.html">Our Services</a></li>
-                    <li class="nav-item"><a class="nav-link" href="fleet.html">Our Fleets</a></li>
-                    <li class="nav-item"><a class="nav-link" href="contact.html">Contact Us</a></li>
+                <ul class="navbar-nav ms-auto align-items-center">
+                    <li class="nav-item"><a class="nav-link mx-2 text-dark" href="#">Home</a></li>
+                    <li class="nav-item"><a class="nav-link mx-2 text-dark" href="#">Services</a></li>
+                    <li class="nav-item"><a class="nav-link mx-2 text-dark" href="#">About Us</a></li>
+                    <li class="nav-item"><a class="btn btn-gold ms-lg-3" href="tel:+447904577355">CALL NOW</a></li>
                 </ul>
             </div>
         </div>
     </nav>
 
-    <section class="hero-section">
+    <header class="hero">
         <div class="container">
-            <div class="row align-items-center g-5">
-                <div class="col-lg-7 text-center text-lg-start">
-                    <h5 class="text-gold fw-bold mb-3">PRESTIGE TAXI CREWE</h5>
-                    <h1 class="display-4 fw-bold mb-4">REACH YOUR DESTINATION ON TIME AND IN STYLE</h1>
-                    <p class="lead mb-4">Experience luxury chauffeur services for business travel, airport transfers, and private journeys across the UK.</p>
+            <span
+                style="color: var(--accent-gold); letter-spacing: 3px; font-weight: 600; font-size: 0.8rem; text-transform: uppercase;">Easy
+                Express Airport Transfers Ltd</span>
+            <h1 class="mt-3">Welcome to the world of<br>luxury chauffeur services</h1>
+            <p>Where style meets reliability. Our fleet features the latest Mercedes S-Class and Mercedes V-Class. We
+                redefine transportation with comfort, style, and unparalleled service.</p>
+            <div class="d-flex justify-content-center gap-3 mt-4">
+                <a href="contact" class="btn btn-gold">Make an enquiry</a>
+                <!-- <a href="#" class="btn btn-outline-light border-0"
+                    style="padding: 12px 30px; background: rgba(255,255,255,0.1);">VIEW SERVICES</a> -->
+            </div>
+        </div>
+    </header>
+
+    <section class="section-padding container">
+        <div class="text-center mb-5">
+            <h2 class="display-6">Our Specialized Services</h2>
+            <div class="divider center"></div>
+        </div>
+        <div class="row g-4">
+            <div class="col-md-4">
+                <div class="card service-card shadow-sm">
+                    <img src="https://images.unsplash.com/photo-1541899481282-d53bffe3c35d?q=80&w=800"
+                        alt="Intercity Transfers">
+                    <div class="service-overlay">
+                        <h5>INTERCITY TRANSFERS</h5>
+                    </div>
                 </div>
-                <div class="col-lg-5">
-                    <div class="card booking-card">
-                        <div class="card-header p-0">
-                            <ul class="nav nav-tabs nav-fill border-0">
-                                <li class="nav-item"><a class="nav-link active m-0" href="#">Instant Quote</a></li>
-                                <li class="nav-item"><a class="nav-link text-dark m-0" href="#">Book Now</a></li>
-                            </ul>
-                        </div>
-                        <div class="card-body p-4 text-dark">
-                            <form>
-                                <div class="mb-3"><input type="text" class="form-control" placeholder="Pickup Address"></div>
-                                <div class="mb-3"><input type="text" class="form-control" placeholder="Destination Address"></div>
-                                <div class="row g-2 mb-3">
-                                    <div class="col-6"><input type="date" class="form-control"></div>
-                                    <div class="col-6"><input type="time" class="form-control"></div>
-                                </div>
-                                <div class="row g-2 mb-4">
-                                    <div class="col-6"><select class="form-select"><option>Passengers</option><option>1-4</option><option>5-8</option></select></div>
-                                    <div class="col-6"><select class="form-select"><option>Luggage</option><option>1 Bag</option><option>2+</option></select></div>
-                                </div>
-                                <button class="btn btn-dark w-100 py-3 fw-bold text-gold">GET FREE QUOTE</button>
-                            </form>
-                        </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card service-card">
+                    <img src="https://images.pexels.com/photos/2026324/pexels-photo-2026324.jpeg?auto=compress&cs=tinysrgb&w=600"
+                        alt="Airport">
+                    <div class="service-overlay">
+                        <h5>Airport Transfers</h5>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card service-card">
+                    <img src="https://images.pexels.com/photos/316794/pexels-photo-316794.jpeg?auto=compress&cs=tinysrgb&w=600"
+                        alt="Corporate">
+                    <div class="service-overlay">
+                        <h5>Corporate Transportation</h5>
                     </div>
                 </div>
             </div>
         </div>
     </section>
-    <section class="features-section">
+
+    <section class="section-padding bg-white">
         <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6 mb-5 mb-lg-0">
+                    <h2 class="mb-4 display-6">Professional business and corporate chauffeur service</h2>
+                    <div class="divider"></div>
+                    <p class="text-muted">At Easy Express Airport Transfers Ltd, we are committed to providing our
+                        clients with the best airport transportation experience. With our fleet of 100+ cars, including
+                        saloons, estates, MPVs, and luxury executive cars, we cater to all your needs.</p>
+                    <p class="text-muted">Our drivers are professional, courteous, and knowledgeable, ensuring that you
+                        have a comfortable and stress-free journey.</p>
+                    <a href="about" class="btn btn-outline-dark mt-3 rounded-0">READ MORE ABOUT US</a>
+                </div>
+                <div class="col-lg-6">
+                    <div class="about-img-box">
+                        <img src="https://images.pexels.com/photos/3065034/pexels-photo-3065034.jpeg?auto=compress&cs=tinysrgb&w=800"
+                            class="img-fluid" alt="Luxury Interior">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section-padding" style="background-color: var(--light-bg);">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6 px-lg-5 order-lg-1">
+                    <img src="https://images.pexels.com/photos/2528118/pexels-photo-2528118.jpeg?auto=compress&cs=tinysrgb&w=800"
+                        class="img-fluid" alt="Electric Car">
+                </div>
+                <div class="col-lg-6 mt-5 mt-lg-0 order-lg-2">
+                    <h6 class="text-uppercase fw-bold mb-2" style="color: var(--accent-gold); letter-spacing: 2px;">
+                        Sustainability Promise</h6>
+                    <h2 class="mb-4 display-6">Luxury driven sustainable chauffeur services</h2>
+                    <div class="divider"></div>
+                    <p class="text-muted">Our sustainable chauffeur service offers eco-friendly transportation without
+                        compromising on luxury. By utilising a select fleet of electric and hybrid vehicles, we reduce
+                        our carbon footprint while maintaining the highest standards.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section-padding">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="display-6">Our Premium Fleet</h2>
+                <div class="divider center"></div>
+            </div>
             <div class="row g-4">
-                
-                <div class="col-md-3 col-sm-6">
-                    <div class="feature-item">
-                        <div class="icon-wrapper">
-                            <i class="fas fa-car-side"></i>
+                <div class="col-lg-4 col-md-6">
+                    <div class="fleet-card">
+                        <div>
+                            <h6>BUSINESS CLASS</h6>
+                            <h5>Mercedes Benz E-Class</h5>
+                            <img src="https://www.easyexpressairport.com/tbmsbooking/images/business-class.png"
+                                class="img-fluid" alt="E-Class">
                         </div>
-                        <h4 class="feature-title">Premium Vehicles</h4>
-                        <p class="feature-text">Modern, well-maintained luxury vehicles for your ultimate comfort.</p>
-                    </div>
-                </div>
-
-                <div class="col-md-3 col-sm-6">
-                    <div class="feature-item">
-                        <div class="icon-wrapper">
-                            <i class="fas fa-clock"></i>
-                        </div>
-                        <h4 class="feature-title">On-Time Service</h4>
-                        <p class="feature-text">Always punctual and reliable transportation for every journey.</p>
-                    </div>
-                </div>
-
-                <div class="col-md-3 col-sm-6">
-                    <div class="feature-item">
-                        <div class="icon-wrapper">
-                            <i class="fas fa-user-tie"></i>
-                        </div>
-                        <h4 class="feature-title">Professional Drivers</h4>
-                        <p class="feature-text">Experienced, courteous drivers trained to deliver perfection.</p>
-                    </div>
-                </div>
-
-                <div class="col-md-3 col-sm-6">
-                    <div class="feature-item">
-                        <div class="icon-wrapper">
-                            <i class="fas fa-shield-alt"></i>
-                        </div>
-                        <h4 class="feature-title">Safe & Secure</h4>
-                        <p class="feature-text">Your safety is our top priority with fully vetted drivers and cars.</p>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-    </section>
-
-    <section class="py-5">
-        <div class="container py-5">
-            <div class="row align-items-center g-5">
-                <div class="col-lg-6">
-                    <h2 class="fw-bold mb-4">Airport Transfers Crewe & Stoke</h2>
-                    <p class="text-muted">Welcome to <strong>Prestige Taxi Crewe</strong>, where we combine excellent travel with exceptional customer service. We're proud of our firm commitment to offering top-notch transportation solutions.</p>
-                    <p class="text-muted">Our mission is simple: to provide reliable and comfortable airport transfers, making sure you reach your destination on time and with great comfort. Whether for a business meeting or catching a flight, we make your travel smooth.</p>
-                    <button class="btn btn-dark px-4 py-2 mt-3 text-gold">Read More</button>
-                </div>
-                <div class="col-lg-6">
-                    <div class="welcome-images">
-                        <img src="https://images.unsplash.com/photo-1449965408869-eaa3f722e40d?auto=format&fit=crop&w=500" alt="Taxi 1" class="img1">
-                        <img src="images/Image_fx-6.png" alt="Taxi 2" class="img2">
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="bg-light py-5">
-        <div class="container py-5 text-center">
-            <h2 class="fw-bold mb-5">Why Choose Prestige Taxi Crewe?</h2>
-            <div class="row g-4 text-start">
-                <div class="col-md-4">
-                    <div class="card why-card">
-                        <div class="icon-box"><i class="fas fa-plane"></i></div>
-                        <h4>Airport Transfers</h4>
-                        <p class="text-muted small">Covering all major UK airports with punctual pickups and professional meet and greet.</p>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="card why-card">
-                        <div class="icon-box"><i class="fas fa-desktop"></i></div>
-                        <h4>Online Booking</h4>
-                        <p class="text-muted small">Easy to use booking engine with instant email confirmation and 24/7 support.</p>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="card why-card">
-                        <div class="icon-box"><i class="fas fa-shield-alt"></i></div>
-                        <h4>Licensed Drivers</h4>
-                        <p class="text-muted small">All drivers are council licensed holders ensuring safety and security for every journey.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
- <section class="py-5" id="testimonial" style=" padding:40px 0;">
-        <h2 class="fw-bold" style="text-align:center;"> Client Testimonials</h2>
-        <div class="text-center mt-2" style="text-align: center;">
-            <i class="fas fa-quote-left pe-2 fa-4x text-left" style="color:#ffcc00"></i>
-        </div>
-        <div style="max-width:1200px; margin:0 auto;">
-            <div class="swiper  mt-2">
-
-                <div class="mySwiperImages swiper-initialized swiper-horizontal swiper-backface-hidden"
-                    style="margin: 0 35px; overflow: hidden;">
-                    <div class="swiper-wrapper" id="swiper-wrapper-1f7d210ee040126a3" aria-live="off"
-                        style="transition-duration: 0ms; transform: translate3d(-3165px, 0px, 0px); transition-delay: 0ms;">
-
-
-
-                        <div class="swiper-slide swiper-slide-next" role="group" aria-label="3 / 4"
-                            data-swiper-slide-index="2" style="width: 1055px;">
-
-                            <div class="row d-flex justify-content-center" style="min-height:150px;display: flex;">
-                                <div class="col-lg-8 mt-2" style="max-width: 800px;margin: 0 auto;">
-                                    <h4 class="mb-2" style="font-size:23px;text-align: center;">- James T</h4>
-                                    <p class="text-muted" style="font-size:16px;margin-top:15px;text-align: center;color:#6c757d; ">
-                                        
-                                        "Fantastic Milton Keynes taxi service - quick, efficient, and good value."
-
-                                    </p>
-
-                                </div>
+                        <div>
+                            <div class="fleet-specs">
+                                <span><i class="fa-solid fa-user me-2"></i> 3 Seats</span>
+                                <span><i class="fa-solid fa-suitcase-rolling me-2"></i> 3 Bags</span>
                             </div>
+                            <a href="contact" class="btn-book d-block">Book Now</a>
                         </div>
-                        <div class="swiper-slide" role="group" aria-label="4 / 4" data-swiper-slide-index="3"
-                            style="width: 1055px;">
-                            <div class="row d-flex justify-content-center" style="min-height:150px;display: flex;">
-                                <div class="col-lg-8 mt-2" style="max-width: 800px;margin: 0 auto;">
-                                    <h4 class="mb-2 " style="font-size:23px;text-align: center;"> - Sarah W</h4>
-                                    <p class="text-muted" style="font-size:16px;margin-top:15px;text-align: center;color:#6c757d;">
-                                        
-                                        "Milton Keynes taxi booked through Heathrow and it was first class!"
-                                    </p>
-
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="swiper-slide swiper-slide-prev" role="group" aria-label="1 / 4"
-                            data-swiper-slide-index="0" style="width: 1055px;">
-                            <div class="row d-flex justify-content-center" style="min-height:150px;display: flex;">
-                                <div class="col-lg-8 mt-2" style="max-width: 800px;margin: 0 auto;">
-                                    <h4 class="mb-2 " style="font-size:23px;text-align: center;">- Mark R</h4>
-                                    <p class="text-muted " style="font-size:16px;margin-top:15px;text-align: center;color:#6c757d;">
-                                        
-                                        "I booked a last-minute airport transfer, and Premier Transfers MK came up trumps. 
-                                            First class and value for money."
-                                    </p>
-
-                                </div>
-                            </div>
-                        </div>
-                        
                     </div>
-                    <div class="swiper-button-next" style="color:#9f9f9f"></div>
-                    <div class="swiper-button-prev" style="color:#9f9f9f"></div>
                 </div>
+
+                <div class="col-lg-4 col-md-6">
+                    <div class="fleet-card">
+                        <div>
+                            <h6>LUXURY CLASS</h6>
+                            <h5>Mercedes Benz S-Class</h5>
+                            <img src="https://www.easyexpressairport.com/tbmsbooking/images/luxury-class.png"
+                                class="img-fluid" alt="S-Class">
+                        </div>
+                        <div>
+                            <div class="fleet-specs">
+                                <span><i class="fa-solid fa-user me-2"></i> 3 Seats</span>
+                                <span><i class="fa-solid fa-suitcase-rolling me-2"></i> 2 Bags</span>
+                            </div>
+                            <a href="contact" class="btn-book d-block">Book Now</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6">
+                    <div class="fleet-card">
+                        <div>
+                            <h6>BUSINESS VAN/SUV</h6>
+                            <h5>Mercedes Benz V-Class</h5>
+                            <img src="https://www.easyexpressairport.com/tbmsbooking/images/business-vansuv.png"
+                                class="img-fluid" alt="V-Class">
+                        </div>
+                        <div>
+                            <div class="fleet-specs">
+                                <span><i class="fa-solid fa-user me-2"></i> 7 Seats</span>
+                                <span><i class="fa-solid fa-suitcase-rolling me-2"></i> 6 Bags</span>
+                            </div>
+                            <a href="contact" class="btn-book d-block">Book Now</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- <div class="col-lg-6">
+                <div class="fleet-card">
+                    <div>
+                        <h6>LUXURY SUV</h6>
+                        <h5>Range Rover Autobiography (EWB)</h5>
+                        <img src="https://www.easyexpressairport.com/tbmsbooking/images/luxury-suv.png" class="img-fluid" alt="Range Rover">
+                    </div>
+                    <div>
+                        <div class="fleet-specs">
+                            <span><i class="fa-solid fa-user me-2"></i> 3 Seats</span>
+                            <span><i class="fa-solid fa-suitcase-rolling me-2"></i> 2 Bags</span>
+                        </div>
+                        <a href="contact" class="btn-book d-block">Book Now</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-6">
+                <div class="fleet-card">
+                    <div>
+                        <h6>ELITE CLASS</h6>
+                        <h5>Rolls Royce Phantom</h5>
+                        <img src="https://www.easyexpressairport.com/tbmsbooking/images/elite-class.png" class="img-fluid" alt="Rolls Royce">
+                    </div>
+                    <div>
+                        <div class="fleet-specs">
+                            <span><i class="fa-solid fa-user me-2"></i> 3 Seats</span>
+                            <span><i class="fa-solid fa-suitcase-rolling me-2"></i> 3 Bags</span>
+                        </div>
+                        <a href="contact" class="btn-book d-block">Book Now</a>
+                    </div>
+                </div>
+            </div> -->
             </div>
         </div>
     </section>
-    <section class="book-now-cta text-center">
+
+    <section class="section-padding" style="background-color: var(--light-bg);">
         <div class="container">
-            <h2 class="fw-bold mb-3">Explore the UK with Experienced Drivers</h2>
-            <p class="lead mb-4" style="opacity: 0.8;">Premium transportation services tailored to your needs.</p>
-            <a href="tel:01270444009" class="btn btn-gold btn-md px-5 py-3 shadow">BOOK NOW</a>
+            <div class="row g-5 align-items-center">
+                <div class="col-lg-7">
+                    <h6 class="text-uppercase fw-bold mb-2" style="color: var(--accent-gold); letter-spacing: 2px;">
+                        Premium Partnership</h6>
+                    <h2 class="mb-4 display-6">Corporate Accounts</h2>
+                    <div class="divider"></div>
+                    <p class="text-muted mb-3">Direct personalised service for frequent clients. We understand the
+                        demands of corporate travel and provide a seamless, priority experience for our partners. This
+                        account provides, among other things:</p>
+
+                    <div class="row g-2">
+                        <div class="col-md-6">
+                            <p class="mb-2"><strong style="color:var(--accent-gold)">✓</strong> Dedicated account
+                                manager</p>
+                        </div>
+                        <div class="col-md-6">
+                            <p class="mb-2"><strong style="color:var(--accent-gold)">✓</strong> Invoice at month end</p>
+                        </div>
+                        <div class="col-md-6">
+                            <p class="mb-2"><strong style="color:var(--accent-gold)">✓</strong> Itemised journeys</p>
+                        </div>
+                        <div class="col-md-6">
+                            <p class="mb-2"><strong style="color:var(--accent-gold)">✓</strong> Cost centre breakdown
+                            </p>
+                        </div>
+                    </div>
+                    <a href="contact" class="btn btn-gold mt-3">SET UP CORPORATE ACCOUNT</a>
+                </div>
+
+                <div class="col-lg-5">
+                    <div class="position-relative">
+                        <div
+                            style="position: absolute; top: -20px; right: -20px; width: 100%; height: 100%; border: 2px solid var(--accent-gold); z-index: 0;">
+                        </div>
+                        <img src="https://images.unsplash.com/photo-1512758017271-d7b84c2113f1?q=80&w=800"
+                            class="img-fluid position-relative shadow-lg" alt="Corporate Chauffeur Service"
+                            style="z-index: 1; border-radius: 0; filter: contrast(1.1);">
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 
+    <section class="section-padding" style="background-color: #fff;">
+        <div class="container text-center">
+            <h6 class="text-uppercase fw-bold mb-3"
+                style="color: var(--accent-gold); letter-spacing: 3px; font-size: 0.75rem;">Why Choose Us</h6>
+            <h2 class="mb-5 h1">Our Advantages</h2>
+            <div class="row g-4">
+                <div class="col-md-6 col-lg-3">
+                    <div class="adv-card shadow-sm">
+                        <div class="icon-box">
+                            <i class="fa-solid fa-calendar-check"></i>
+                        </div>
+                        <h4>Easy Booking</h4>
+                        <p>Effortless reservations through our dedicated app, email, or a quick phone call.</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="adv-card shadow-sm">
+                        <div class="icon-box">
+                            <i class="fa-solid fa-tags"></i>
+                        </div>
+                        <h4>Unbeatable Rates</h4>
+                        <p>Premium service at competitive prices. We guarantee to beat any written formal quotation.</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="adv-card shadow-sm">
+                        <div class="icon-box">
+                            <i class="fa-solid fa-star"></i>
+                        </div>
+                        <h4>Excellence</h4>
+                        <p>Our commitment to perfection ensures a seamless and stress-free journey every time.</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="adv-card shadow-sm">
+                        <div class="icon-box">
+                            <i class="fa-solid fa-car-side"></i>
+                        </div>
+                        <h4>Luxury Fleet</h4>
+                        <p>Travel in the latest Mercedes S-Class and V-Class models, maintained to impeccable standards.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="testimonial-sec text-center">
+        <div class="container">
+            <h6 class="text-uppercase mb-3" style="color: var(--accent-gold); letter-spacing: 5px; font-size: 0.8rem;">
+                Testimonials</h6>
+            <h2 class="mb-5 h1 text-white">Client Experience</h2>
+
+            <i class="fa-solid fa-quote-left quote-icon"></i>
+
+            <div id="testimonialSlider" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-indicators" style="bottom: -50px;">
+                    <button type="button" data-bs-target="#testimonialSlider" data-bs-slide-to="0"
+                        class="active"></button>
+                    <button type="button" data-bs-target="#testimonialSlider" data-bs-slide-to="1"></button>
+                    <button type="button" data-bs-target="#testimonialSlider" data-bs-slide-to="2"></button>
+                </div>
+
+                <div class="carousel-inner">
+                    <div class="carousel-item active" data-bs-interval="5000">
+                        <p class="testimonial-text">“I recently used Easy Express for my airport transfer, and I was
+                            impressed with their service. The driver was punctual, and the car was clean and
+                            comfortable. I would definitely recommend them.”</p>
+                        <p class="client-name">John Smith</p>
+                    </div>
+
+                    <div class="carousel-item" data-bs-interval="5000">
+                        <p class="testimonial-text">“I have been using Easy Express for my corporate transportation
+                            needs, and I am impressed with their professionalism and reliability. Their drivers are
+                            knowledgeable and courteous, and their cars are always pristine.”</p>
+                        <p class="client-name">Sarah Jones</p>
+                    </div>
+
+                    <div class="carousel-item" data-bs-interval="5000">
+                        <p class="testimonial-text">“I have used Easy Express for several intercity transfers and am
+                            impressed with the standard. Their drivers are experienced, and their cars are comfortable
+                            and spacious. Highly recommended.”</p>
+                        <p class="client-name">Michael Johnson</p>
+                    </div>
+                </div>
+
+                <button class="carousel-control-prev" type="button" data-bs-target="#testimonialSlider"
+                    data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true" style="opacity: 0.3;"></span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#testimonialSlider"
+                    data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true" style="opacity: 0.3;"></span>
+                </button>
+            </div>
+        </div>
+    </section>
+    <section class="cta-section">
+        <div class="container">
+            <div class="row g-0 cta-box align-items-center">
+                <div class="col-lg-6 text-center text-lg-start p-4 border-end-lg">
+                    <h6 class="text-uppercase mb-3" style="color: var(--accent-gold); letter-spacing: 3px;">Available
+                        24/7</h6>
+                    <h2 class="display-6 mb-4">Order Your Minicab Now!</h2>
+                    <p class="text-white-50">Experience the gold standard in chauffeur services. Our team is ready to
+                        assist you with your journey.</p>
+                    <p class="mb-1 mt-4 small text-uppercase">Give us a call at:</p>
+                    <a href="tel:+447904577355" class="call-link">+44 790-457-7355</a>
+                </div>
+
+                <div class="col-lg-6 p-4 ps-lg-5">
+                    <h4 class="mb-4">Have a question?</h4>
+                    <p class="small text-white-50 mb-4">Leave a message and we'll get back to you shortly.</p>
+                    <form class="cta-form">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <input type="text" class="form-control" placeholder="Full Name">
+                            </div>
+                            <div class="col-md-6">
+                                <input type="email" class="form-control" placeholder="Email Address">
+                            </div>
+                        </div>
+                        <textarea class="form-control" rows="1" placeholder="Your Question / Trip Details"></textarea>
+                        <button type="submit" class="btn btn-gold w-100 mt-3">SEND MESSAGE</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
     <footer>
         <div class="container">
-            <div class="row g-4">
+            <div class="row g-5">
                 <div class="col-lg-4">
-                    <h5>About Prestige Taxi</h5>
-                    <p class="small">We combine luxury travel with reliability. Serving Crewe, Stoke-on-Trent, and all major UK airports 24/7.</p>
-                    <div class="mt-4">
-                        <i class="fab fa-facebook-square fa-2x me-2"></i>
-                        <i class="fab fa-whatsapp-square fa-2x"></i>
-                    </div>
+                    <h5 class="fw-bold">EASY EXPRESS</h5>
+                    <p class="small">Committed to providing our clients with the best airport transportation experience
+                        with our professional chauffeurs.</p>
                 </div>
                 <div class="col-lg-4">
                     <h5>Quick Links</h5>
                     <ul class="list-unstyled small">
-                        <li class="mb-2">Home</li>
-                        <li class="mb-2">Our Fleets</li>
-                        <li class="mb-2">Our Services</li>
-                        <li class="mb-2">Contact Us</li>
+                        <li class="mb-2"><a href="/">Home</a></li>
+                        <li class="mb-2"><a href="about">About Us</a></li>
+                        <li class="mb-2"><a href="services">Services</a></li>
+                        <li class="mb-2"><a href="privacy-policy">Privacy Policy</a></li>
+
                     </ul>
                 </div>
                 <div class="col-lg-4">
                     <h5>Contact Info</h5>
                     <ul class="list-unstyled small">
-                        <li class="mb-2"><i class="fas fa-phone text-gold me-2"></i> 01270 444009</li>
-                        <li class="mb-2"><i class="fas fa-envelope text-gold me-2"></i> Infoprestigetaxi@yahoo.com</li>
-                        <li class="mb-2"><i class="fas fa-map-marker-alt text-gold me-2"></i> Crewe, United Kingdom</li>
+                        <li class="mb-2">
+                            <i class="fas fa-phone text-gold me-2"></i>
+                            <a href="tel:+44 790-583-2632" class="text-decoration-none">
+                                +44 790-583-2632
+                            </a>
+                        </li>
+
+                        <li class="mb-2">
+                            <i class="fas fa-envelope text-gold me-2"></i>
+                            <a href="mailto:support@easyexpressairport.com" class="text-decoration-none">
+                                support@easyexpressairport.com
+                            </a>
+                        </li>
+
+                        <li class="mb-2">
+                            <i class="fas fa-map-marker-alt text-gold me-2"></i>
+                            <a href="#" target="_blank"
+                                class="text-decoration-none">
+                                3, Surrey Court, 55 Woodcote Road, Wallington, Surrey, Greator London, SM6 0PN
+                            </a>
+                        </li>
                     </ul>
                 </div>
             </div>
-            <div class="footer-bottom text-center small">
-                <p>&copy; 2025 Prestige Taxi Crewe. All Rights Reserved.</p>
+            <div class="border-top border-secondary mt-5 pt-4 text-center">
+                <p class="small">Copyright © 2026. Easy Express Airport Transfers. All Rights Reserved.</p>
             </div>
         </div>
     </footer>
- <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
-    <!-- Initialize Swiper -->
-    <script>
-        var swiper = new Swiper(".mySwiperImages", {
-            slidesPerView: 1,
-            autoplay: true,
-            loop: true, 
-            navigation: {
-            nextEl: ".swiper-button-next",
-            prevEl: ".swiper-button-prev",
-          },
-    
-        });
-    </script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
+
 </html>
