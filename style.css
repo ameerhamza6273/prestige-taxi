@@ -1,42 +1,397 @@
         :root {
-            --navy: #081a2f;
-            --gold: #c5a059;
-            --light-grey: #f8f9fa;
+            --primary-dark: #1a2b2c;
+            --accent-gold: #a68a56;
+            --light-bg: #f4f7f6;
+            --text-muted: #666;
         }
 
-        body { font-family: 'Poppins', sans-serif; color: #333; }
-        h1, h2, h3 { font-family: 'Playfair Display', serif; }
-
-        /* Navigation & Hero Style */
-        .navbar { background-color: var(--navy); border-bottom: 2px solid var(--gold); }
-        .hero-section {
-            background: linear-gradient(rgba(8, 26, 47, 0.8), rgba(8, 26, 47, 0.8)), url('https://images.unsplash.com/photo-1549144464-90924905f42c?q=80&w=2070') no-repeat center center/cover;
-            color: white; padding: 100px 0; text-align: center;
+        .text-gold {
+            color: var(--accent-gold);
         }
 
-        /* Gold Button Style */
+        body {
+            font-family: 'Montserrat', sans-serif;
+            color: #333;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        .section-padding {
+            padding: 80px 0;
+        }
+
+        /* Navbar */
+        .navbar {
+            background: white;
+            padding: 15px 0;
+            border-bottom: 1px solid #eee;
+        }
+
         .btn-gold {
-            background-color: var(--gold); color: white; border: none;
-            padding: 12px 30px; font-weight: 600; transition: 0.3s;
+            background-color: var(--accent-gold);
+            color: white !important;
+            border-radius: 0;
+            padding: 12px 30px;
+            border: none;
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: 0.3s;
         }
-        .btn-gold:hover { background-color: #a3854a; color: white; }
 
-        /* Fleet Cards - Claremont Style */
+        .btn-gold:hover {
+            background-color: #8e7545;
+        }
+
+        /* Hero Section Fix */
+        .hero {
+            /* High-end S-Class Interior/Lifestyle Image */
+            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.7)),
+                url('images/hero-luxury-car.jpg') center/cover no-repeat;
+            height: 100vh;
+            /* Claremont full height use karta hai */
+            display: flex;
+            align-items: center;
+            color: white;
+            text-align: center;
+            background-attachment: fixed;
+        }
+        .about-hero h1,
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 800px;
+            margin: 0 auto 30px;
+            font-weight: 300;
+        }
+
+        /* Services Styling */
+        .service-card {
+            position: relative;
+            overflow: hidden;
+            border: none;
+            height: 350px;
+        }
+
+        .service-card img {
+            height: 100%;
+            width: 100%;
+            object-fit: cover;
+            transition: 0.5s;
+        }
+
+        .service-card:hover img {
+            transform: scale(1.1);
+        }
+
+        .service-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            padding: 20px;
+            background: linear-gradient(transparent, rgba(26, 43, 44, 0.9));
+            color: white;
+            text-align: center;
+        }
+
+        /* About Section */
+        .about-img-box {
+            border-left: 10px solid var(--accent-gold);
+            padding-left: 20px;
+        }
+
+        .divider {
+            width: 80px;
+            height: 3px;
+            background: var(--accent-gold);
+            margin: 15px 0;
+        }
+
+        .divider.center {
+            margin: 15px auto;
+        }
+
+        /* Fleet Section */
         .fleet-card {
-            border: none; box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-            transition: transform 0.3s ease; border-bottom: 4px solid transparent;
-        }
-        .fleet-card:hover { transform: translateY(-10px); border-bottom: 4px solid var(--gold); }
-        .fleet-img { height: 200px; object-fit: cover; }
-        
-        .spec-icon { color: var(--gold); font-weight: bold; margin-right: 10px; }
-        
-        /* Section Titles */
-        .section-title { position: relative; padding-bottom: 15px; margin-bottom: 40px; }
-        .section-title::after {
-            content: ''; position: absolute; left: 0; bottom: 0;
-            width: 60px; height: 3px; background-color: var(--gold);
+            background: #fff;
+            border: 1px solid #eef0f2;
+            padding: 30px;
+            text-align: center;
+            transition: all 0.5s ease;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
         }
 
-        /* Testimonials */
-        .testimonial-box { background: var(--light-grey); padding: 30px; border-left: 5px solid var(--gold); }
+        .fleet-card:hover {
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.08);
+            border-color: var(--accent-gold);
+            transform: translateY(-5px);
+        }
+
+        .fleet-card img {
+            transition: transform 0.5s ease;
+            max-height: 140px;
+            width: auto;
+            margin: 20px auto;
+        }
+
+        .fleet-card:hover img {
+            transform: scale(1.08);
+        }
+
+        .fleet-card h6 {
+            color: var(--accent-gold);
+            font-size: 0.75rem;
+            letter-spacing: 3px;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+
+        .fleet-card h5 {
+            font-size: 1.1rem;
+            font-weight: 900;
+            margin-bottom: 20px;
+        }
+
+        .fleet-specs {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            border-top: 1px solid #f0f0f0;
+            padding-top: 20px;
+            margin-bottom: 25px;
+            color: #666;
+            font-size: 0.9rem;
+        }
+
+        .btn-book {
+            background-color: var(--primary-dark);
+            color: white;
+            border-radius: 0;
+            padding: 12px;
+            font-weight: 700;
+            font-size: 0.8rem;
+            letter-spacing: 1px;
+            transition: 0.3s;
+            text-transform: uppercase;
+            text-decoration: none;
+        }
+
+        .btn-book:hover {
+            background-color: var(--accent-gold);
+            color: white;
+        }
+
+        /* Advantages */
+        .advantages-section {
+            background-color: var(--light-bg);
+        }
+
+        .adv-card {
+            background: #ffffff;
+            padding: 40px 25px;
+            height: 100%;
+            border: 1px solid #f0f0f0;
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .adv-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.05);
+            border-color: var(--accent-gold);
+        }
+
+        .icon-box {
+            width: 70px;
+            height: 70px;
+            background: var(--light-bg);
+            color: var(--accent-gold);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8rem;
+            margin: 0 auto 25px;
+            border-radius: 50%;
+            /* Circle look */
+            transition: 0.3s;
+        }
+
+        .adv-card:hover .icon-box {
+            background: var(--accent-gold);
+            color: #fff;
+        }
+
+        .adv-card h4 {
+            font-size: 0.95rem;
+            font-weight: 700;
+            letter-spacing: 1px;
+            margin-bottom: 15px;
+            color: var(--primary-dark);
+        }
+
+        .adv-card p {
+            color: var(--text-muted);
+            font-size: 0.85rem;
+            line-height: 1.5;
+        }
+
+        /* Corporate Inquiry Form */
+        .inquiry-box {
+            background: white;
+            padding: 40px;
+            border: 1px solid #eee;
+        }
+
+        .img-fluid {
+            width: 100%;
+            height: auto;
+            max-height: 350px;
+            object-fit: cover;
+        }
+
+        /* Testimonial Section */
+        /* Testimonial Slider Styles */
+        .testimonial-sec {
+            background: var(--primary-dark);
+            /* Deep dark background */
+            padding: 100px 0;
+            color: white;
+        }
+
+        .quote-icon {
+            font-size: 3rem;
+            color: var(--accent-gold);
+            margin-bottom: 30px;
+            opacity: 0.6;
+        }
+
+        .testimonial-text {
+            font-size: 1.6rem;
+            font-weight: 300;
+            font-style: italic;
+            max-width: 900px;
+            margin: 0 auto;
+            line-height: 1.5;
+            font-family: 'Lato', sans-serif;
+        }
+
+        .client-name {
+            color: var(--accent-gold);
+            letter-spacing: 3px;
+            font-weight: 700;
+            margin-top: 30px;
+            text-transform: uppercase;
+        }
+
+        /* Slider Controls Customization */
+        .carousel-indicators [data-bs-target] {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background-color: var(--accent-gold);
+        }
+
+        .booking-form .form-control, .booking-form .form-select {
+    border: 1px solid #ddd;
+    background-color: #fcfcfc;
+}
+
+.booking-form .form-control:focus, .booking-form .form-select:focus {
+    border-color: var(--accent-gold);
+    box-shadow: none;
+    background-color: #fff;
+}
+
+.booking-form .form-label {
+    color: #333;
+    margin-bottom: 5px;
+}
+
+.text-gold {
+    color: var(--accent-gold) !important;
+}
+
+.bg-gold {
+    background-color: var(--accent-gold) !important;
+}
+        /* Contact CTA Section */
+        .cta-section {
+            background: linear-gradient(rgba(26, 43, 44, 0.95), rgba(26, 43, 44, 0.95)),
+                url('https://images.unsplash.com/photo-1449965408869-eaa3f722e40d?q=80&w=2000') center/cover no-repeat;
+            padding: 80px 0;
+            color: white;
+        }
+
+        .cta-box {
+            border: 1px solid rgba(166, 138, 86, 0.3);
+            padding: 40px;
+            background: rgba(255, 255, 255, 0.03);
+        }
+
+        .call-link {
+            font-size: 2.2rem;
+            color: var(--accent-gold);
+            text-decoration: none;
+            font-weight: 700;
+            display: block;
+            margin: 20px 0;
+            transition: 0.3s;
+        }
+
+        .call-link:hover {
+            color: white;
+            transform: scale(1.05);
+        }
+
+        .cta-form .form-control {
+            background: transparent;
+            border: none;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 0;
+            color: white;
+            padding: 12px 0;
+            margin-bottom: 20px;
+        }
+
+        .cta-form .form-control:focus {
+            background: transparent;
+            box-shadow: none;
+            border-color: var(--accent-gold);
+            color: white;
+        }
+
+        .cta-form .form-control::placeholder {
+            color: #999;
+            font-size: 0.9rem;
+        }
+
+        footer {
+            background: #0f1a1b;
+            color: #999;
+            padding: 80px 0 20px;
+        }
+
+        footer h5 {
+            color: white;
+            margin-bottom: 25px;
+            border-left: 4px solid var(--accent-gold);
+            padding-left: 10px;
+        }
+
+        footer a {
+            color: #999;
+            text-decoration: none;
+            transition: 0.3s;
+        }
+
+        footer a:hover {
+            color: var(--accent-gold);
+        }
