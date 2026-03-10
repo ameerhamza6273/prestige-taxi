@@ -16,7 +16,8 @@
 
     <nav class="navbar navbar-expand-lg sticky-top">
         <div class="container">
-            <a class="navbar-brand" href="/"><img src="images/easy-express-logo.jpeg" alt="Easy Express Logo" height="55px"></a>
+            <a class="navbar-brand" href="/"><img src="images/easy-express-logo.jpeg" alt="Easy Express Logo"
+                    height="55px"></a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -41,8 +42,8 @@
             <p style="opacity: 0.8;">Bespoke requirements? Call or email our team today.</p>
 
             <div class="d-flex flex-wrap justify-content-center gap-4 mt-4">
-                <a href="tel:+447905832632" class="text-white text-decoration-none h4">
-                    <i class="fas fa-phone-alt text-gold me-2"></i> +44 790-583-2632
+                <a href="tel:+44 20 3954 7443" class="text-white text-decoration-none h4">
+                    <i class="fas fa-phone-alt text-gold me-2"></i> +44 20 3954 7443
                 </a>
                 <a href="mailto:support@easyexpressairport.com" class="text-white text-decoration-none h4">
                     <i class="fas fa-envelope text-gold me-2"></i> support@easyexpressairport.com
@@ -57,7 +58,7 @@
                     <p class="text-muted mb-5 text-center">Enter your information below and we will get back to you with
                         your booking confirmation.</p>
 
-                    <form class="booking-form p-4 rounded shadow-sm bg-white" >
+                    <form class="booking-form p-4 rounded shadow-sm bg-white">
                         <div class="mb-5">
                             <h4 class="mb-4 border-bottom pb-2 text-uppercase" style="letter-spacing: 1px;">Client
                                 Details <small class="text-muted" style="font-size: 12px;">(*required fields)</small>
@@ -175,7 +176,6 @@
             </div>
         </div>
     </section>
-
     <footer>
         <div class="container">
             <div class="row g-5">
@@ -199,8 +199,8 @@
                     <ul class="list-unstyled small">
                         <li class="mb-2">
                             <i class="fas fa-phone text-gold me-2"></i>
-                            <a href="tel:+44 790-583-2632" class="text-decoration-none">
-                                +44 790-583-2632
+                            <a href="tel:+44 20 3954 7443" class="text-decoration-none">
+                                +44 20 3954 7443
                             </a>
                         </li>
 
@@ -227,6 +227,26 @@
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Whatsapp Chat Button -->
+    <script async src='https://d2mpatx37cqexb.cloudfront.net/delightchat-whatsapp-widget/embeds/embed.min.js'></script>
+    <script>
+        var wa_btnSetting = { "btnColor": "#16BE45", "ctaText": "WhatsApp Us", "cornerRadius": 40, "marginBottom": 20, "marginLeft": 20, "marginRight": 20, "btnPosition": "right", "whatsAppNumber": "+447905832632", "welcomeMessage": "", "zIndex": 999999, "btnColorScheme": "light" };
+        window.onload = () => {
+            _waEmbed(wa_btnSetting);
+        };
+
+        window.addEventListener("pageshow", function (event) {
+            var historyTraversal = event.persisted ||
+                (typeof window.performance != "undefined" &&
+                    window.performance.navigation.type === 2);
+            if (historyTraversal) {
+                // Handle page restore.
+                window.location.reload();
+            }
+        });
+
+    </script>
+
 </body>
 
 </html>
