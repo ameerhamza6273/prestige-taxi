@@ -55,6 +55,7 @@
             text-align: center;
             background-attachment: fixed;
         }
+
         .about-hero h1,
         .hero h1 {
             font-size: 3.5rem;
@@ -299,29 +300,32 @@
             background-color: var(--accent-gold);
         }
 
-        .booking-form .form-control, .booking-form .form-select {
-    border: 1px solid #ddd;
-    background-color: #fcfcfc;
-}
+        .booking-form .form-control,
+        .booking-form .form-select {
+            border: 1px solid #ddd;
+            background-color: #fcfcfc;
+        }
 
-.booking-form .form-control:focus, .booking-form .form-select:focus {
-    border-color: var(--accent-gold);
-    box-shadow: none;
-    background-color: #fff;
-}
+        .booking-form .form-control:focus,
+        .booking-form .form-select:focus {
+            border-color: var(--accent-gold);
+            box-shadow: none;
+            background-color: #fff;
+        }
 
-.booking-form .form-label {
-    color: #333;
-    margin-bottom: 5px;
-}
+        .booking-form .form-label {
+            color: #333;
+            margin-bottom: 5px;
+        }
 
-.text-gold {
-    color: var(--accent-gold) !important;
-}
+        .text-gold {
+            color: var(--accent-gold) !important;
+        }
 
-.bg-gold {
-    background-color: var(--accent-gold) !important;
-}
+        .bg-gold {
+            background-color: var(--accent-gold) !important;
+        }
+
         /* Contact CTA Section */
         .cta-section {
             background: linear-gradient(rgba(26, 43, 44, 0.95), rgba(26, 43, 44, 0.95)),
@@ -394,4 +398,52 @@
 
         footer a:hover {
             color: var(--accent-gold);
+        }
+
+        /* Tablet Devices */
+        @media (max-width: 991px) {
+
+            .hero h1,
+            .about-hero h1 {
+                font-size: 2.6rem;
+            }
+
+            .fleet-card h5 {
+                font-size: 1rem;
+            }
+
+        }
+
+        /* Mobile Devices */
+        @media (max-width: 768px) {
+
+            .hero {
+                height: 80vh;
+                background-attachment: scroll;
+                /* mobile par fixed issue deta hai */
+            }
+
+            .hero h1,
+            .about-hero h1 {
+                font-size: 2rem;
+            }
+
+            .adv-card h4 {
+                font-size: 0.85rem;
+            }
+
+        }
+
+        /* Small Mobile */
+        @media (max-width: 576px) {
+
+            .hero h1,
+            .about-hero h1 {
+                font-size: 1.7rem;
+            }
+
+            .testimonial-text {
+                font-size: 1rem;
+            }
+
         }
