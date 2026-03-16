@@ -41,13 +41,152 @@
 
     <section class="hero">
         <div class="container">
-            <p class="mb-1 text-uppercase">Trusted Local Service Since 1979</p>
-            <h1>FLEET TAXIS</h1>
-            <p class="lead mb-4">Local Taxi Work • All Major Airports • Parcel Service</p>
-            <div class="d-flex justify-content-center gap-3">
-                <a href="tel:01494677022" class="btn btn-gold btn-lg rounded">Book Now</a>
-                <a href="#services" class="btn btn-outline-light btn-lg">Our Services</a>
+            <div class="row g-5">
+                <div class="col-lg-7 align-self-center order-2 order-lg-1">
+                    <p class="mb-1 text-uppercase">Trusted Local Service Since 1979</p>
+                    <h1>FLEET TAXIS</h1>
+                    <p class="lead mb-4">Local Taxi Work • All Major Airports • Parcel Service</p>
+                    <div class="d-flex gap-3">
+                        <a href="tel:01494677022" class="btn btn-gold btn-lg rounded">Book Now</a>
+                        <a href="#services" class="btn btn-outline-light btn-lg">Our Services</a>
+                    </div>
+                </div>
+                <div class="col-lg-5 order-1 order-lg-2">
+                    <div class="p-4 bg-dark shadow-lg rounded border-top border-warning border-5 text-white">
+                        <h3 class="fw-bold mb-2 text-warning text-center"> GET A QUICK QUOTE</h3>
+                        
+                        <form action="" method="post" id="form1" name="form1">
+                            <div class="mb-2 p-2 rounded" style="background: rgba(255,255,255,0.05);">
+                                <label class="me-4 cursor-pointer">
+                                    <input type="radio" name="form_sbmit_type" value="Quotation"
+                                        onclick="changebtntext('Quick Quote','Quote Now')" checked
+                                        class="form-check-input me-2">
+                                    <span class="fw-bold">Quote</span>
+                                </label>
+                                <label class="cursor-pointer">
+                                    <input type="radio" name="form_sbmit_type" value="Booking"
+                                        onclick="changebtntext('Your Booking Now','Book Now')"
+                                        class="form-check-input me-2">
+                                    <span class="fw-bold">Booking</span>
+                                </label>
+                            </div>
+
+                            <div class="row g-3 mb-3">
+                                <div class="col-md-6">
+                                    <label class="small fw-bold mb-1">Full Name</label>
+                                    <input class="form-control rounded-0 bg-white" type="text" name="name" required
+                                        placeholder="Full Name">
+                                </div>
+                                <div class="col-md-6">
+                                    <label class="small fw-bold mb-1">Phone Number</label>
+                                    <input class="form-control rounded-0 bg-white" type="text" name="phone" required
+                                        placeholder="Phone Number">
+                                </div>
+                                <div class="col-md-12">
+                                    <label class="small fw-bold mb-1">Email Address</label>
+                                    <input class="form-control rounded-0 bg-white" type="email" name="email" required
+                                        placeholder="Email Address">
+                                </div>
+                            </div>
+
+                            <div class="mb-3 position-relative">
+                                <div class="input-group">
+                                    <span class="input-group-text bg-warning border-0"><i
+                                            class="fas fa-map-marker-alt"></i></span>
+                                    <input name="pickup" id="pickup" class="form-control rounded-0 border-0"
+                                        placeholder="From: Postcode, venue or place" required>
+                                </div>
+                            </div>
+
+                            <div class="mb-3">
+                                <a href="javascript:void(0)" class="text-warning text-decoration-none small fw-bold"
+                                    onclick="addviafields(1)">
+                                    <i class="fa fa-plus-circle"></i> Add Via Address
+                                </a>
+                            </div>
+
+                            <div class="via_address_1 mb-3" style="display:none;">
+                                <input type="text" name="via_address_1" id="via_address_1"
+                                    class="form-control rounded-0 mb-2" placeholder="Enter via address 1">
+                            </div>
+
+                            <div class="mb-3">
+                                <div class="input-group">
+                                    <span class="input-group-text bg-warning border-0"><i
+                                            class="fas fa-flag-checkered"></i></span>
+                                    <input type="text" name="dropoff" id="dropoff"
+                                        class="form-control rounded-0 border-0" placeholder="To: Airport or Town"
+                                        required>
+                                </div>
+                            </div>
+
+                            <div class="row g-3 mb-4 ">
+                                <div class="col-md-12">
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="radio" name="trip_type" id="oneway_rd"
+                                            value="one_way" checked onclick="singleactive()">
+                                        <label class="form-check-label small fw-bold">One Way</label>
+                                    </div>
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="radio" name="trip_type" id="return_rd"
+                                            value="return" onclick="returnactive()">
+                                        <label class="form-check-label small fw-bold">Return Trip</label>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-4">
+                                    <label class="small fw-bold mb-1 d-block">Date</label>
+                                    <input class="form-control rounded-0" type="date" name="myDate" id="myDate"
+                                        required>
+                                </div>
+                                <div class="col-md-4">
+                                    <label class="small fw-bold mb-1 d-block">Time</label>
+                                    <input class="form-control rounded-0" type="time" id="myTime" name="pickuptime"
+                                        required>
+                                </div>
+                                <div class="col-md-4">
+                                    <label class="small fw-bold mb-1 d-block">Flight No</label>
+                                    <input class="form-control rounded-0" type="text" name="flight_no"
+                                        placeholder="Flight No">
+                                </div>
+                            </div>
+
+                            <div class="row g-3 mb-4">
+                                <div class="col-md-4">
+                                    <label class="small fw-bold mb-1">Luggage</label>
+                                    <input class="form-control rounded-0" type="number" name="luggage"
+                                        placeholder="Suitcases" required min="0">
+                                </div>
+                                <div class="col-md-4">
+                                    <label class="small fw-bold mb-1">Hand Luggage</label>
+                                    <input class="form-control rounded-0" type="number" name="handluggage"
+                                        placeholder="Handbags" required min="0">
+                                </div>
+                                <div class="col-md-4">
+                                    <label class="small fw-bold mb-1">Passengers</label>
+                                    <select class="form-select rounded-0" name="passengers">
+                                        <option value="1">1 Passenger</option>
+                                        <option value="2">2 Passengers</option>
+                                        <option value="3">3 Passengers</option>
+                                        <option value="4">4 Passengers</option>
+                                        <option value="5">5 Passengers</option>
+                                        <option value="6">6 Passengers</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="mt-4">
+                                <input type="hidden" name="current_date" value="16-03-2026 01:00">
+                                <button type="submit"
+                                    class="btn btn-warning w-100 py-2 fw-bold rounded-0 text-dark uppercase shadow">
+                                    <span id="SubBTNText">QUOTE NOW</span> <i class="fa fa-arrow-right ms-2"></i>
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
             </div>
+
         </div>
     </section>
     <section class="py-5">
