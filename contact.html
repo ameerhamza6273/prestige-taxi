@@ -4,10 +4,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Easy Express Airport Transfers Ltd | Luxury Chauffeur</title>
+    <title>Fleet Taxis | Est. 1979 - Local & Airport Transfers</title>
+    <link rel="icon" type="image/png" href="images/logo-fleet-taxi.png">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700;900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;700&family=Poppins:wght@300;400;600&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 
 </head>
@@ -16,186 +19,143 @@
 
     <nav class="navbar navbar-expand-lg sticky-top">
         <div class="container">
-            <a class="navbar-brand" href="/"><img src="images/easy-express-logo.jpeg" alt="Easy Express Logo"
-                    height="55px"></a>
+            <a class="navbar-brand" href="/" style="padding: 0;">
+                <img src="images/logo-fleet-taxi.png" alt="Fleet Taxis Logo" height="85px">
+            </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto align-items-center">
                     <li class="nav-item"><a class="nav-link mx-2 text-dark" href="index.html">Home</a></li>
-                    <li class="nav-item"><a class="nav-link mx-2 text-dark" href="services.html">Services</a></li>
                     <li class="nav-item"><a class="nav-link mx-2 text-dark" href="about.html">About Us</a></li>
+                    <li class="nav-item"><a class="nav-link mx-2 text-dark" href="services.html">Services</a></li>
+                    <li class="nav-item"><a class="nav-link mx-2 text-dark" href="fleet.html">Fleets</a></li>
                     <li class="nav-item"><a class="nav-link mx-2 text-dark" href="contact.html">Contact Us</a></li>
-                    <li class="nav-item"><a class="btn btn-gold ms-lg-3" href="tel:+02039547443">CALL NOW</a></li>
+                    <li class="nav-item"><a class="btn btn-gold ms-lg-3" href="tel:01494677022">CALL NOW</a></li>
                 </ul>
             </div>
         </div>
     </nav>
 
-    <section class="section-padding about-hero" style="background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.7)),
-                url('images/professional-services.jpg') center/cover no-repeat; color: white; padding: 120px 0 60px;">
-        <div class="container text-center">
-            <h6 class="text-uppercase fw-bold mb-3" style="color: var(--accent-gold); letter-spacing: 3px;">Get in Touch
-            </h6>
-            <h1 class="mb-4">Enquire Now & Make a Reservation</h1>
-            <p style="opacity: 0.8;">Bespoke requirements? Call or email our team today.</p>
-
-            <div class="d-flex flex-wrap justify-content-center gap-4 mt-4">
-                <a href="tel:+44 20 3954 7443" class="text-white text-decoration-none h4">
-                    <i class="fas fa-phone-alt text-gold me-2"></i> +44 20 3954 7443
-                </a>
-                <a href="mailto:support@easyexpressairport.com" class="text-white text-decoration-none h4">
-                    <i class="fas fa-envelope text-gold me-2"></i> support@easyexpressairport.com
-                </a>
-            </div>
+    <section class="py-5"
+        style="background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)), url('https://images.unsplash.com/photo-1449965408869-eaa3f722e40d?auto=format&fit=crop&w=1400&q=80'); background-size: cover; background-position: center; color: white; text-align: center;">
+        <div class="container py-4">
+            <h1 class="display-4 fw-bold text-uppercase">Contact Us</h1>
+            <div class="mx-auto mb-3" style="width: 70px; height: 4px; background: #FFD700;"></div>
+            <p class="lead">Get in touch for bookings, quotes, and corporate accounts</p>
         </div>
     </section>
-    <section class="section-padding" style="background-color: var(--light-bg);">
+
+    <section class="py-5 bg-light">
         <div class="container">
-            <div class="row justify-content-center">
-                <div class="col-lg-10">
-                    <p class="text-muted mb-5 text-center">Enter your information below and we will get back to you with
-                        your booking confirmation.</p>
+            <div class="row g-5">
+                <div class="col-lg-4">
+                    <div class="p-4 bg-white shadow-sm h-100 rounded">
+                        <h3 class="fw-bold mb-4">Get In Touch</h3>
 
-                    <form class="booking-form p-4 rounded shadow-sm bg-white">
-                        <div class="mb-5">
-                            <h4 class="mb-4 border-bottom pb-2 text-uppercase" style="letter-spacing: 1px;">Client
-                                Details <small class="text-muted" style="font-size: 12px;">(*required fields)</small>
-                            </h4>
-                            <div class="row g-3">
-                                <div class="col-md-6">
-                                    <label class="form-label small fw-bold">Name*</label>
-                                    <input type="text" class="form-control rounded-0 p-3" required>
-                                </div>
-                                <div class="col-md-6">
-                                    <label class="form-label small fw-bold">Company Name</label>
-                                    <input type="text" class="form-control rounded-0 p-3">
-                                </div>
-                                <div class="col-md-6">
-                                    <label class="form-label small fw-bold">Email Address*</label>
-                                    <input type="email" class="form-control rounded-0 p-3" required>
-                                </div>
-                                <div class="col-md-6">
-                                    <label class="form-label small fw-bold">Telephone Number*</label>
-                                    <input type="tel" class="form-control rounded-0 p-3" required>
-                                </div>
+                        <div class="d-flex mb-4">
+                            <div class="me-3">
+                                <i class="fas fa-phone-alt text-warning fa-lg"></i>
+                            </div>
+                            <div>
+                                <h6 class="fw-bold mb-1">Phone Numbers</h6>
+                                <p class="small mb-0 text-muted">Main: <a href="tel:01494677022"
+                                        class="text-dark text-decoration-none">01494 677022</a></p>
+                                <p class="small mb-0 text-muted">Other: 01494 670870 | 01494 681953</p>
+                                <p class="small mb-0 text-muted">Other: 01494 677308 | 01753 885645</p>
                             </div>
                         </div>
 
-                        <div class="mb-5">
-                            <h4 class="mb-4 border-bottom pb-2 text-uppercase" style="letter-spacing: 1px;">Passenger
-                                Details</h4>
-                            <div class="row g-3">
-                                <div class="col-md-6">
-                                    <label class="form-label small fw-bold">Name*</label>
-                                    <input type="text" class="form-control rounded-0 p-3" required>
-                                </div>
-                                <div class="col-md-6">
-                                    <label class="form-label small fw-bold">Contact Number</label>
-                                    <input type="tel" class="form-control rounded-0 p-3">
-                                </div>
+                        <div class="d-flex mb-4">
+                            <div class="me-3">
+                                <i class="fas fa-envelope text-warning fa-lg"></i>
+                            </div>
+                            <div>
+                                <h6 class="fw-bold mb-1">Email Address</h6>
+                                <p class="small mb-0"><a href="mailto:fleetexecutive@gmail.com"
+                                        class="text-dark text-decoration-none">fleetexecutive@gmail.com</a></p>
                             </div>
                         </div>
 
-                        <div class="mb-5">
-                            <h4 class="mb-4 border-bottom pb-2 text-uppercase" style="letter-spacing: 1px;">Reservation
-                                Details</h4>
+                        <div class="d-flex mb-4">
+                            <div class="me-3">
+                                <i class="fas fa-clock text-warning fa-lg"></i>
+                            </div>
+                            <div>
+                                <h6 class="fw-bold mb-1">Availability</h6>
+                                <p class="small mb-0 text-muted">Open 24 Hours a Day<br>7 Days a Week</p>
+                            </div>
+                        </div>
+
+                        <div class="d-flex">
+                            <div class="me-3">
+                                <i class="fas fa-shield-check text-warning fa-lg"></i>
+                            </div>
+                            <div>
+                                <h6 class="fw-bold mb-1">Area Office</h6>
+                                <p class="small mb-0 text-muted">Licensed by South Bucks District Council<br>Serving
+                                    Beaconsfield & Surrounds</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-8">
+                    <div class="p-4 p-md-5 bg-white shadow-sm rounded border-top border-warning border-4">
+                        <h3 class="fw-bold mb-4">Send Us A Message</h3>
+                        <form action="#" method="POST">
                             <div class="row g-3">
-                                <div class="col-md-4">
-                                    <label class="form-label small fw-bold">Reservation Date*</label>
-                                    <input type="date" class="form-control rounded-0 p-3" required>
+                                <div class="col-md-6">
+                                    <label class="form-label small fw-bold">Full Name</label>
+                                    <input type="text" class="form-control rounded-0 bg-light"
+                                        placeholder="Enter your name" required>
                                 </div>
-                                <div class="col-md-8">
-                                    <label class="form-label small fw-bold">Collection Address*</label>
-                                    <input type="text" class="form-control rounded-0 p-3"
-                                        placeholder="Postcode / Street Name" required>
+                                <div class="col-md-6">
+                                    <label class="form-label small fw-bold">Phone Number</label>
+                                    <input type="tel" class="form-control rounded-0 bg-light"
+                                        placeholder="Enter phone number" required>
                                 </div>
                                 <div class="col-md-12">
-                                    <label class="form-label small fw-bold">Destination Address*</label>
-                                    <input type="text" class="form-control rounded-0 p-3" required>
+                                    <label class="form-label small fw-bold">Email Address</label>
+                                    <input type="email" class="form-control rounded-0 bg-light"
+                                        placeholder="Enter email address">
                                 </div>
-                                <div class="col-md-4">
-                                    <label class="form-label small fw-bold">No. of Passengers*</label>
-                                    <select class="form-select rounded-0 p-3">
-                                        <option>1</option>
-                                        <option>2</option>
-                                        <option>3</option>
-                                        <option>4</option>
-                                        <option>5</option>
-                                        <option>6</option>
-                                        <option>7+</option>
-                                    </select>
+                                <div class="col-md-12">
+                                    <label class="form-label small fw-bold">Subject</label>
+                                    <input type="text" class="form-control rounded-0 bg-light"
+                                        placeholder="How can we help you?">
                                 </div>
-                                <div class="col-md-4">
-                                    <label class="form-label small fw-bold">Luggage?</label>
-                                    <select class="form-select rounded-0 p-3">
-                                        <option>Yes</option>
-                                        <option>No</option>
-                                    </select>
+                                <div class="col-md-12">
+                                    <label class="form-label small fw-bold">Your Message</label>
+                                    <textarea class="form-control rounded-0 bg-light" rows="5"
+                                        placeholder="Write your message here..." required></textarea>
                                 </div>
-                                <div class="col-md-4">
-                                    <label class="form-label small fw-bold">Vehicle Choice*</label>
-                                    <select class="form-select rounded-0 p-3 shadow-sm">
-                                        <optgroup label="Standard Fleet">
-                                            <option>Saloon Car</option>
-                                            <option>Estate Car</option>
-                                            <option>Standard MPV (6-Seater)</option>
-                                        </optgroup>
-                                        <optgroup label="Premium Fleet">
-                                            <option>Mercedes E-Class</option>
-                                            <option>Mercedes S-Class</option>
-                                            <option>BMW i7 / EQS</option>
-                                            <option>Range Rover LWB</option>
-                                        </optgroup>
-                                        <optgroup label="Group & Large Vehicles">
-                                            <option>Mercedes V-Class (7-Seater)</option>
-                                            <option>Mercedes Vito (9-Seater)</option>
-                                            <option>Mini Bus (16-Seater)</option>
-                                            <option>Executive Coach (32-Seater)</option>
-                                            <option>Large Coach (49-Seater)</option>
-                                        </optgroup>
-                                    </select>
+                                <div class="col-md-12 text-end">
+                                    <button type="submit"
+                                        class="btn btn-warning px-5 py-2 fw-bold rounded-0 w-100 w-md-auto">SUBMIT
+                                        MESSAGE</button>
                                 </div>
                             </div>
-                        </div>
-
-                        <div class="mb-5">
-                            <h4 class="mb-4 border-bottom pb-2 text-uppercase" style="letter-spacing: 1px;">Flight
-                                Details (If Required)</h4>
-                            <div class="row g-3">
-                                <div class="col-md-6">
-                                    <label class="form-label small fw-bold">Airport & Terminal</label>
-                                    <input type="text" class="form-control rounded-0 p-3"
-                                        placeholder="e.g. Heathrow Terminal 5">
-                                </div>
-                                <div class="col-md-6">
-                                    <label class="form-label small fw-bold">Flight Number</label>
-                                    <input type="text" class="form-control rounded-0 p-3" placeholder="e.g. QF103">
-                                </div>
-                                <div class="col-12">
-                                    <label class="form-label small fw-bold">Additional Information</label>
-                                    <textarea class="form-control rounded-0 p-3" rows="4"></textarea>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="text-center">
-                            <button type="submit" class="btn btn-gold btn-lg px-5 py-3 fw-bold">
-                                Send enquiry</button>
-                        </div>
-                    </form>
+                        </form>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
+
     <footer>
         <div class="container">
             <div class="row g-5">
                 <div class="col-lg-4">
-                    <h5 class="fw-bold">EASY EXPRESS</h5>
-                    <p class="small">Committed to providing our clients with the best airport transportation experience
-                        with our professional chauffeurs.</p>
+                    <h5 class="fw-bold">FLEET TAXIS</h5>
+                    <p class="small">Established in 1979, we are committed to providing our clients with the best
+                        transportation experience. Licensed by South Bucks District Council with professional drivers at
+                        your service.</p>
+                    <div class="mt-3">
+                        <img src="images/pay-card.png" height="50" class="opacity-75">
+                        <p class="small mt-2">Account Facilities Available</p>
+                    </div>
                 </div>
                 <div class="col-lg-4">
                     <h5>Quick Links</h5>
@@ -204,7 +164,6 @@
                         <li class="mb-2"><a href="about.html">About Us</a></li>
                         <li class="mb-2"><a href="services.html">Services</a></li>
                         <li class="mb-2"><a href="#">Privacy Policy</a></li>
-
                     </ul>
                 </div>
                 <div class="col-lg-4">
@@ -212,54 +171,32 @@
                     <ul class="list-unstyled small">
                         <li class="mb-2">
                             <i class="fas fa-phone text-gold me-2"></i>
-                            <a href="tel:+44 20 3954 7443" class="text-decoration-none">
-                                +44 20 3954 7443
-                            </a>
+                            <strong>Main:</strong> <a href="tel:01494677022">01494 677022</a>
                         </li>
-
                         <li class="mb-2">
-                            <i class="fas fa-envelope text-gold me-2"></i>
-                            <a href="mailto:support@easyexpressairport.com" class="text-decoration-none">
-                                support@easyexpressairport.com
-                            </a>
+                            <i class="fas fa-phone text-gold me-2"></i>
+                            <strong>Other Lines:</strong> <br>
+                            <span class="ms-4">01494 670870 | 01494 681953</span> <br>
+                            <span class="ms-4">01494 677308 | 01753 885645</span>
                         </li>
-
+                        <li class="mb-2 mt-3">
+                            <i class="fas fa-envelope text-gold me-2"></i>
+                            <a href="mailto:fleetexecutive@gmail.com">fleetexecutive@gmail.com</a>
+                        </li>
                         <li class="mb-2">
                             <i class="fas fa-map-marker-alt text-gold me-2"></i>
-                            <a href="#" target="_blank" class="text-decoration-none">
-                                3, Surrey Court, 55 Woodcote Road, Wallington, Surrey, Greator London, SM6 0PN
-                            </a>
+                            <span>Licensed by South Bucks District Council</span>
                         </li>
                     </ul>
                 </div>
             </div>
-            <div class="border-top border-secondary mt-5 pt-4 text-center">
-                <p class="small">Copyright © 2026. Easy Express Airport Transfers. All Rights Reserved.</p>
+            <div class="footer-bottom pt-4 text-center">
+                <p class="small mb-0">Copyright © 2026. Fleet Taxis Beaconsfield. All Rights Reserved.</p>
             </div>
         </div>
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <!-- Whatsapp Chat Button -->
-    <script async src='https://d2mpatx37cqexb.cloudfront.net/delightchat-whatsapp-widget/embeds/embed.min.js'></script>
-    <script>
-        var wa_btnSetting = { "btnColor": "#16BE45", "ctaText": "WhatsApp Us", "cornerRadius": 40, "marginBottom": 20, "marginLeft": 20, "marginRight": 20, "btnPosition": "right", "whatsAppNumber": "+447905832632", "welcomeMessage": "", "zIndex": 999999, "btnColorScheme": "light" };
-        window.onload = () => {
-            _waEmbed(wa_btnSetting);
-        };
-
-        window.addEventListener("pageshow", function (event) {
-            var historyTraversal = event.persisted ||
-                (typeof window.performance != "undefined" &&
-                    window.performance.navigation.type === 2);
-            if (historyTraversal) {
-                // Handle page restore.
-                window.location.reload();
-            }
-        });
-
-    </script>
-
 </body>
 
 </html>
