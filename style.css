@@ -1,449 +1,117 @@
         :root {
-            --primary-dark: #1a2b2c;
-            --accent-gold: #a68a56;
-            --light-bg: #f4f7f6;
-            --text-muted: #666;
-        }
-
-        .text-gold {
-            color: var(--accent-gold);
+            --brand-yellow: #FFD700;
+            --brand-dark: #1a1a1a;
+            --text-gold: #FFD700;
         }
 
         body {
-            font-family: 'Montserrat', sans-serif;
-            color: #333;
-            line-height: 1.6;
-            overflow-x: hidden;
+            font-family: 'Poppins', sans-serif;
         }
 
-        .section-padding {
-            padding: 80px 0;
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        .nav-link,
+        .btn-gold {
+            font-family: 'Oswald', sans-serif;
+            text-transform: uppercase;
         }
 
         /* Navbar */
         .navbar {
-            background: white;
-            padding: 15px 0;
-            border-bottom: 1px solid #eee;
+            background-color: #fff;
+            border-bottom: 3px solid var(--brand-yellow);
         }
 
         .btn-gold {
-            background-color: var(--accent-gold);
-            color: white !important;
+            background-color: var(--brand-yellow);
+            color: #000;
+            font-weight: bold;
             border-radius: 0;
-            padding: 12px 30px;
-            border: none;
-            font-weight: 600;
-            font-size: 0.9rem;
-            transition: 0.3s;
+            padding: 10px 25px;
         }
 
         .btn-gold:hover {
-            background-color: #8e7545;
+            background-color: #000;
+            color: var(--brand-yellow);
         }
 
-        /* Hero Section Fix */
+        /* Hero */
         .hero {
-            /* High-end S-Class Interior/Lifestyle Image */
-            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.7)),
-                url('images/hero-luxury-car.jpg') center/cover no-repeat;
-            height: 100vh;
-            /* Claremont full height use karta hai */
-            display: flex;
-            align-items: center;
+            background: linear-gradient(#000000bf, #000000bf), url('images/fleet-taxi-bg-img.png');
+            background-size: cover;
+            background-position: center;
             color: white;
+            padding: 150px 0;
             text-align: center;
-            background-attachment: fixed;
         }
 
-        .about-hero h1,
         .hero h1 {
+            color: var(--brand-yellow);
             font-size: 3.5rem;
-            margin-bottom: 20px;
         }
 
-        .hero p {
-            font-size: 1.2rem;
-            max-width: 800px;
-            margin: 0 auto 30px;
-            font-weight: 300;
-        }
-
-        /* Services Styling */
-        .service-card {
-            position: relative;
-            overflow: hidden;
-            border: none;
-            height: 350px;
-        }
-
-        .service-card img {
-            height: 100%;
-            width: 100%;
-            object-fit: cover;
-            transition: 0.5s;
-        }
-
-        .service-card:hover img {
-            transform: scale(1.1);
-        }
-
-        .service-overlay {
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            padding: 20px;
-            background: linear-gradient(transparent, rgba(26, 43, 44, 0.9));
-            color: white;
-            text-align: center;
-        }
-
-        /* About Section */
-        .about-img-box {
-            border-left: 10px solid var(--accent-gold);
-            padding-left: 20px;
-        }
-
-        .divider {
-            width: 80px;
-            height: 3px;
-            background: var(--accent-gold);
-            margin: 15px 0;
-        }
-
-        .divider.center {
-            margin: 15px auto;
-        }
-
-        /* Fleet Section */
         .fleet-card {
+            transition: 0.3s;
             background: #fff;
-            border: 1px solid #eef0f2;
-            padding: 30px;
-            text-align: center;
-            transition: all 0.5s ease;
-            height: 100%;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
+            border-top: 4px solid transparent !important;
         }
 
         .fleet-card:hover {
-            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.08);
-            border-color: var(--accent-gold);
-            transform: translateY(-5px);
+            transform: translateY(-10px);
+            border-top-color: var(--brand-yellow) !important;
         }
 
         .fleet-card img {
-            transition: transform 0.5s ease;
-            max-height: 140px;
-            width: auto;
-            margin: 12px auto;
+            height: 120px;
+            object-fit: contain;
         }
 
-        .fleet-card:hover img {
-            transform: scale(1.08);
+        
+        /* Page Header */
+        .page-header {
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1449965408869-eaa3f722e40d?auto=format&fit=crop&w=1400&q=80');
+            background-size: cover; background-position: center;
+            color: white; padding: 80px 0; text-align: center;
         }
 
-        .fleet-card h6 {
-            color: var(--accent-gold);
-            font-size: 0.75rem;
-            letter-spacing: 3px;
-            font-weight: 700;
-            margin-bottom: 10px;
-        }
-
-        .fleet-card h5 {
-            font-size: 1.1rem;
-            font-weight: 900;
-            margin-bottom: 20px;
-        }
-
-        .fleet-specs {
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-            border-top: 1px solid #f0f0f0;
-            padding-top: 20px;
-            margin-bottom: 25px;
-            color: #666;
-            font-size: 0.9rem;
-        }
-
-        .btn-book {
-            background-color: var(--primary-dark);
-            color: white;
-            border-radius: 0;
-            padding: 12px;
-            font-weight: 700;
-            font-size: 0.8rem;
-            letter-spacing: 1px;
-            transition: 0.3s;
-            text-transform: uppercase;
-            text-decoration: none;
-        }
-
-        .btn-book:hover {
-            background-color: var(--accent-gold);
-            color: white;
-        }
-
-        /* Advantages */
-        .advantages-section {
-            background-color: var(--light-bg);
-        }
-
-        .adv-card {
-            background: #ffffff;
-            padding: 40px 25px;
-            height: 100%;
-            border: 1px solid #f0f0f0;
-            transition: all 0.4s ease;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .adv-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.05);
-            border-color: var(--accent-gold);
-        }
-
-        .icon-box {
-            width: 70px;
-            height: 70px;
-            background: var(--light-bg);
-            color: var(--accent-gold);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.8rem;
-            margin: 0 auto 25px;
-            border-radius: 50%;
-            /* Circle look */
-            transition: 0.3s;
-        }
-
-        .adv-card:hover .icon-box {
-            background: var(--accent-gold);
-            color: #fff;
-        }
-
-        .adv-card h4 {
-            font-size: 0.95rem;
-            font-weight: 700;
-            letter-spacing: 1px;
-            margin-bottom: 15px;
-            color: var(--primary-dark);
-        }
-
-        .adv-card p {
-            color: var(--text-muted);
-            font-size: 0.85rem;
-            line-height: 1.5;
-        }
-
-        /* Corporate Inquiry Form */
-        .inquiry-box {
-            background: white;
-            padding: 40px;
-            border: 1px solid #eee;
-        }
-
-        .img-fluid {
-            width: 100%;
-            height: auto;
-            max-height: 350px;
-            object-fit: cover;
-        }
-
-        /* Testimonial Section */
-        /* Testimonial Slider Styles */
-        .testimonial-sec {
-            background: var(--primary-dark);
-            /* Deep dark background */
-            padding: 100px 0;
-            color: white;
-        }
-
-        .quote-icon {
-            font-size: 3rem;
-            color: var(--accent-gold);
-            margin-bottom: 30px;
-            opacity: 0.6;
-        }
-
-        .testimonial-text {
-            font-size: 1.6rem;
-            font-weight: 300;
-            font-style: italic;
-            max-width: 900px;
-            margin: 0 auto;
-            line-height: 1.5;
-            font-family: 'Lato', sans-serif;
-        }
-
-        .client-name {
-            color: var(--accent-gold);
-            letter-spacing: 3px;
-            font-weight: 700;
-            margin-top: 30px;
-            text-transform: uppercase;
-        }
-
-        /* Slider Controls Customization */
-        .carousel-indicators [data-bs-target] {
-            width: 10px;
-            height: 10px;
-            border-radius: 50%;
-            background-color: var(--accent-gold);
-        }
-
-        .booking-form .form-control,
-        .booking-form .form-select {
-            border: 1px solid #ddd;
-            background-color: #fcfcfc;
-        }
-
-        .booking-form .form-control:focus,
-        .booking-form .form-select:focus {
-            border-color: var(--accent-gold);
-            box-shadow: none;
-            background-color: #fff;
-        }
-
-        .booking-form .form-label {
-            color: #333;
-            margin-bottom: 5px;
-        }
-
-        .text-gold {
-            color: var(--accent-gold) !important;
-        }
-
-        .bg-gold {
-            background-color: var(--accent-gold) !important;
-        }
-
-        /* Contact CTA Section */
-        .cta-section {
-            background: linear-gradient(rgba(26, 43, 44, 0.95), rgba(26, 43, 44, 0.95)),
-                url('https://images.unsplash.com/photo-1449965408869-eaa3f722e40d?q=80&w=2000') center/cover no-repeat;
-            padding: 80px 0;
-            color: white;
-        }
-
-        .cta-box {
-            border: 1px solid rgba(166, 138, 86, 0.3);
-            padding: 40px;
-            background: rgba(255, 255, 255, 0.03);
-        }
-
-        .call-link {
-            font-size: 2.2rem;
-            color: var(--accent-gold);
-            text-decoration: none;
-            font-weight: 700;
-            display: block;
-            margin: 20px 0;
-            transition: 0.3s;
-        }
-
-        .call-link:hover {
-            color: white;
-            transform: scale(1.05);
-        }
-
-        .cta-form .form-control {
-            background: transparent;
-            border: none;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.2);
-            border-radius: 0;
-            color: white;
-            padding: 12px 0;
-            margin-bottom: 20px;
-        }
-
-        .cta-form .form-control:focus {
-            background: transparent;
-            box-shadow: none;
-            border-color: var(--accent-gold);
-            color: white;
-        }
-
-        .cta-form .form-control::placeholder {
-            color: #999;
-            font-size: 0.9rem;
-        }
-
+        /* About Section */
+        .about-img { border-left: 10px solid var(--brand-yellow); padding-left: 20px; }
+        .stat-box { border-bottom: 3px solid var(--brand-yellow); padding: 20px; background: #f8f9fa; }
+        /* Footer Custom Styling */
         footer {
-            background: #0f1a1b;
-            color: #999;
-            padding: 80px 0 20px;
+            background: var(--brand-dark);
+            color: #ccc;
+            padding: 60px 0 20px 0;
+            border-top: 5px solid var(--brand-yellow);
         }
 
         footer h5 {
-            color: white;
+            color: #fff;
             margin-bottom: 25px;
-            border-left: 4px solid var(--accent-gold);
+            letter-spacing: 1px;
+            border-left: 4px solid var(--brand-yellow);
             padding-left: 10px;
         }
 
+
         footer a {
-            color: #999;
+            color: #ccc;
             text-decoration: none;
             transition: 0.3s;
         }
 
         footer a:hover {
-            color: var(--accent-gold);
+            color: var(--brand-yellow);
         }
 
-        /* Tablet Devices */
-        @media (max-width: 991px) {
-
-            .hero h1,
-            .about-hero h1 {
-                font-size: 2.6rem;
-            }
-
-            .fleet-card h5 {
-                font-size: 1rem;
-            }
-
+        .text-gold {
+            color: var(--brand-yellow) !important;
         }
 
-        /* Mobile Devices */
-        @media (max-width: 768px) {
-
-            .hero {
-                height: 80vh;
-                background-attachment: scroll;
-                /* mobile par fixed issue deta hai */
-            }
-
-            .hero h1,
-            .about-hero h1 {
-                font-size: 2rem;
-            }
-
-            .adv-card h4 {
-                font-size: 0.85rem;
-            }
-
-        }
-
-        /* Small Mobile */
-        @media (max-width: 576px) {
-
-            .hero h1,
-            .about-hero h1 {
-                font-size: 1.7rem;
-            }
-
-            .testimonial-text {
-                font-size: 1rem;
-            }
-
+        .footer-bottom {
+            border-top: 1px solid #333;
+            margin-top: 50px;
         }
