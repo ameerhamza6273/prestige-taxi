@@ -4,406 +4,394 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Easy Express Airport Transfers Ltd | Luxury Chauffeur</title>
+    <title>Fleet Taxis | Est. 1979 - Local & Airport Transfers</title>
+    <link rel="icon" type="image/png" href="images/logo-fleet-taxi.png">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700;900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;700&family=Poppins:wght@300;400;600&display=swap"
+        rel="stylesheet">
+    <style>
+        :root {
+            --brand-yellow: #FFD700;
+            --brand-dark: #1a1a1a;
+            --text-gold: #FFD700;
+        }
 
+        body {
+            font-family: 'Poppins', sans-serif;
+        }
+
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        .nav-link,
+        .btn-gold {
+            font-family: 'Oswald', sans-serif;
+            text-transform: uppercase;
+        }
+
+        /* Navbar */
+        .navbar {
+            background-color: #fff;
+            border-bottom: 3px solid var(--brand-yellow);
+        }
+
+        .btn-gold {
+            background-color: var(--brand-yellow);
+            color: #000;
+            font-weight: bold;
+            border-radius: 0;
+            padding: 10px 25px;
+        }
+
+        .btn-gold:hover {
+            background-color: #000;
+            color: var(--brand-yellow);
+        }
+
+        /* Hero */
+        .hero {
+            background: linear-gradient(#000000bf, #000000bf), url('images/fleet-taxi-bg-img.png');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 150px 0;
+            text-align: center;
+        }
+
+        .hero h1 {
+            color: var(--brand-yellow);
+            font-size: 3.5rem;
+        }
+
+        .fleet-card {
+            transition: 0.3s;
+            background: #fff;
+            border-top: 4px solid transparent !important;
+        }
+
+        .fleet-card:hover {
+            transform: translateY(-10px);
+            border-top-color: var(--brand-yellow) !important;
+        }
+
+        .fleet-card img {
+            height: 120px;
+            object-fit: contain;
+        }
+
+        /* Footer Custom Styling */
+        footer {
+            background: var(--brand-dark);
+            color: #ccc;
+            padding: 60px 0 20px 0;
+            border-top: 5px solid var(--brand-yellow);
+        }
+
+        footer h5 {
+            color: #fff;
+            margin-bottom: 25px;
+            letter-spacing: 1px;
+            border-left: 4px solid var(--brand-yellow);
+            padding-left: 10px;
+        }
+
+
+        footer a {
+            color: #ccc;
+            text-decoration: none;
+            transition: 0.3s;
+        }
+
+        footer a:hover {
+            color: var(--brand-yellow);
+        }
+
+        .text-gold {
+            color: var(--brand-yellow) !important;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid #333;
+            margin-top: 50px;
+        }
+    </style>
 </head>
 
 <body>
 
     <nav class="navbar navbar-expand-lg sticky-top">
         <div class="container">
-            <a class="navbar-brand" href="/"><img src="images/easy-express-logo.jpeg" alt="Easy Express Logo"
-                    height="55px"></a>
+            <a class="navbar-brand" href="/" style="padding: 0;">
+                <img src="images/logo-fleet-taxi.png" alt="Fleet Taxis Logo" height="85px">
+            </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto align-items-center">
                     <li class="nav-item"><a class="nav-link mx-2 text-dark" href="index.html">Home</a></li>
-                    <li class="nav-item"><a class="nav-link mx-2 text-dark" href="services.html">Services</a></li>
                     <li class="nav-item"><a class="nav-link mx-2 text-dark" href="about.html">About Us</a></li>
+                    <li class="nav-item"><a class="nav-link mx-2 text-dark" href="services.html">Services</a></li>
+                    <li class="nav-item"><a class="nav-link mx-2 text-dark" href="contact.html">Fleets</a></li>
                     <li class="nav-item"><a class="nav-link mx-2 text-dark" href="contact.html">Contact Us</a></li>
-                    <li class="nav-item"><a class="btn btn-gold ms-lg-3" href="tel:+02039547443">CALL NOW</a></li>
+                    <li class="nav-item"><a class="btn btn-gold ms-lg-3" href="tel:01494677022">CALL NOW</a></li>
                 </ul>
             </div>
         </div>
     </nav>
 
-    <header class="hero">
+    <section class="hero">
         <div class="container">
-            <span
-                style="color: var(--accent-gold); letter-spacing: 3px; font-weight: 600; font-size: 0.8rem; text-transform: uppercase;">Easy
-                Express Airport Transfers Ltd</span>
-            <h1 class="mt-3">Welcome to the world of<br>luxury chauffeur services</h1>
-            <p>Where style meets reliability. Our fleet features the latest Mercedes S-Class and Mercedes V-Class. We
-                redefine transportation with comfort, style, and unparalleled service.</p>
-            <div class="d-flex justify-content-center gap-3 mt-4">
-                <a href="contact" class="btn btn-gold">Make an enquiry</a>
-                <!-- <a href="#" class="btn btn-outline-light border-0"
-                    style="padding: 12px 30px; background: rgba(255,255,255,0.1);">VIEW SERVICES</a> -->
-            </div>
-        </div>
-    </header>
-
-    <section class="section-padding container">
-        <div class="text-center mb-5">
-            <h2 class="display-6">Our Specialized Services</h2>
-            <div class="divider center"></div>
-        </div>
-        <div class="row g-4">
-            <div class="col-md-4">
-                <div class="card service-card shadow-sm">
-                    <img src="https://images.unsplash.com/photo-1541899481282-d53bffe3c35d?q=80&w=800"
-                        alt="Intercity Transfers">
-                    <div class="service-overlay">
-                        <h5>INTERCITY TRANSFERS</h5>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="card service-card">
-                    <img src="https://images.pexels.com/photos/2026324/pexels-photo-2026324.jpeg?auto=compress&cs=tinysrgb&w=600"
-                        alt="Airport">
-                    <div class="service-overlay">
-                        <h5>Airport Transfers</h5>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="card service-card">
-                    <img src="https://images.pexels.com/photos/316794/pexels-photo-316794.jpeg?auto=compress&cs=tinysrgb&w=600"
-                        alt="Corporate">
-                    <div class="service-overlay">
-                        <h5>Corporate Transportation</h5>
-                    </div>
-                </div>
+            <p class="mb-1 text-uppercase">Trusted Local Service Since 1979</p>
+            <h1>FLEET TAXIS</h1>
+            <p class="lead mb-4">Local Taxi Work • All Major Airports • Parcel Service</p>
+            <div class="d-flex justify-content-center gap-3">
+                <a href="tel:01494677022" class="btn btn-gold btn-lg rounded">Book Now</a>
+                <a href="#services" class="btn btn-outline-light btn-lg">Our Services</a>
             </div>
         </div>
     </section>
-
-    <section class="section-padding bg-white">
-        <div class="container">
+    <section class="py-5">
+        <div class="container my-3">
             <div class="row align-items-center">
-                <div class="col-lg-6 mb-5 mb-lg-0">
-                    <h2 class="mb-4 display-6">Professional business and corporate chauffeur service</h2>
-                    <div class="divider"></div>
-                    <p class="text-muted">At Easy Express Airport Transfers Ltd, we are committed to providing our
-                        clients with the best airport transportation experience. With our fleet of 100+ cars, including
-                        saloons, estates, MPVs, and luxury executive cars, we cater to all your needs.</p>
-                    <p class="text-muted">Our drivers are professional, courteous, and knowledgeable, ensuring that you
-                        have a comfortable and stress-free journey.</p>
-                    <a href="about" class="btn btn-outline-dark mt-3 rounded-0">READ MORE ABOUT US</a>
-                </div>
                 <div class="col-lg-6">
-                    <div class="about-img-box">
-                        <img src="https://images.pexels.com/photos/3065034/pexels-photo-3065034.jpeg?auto=compress&cs=tinysrgb&w=800"
-                            class="img-fluid" alt="Luxury Interior">
-                    </div>
+                    <h6 class="text-warning fw-bold">Welcome to Fleet Taxis</h6>
+                    <h2 class="display-5 fw-bold mb-4">Over 45 Years of Excellence</h2>
+                    <p>Fleet Taxis has been a cornerstone of the Beaconsfield community since 1979. We pride ourselves
+                        on providing a professional, reliable, and safe taxi service for both local residents and
+                        corporate clients.</p>
+                    <p>Whether it's a quick trip to the shops or a comfortable ride to the airport, our experienced
+                        drivers are at your service 24/7. Fully licensed by South Bucks District Council.</p>
+                    <a href="tel:01494677022" class="btn btn-dark btn-md mt-3">Call Now 01494 677022</a>
+                </div>
+                <div class="col-lg-6 mt-4 mt-lg-0">
+                    <img src="images/ser-img-1.png" alt="Fleet Taxi Service" class="img-fluid rounded shadow">
                 </div>
             </div>
         </div>
     </section>
 
-    <section class="section-padding" style="background-color: var(--light-bg);">
-        <div class="container">
-            <div class="row align-items-center">
-                <div class="col-lg-6 px-lg-5 order-lg-1">
-                    <img src="https://images.pexels.com/photos/2528118/pexels-photo-2528118.jpeg?auto=compress&cs=tinysrgb&w=800"
-                        class="img-fluid" alt="Electric Car">
-                </div>
-                <div class="col-lg-6 mt-5 mt-lg-0 order-lg-2">
-                    <h6 class="text-uppercase fw-bold mb-2" style="color: var(--accent-gold); letter-spacing: 2px;">
-                        Sustainability Promise</h6>
-                    <h2 class="mb-4 display-6">Luxury driven sustainable chauffeur services</h2>
-                    <div class="divider"></div>
-                    <p class="text-muted">Our sustainable chauffeur service offers eco-friendly transportation without
-                        compromising on luxury. By utilising a select fleet of electric and hybrid vehicles, we reduce
-                        our carbon footprint while maintaining the highest standards.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="section-padding">
-        <div class="container">
-            <div class="text-center mb-5">
-                <h2 class="display-6">Our Premium Fleet</h2>
-                <div class="divider center"></div>
-            </div>
+    <section class="py-5 bg-light" id="services">
+        <div class="container text-center my-3">
+            <h2 class="display-6 fw-bold mb-5">Our Core Services</h2>
             <div class="row g-4">
-                <div class="col-lg-4 col-md-6">
-                    <div class="fleet-card">
-                        <div>
-                            <h6 class="text-uppercase">Standard Class</h6>
-                            <h5>Saloon Car</h5>
-                            <img src="images/saloon.png"
-                                class="img-fluid" alt="E-Class">
-                        </div>
-                        <div>
-                            <div class="fleet-specs">
-                                <span><i class="fa-solid fa-user me-2"></i> 4 Seats</span>
-                                <span><i class="fa-solid fa-suitcase-rolling me-2"></i> 2 Bags</span>
-                            </div>
-                            <a href="contact" class="btn-book d-block">Book Now</a>
-                        </div>
+                <div class="col-md-4">
+                    <div class="p-4 border bg-white shadow-sm h-100">
+                        <i class="fas fa-car-side fa-3x text-warning mb-3"></i>
+                        <h4>Local Taxi Work</h4>
+                        <p class="small text-muted">Reliable pickups for Beaconsfield, Seer Green, Penn, and surrounding
+                            districts.</p>
                     </div>
                 </div>
-
-                <div class="col-lg-4 col-md-6">
-                    <div class="fleet-card">
-                        <div>
-                            <h6 class="text-uppercase">Standard Class</h6>
-                            <h5>Estate Car</h5>
-                            <img src="images/Saloon-Executive.png"
-                                class="img-fluid" alt="S-Class">
-                        </div>
-                        <div>
-                            <div class="fleet-specs">
-                                <span><i class="fa-solid fa-user me-2"></i> 4 Seats</span>
-                                <span><i class="fa-solid fa-suitcase-rolling me-2"></i> 4 Bags</span>
-                            </div>
-                            <a href="contact" class="btn-book d-block">Book Now</a>
-                        </div>
+                <div class="col-md-4">
+                    <div class="p-4 border bg-white shadow-sm h-100">
+                        <i class="fas fa-plane-departure fa-3x text-warning mb-3"></i>
+                        <h4>Airport Specialists</h4>
+                        <p class="small text-muted">Fixed price transfers to Heathrow, Gatwick, Luton, Stansted & City
+                            Airport.</p>
                     </div>
                 </div>
-
-                <div class="col-lg-4 col-md-6">
-                    <div class="fleet-card">
-                        <div>
-                            <h6 class="text-uppercase">Business Class</h6>
-                            <h5>MPV (6-Seater)</h5>
-                            <img src="images/MPV5.png"
-                                class="img-fluid" alt="V-Class">
-                        </div>
-                        <div>
-                            <div class="fleet-specs">
-                                <span><i class="fa-solid fa-user me-2"></i> 6 Seats</span>
-                                <span><i class="fa-solid fa-suitcase-rolling me-2"></i> 4 Bags</span>
-                            </div>
-                            <a href="contact" class="btn-book d-block">Book Now</a>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-    
-        </div>
-    </section>
-
-    <section class="section-padding" style="background-color: var(--light-bg);">
-        <div class="container">
-            <div class="row g-5 align-items-center">
-                <div class="col-lg-7">
-                    <h6 class="text-uppercase fw-bold mb-2" style="color: var(--accent-gold); letter-spacing: 2px;">
-                        Premium Partnership</h6>
-                    <h2 class="mb-4 display-6">Corporate Accounts</h2>
-                    <div class="divider"></div>
-                    <p class="text-muted mb-3">Direct personalised service for frequent clients. We understand the
-                        demands of corporate travel and provide a seamless, priority experience for our partners. This
-                        account provides, among other things:</p>
-
-                    <div class="row g-2">
-                        <div class="col-md-6">
-                            <p class="mb-2"><strong style="color:var(--accent-gold)">✓</strong> Dedicated account
-                                manager</p>
-                        </div>
-                        <div class="col-md-6">
-                            <p class="mb-2"><strong style="color:var(--accent-gold)">✓</strong> Invoice at month end</p>
-                        </div>
-                        <div class="col-md-6">
-                            <p class="mb-2"><strong style="color:var(--accent-gold)">✓</strong> Itemised journeys</p>
-                        </div>
-                        <div class="col-md-6">
-                            <p class="mb-2"><strong style="color:var(--accent-gold)">✓</strong> Cost centre breakdown
-                            </p>
-                        </div>
-                    </div>
-                    <a href="contact" class="btn btn-gold mt-3">SET UP CORPORATE ACCOUNT</a>
-                </div>
-
-                <div class="col-lg-5">
-                    <div class="position-relative">
-                        <div class="image-b-style"
-                            style="position: absolute; top: -20px; right: -20px; width: 100%; height: 100%; border: 2px solid var(--accent-gold); z-index: 0;">
-                        </div>
-                        <img src="https://images.unsplash.com/photo-1512758017271-d7b84c2113f1?q=80&w=800"
-                            class="img-fluid position-relative shadow-lg" alt="Corporate Chauffeur Service"
-                            style="z-index: 1; border-radius: 0; filter: contrast(1.1);">
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="section-padding" style="background-color: #fff;">
-        <div class="container text-center">
-            <h6 class="text-uppercase fw-bold mb-3"
-                style="color: var(--accent-gold); letter-spacing: 3px; font-size: 0.75rem;">Why Choose Us</h6>
-            <h2 class="mb-5 h1">Our Advantages</h2>
-            <div class="row g-4">
-                <div class="col-md-6 col-lg-3">
-                    <div class="adv-card shadow-sm">
-                        <div class="icon-box">
-                            <i class="fa-solid fa-calendar-check"></i>
-                        </div>
-                        <h4>Easy Booking</h4>
-                        <p>Effortless reservations through our dedicated app, email, or a quick phone call.</p>
-                    </div>
-                </div>
-                <div class="col-md-6 col-lg-3">
-                    <div class="adv-card shadow-sm">
-                        <div class="icon-box">
-                            <i class="fa-solid fa-tags"></i>
-                        </div>
-                        <h4>Unbeatable Rates</h4>
-                        <p>Premium service at competitive prices. We guarantee to beat any written formal quotation.</p>
-                    </div>
-                </div>
-                <div class="col-md-6 col-lg-3">
-                    <div class="adv-card shadow-sm">
-                        <div class="icon-box">
-                            <i class="fa-solid fa-star"></i>
-                        </div>
-                        <h4>Excellence</h4>
-                        <p>Our commitment to perfection ensures a seamless and stress-free journey every time.</p>
-                    </div>
-                </div>
-                <div class="col-md-6 col-lg-3">
-                    <div class="adv-card shadow-sm">
-                        <div class="icon-box">
-                            <i class="fa-solid fa-car-side"></i>
-                        </div>
-                        <h4>Luxury Fleet</h4>
-                        <p>Travel in the latest Mercedes S-Class and V-Class models, maintained to impeccable standards.
+                <div class="col-md-4">
+                    <div class="p-4 border bg-white shadow-sm h-100">
+                        <i class="fas fa-box-open fa-3x text-warning mb-3"></i>
+                        <h4>Parcel Service</h4>
+                        <p class="small text-muted">Swift and secure delivery for all your urgent documents and parcels.
                         </p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
-<section class="section-padding" style="background-color: var(--light-bg); border-top: 1px solid #eee;">
-    <div class="container">
-        <div class="row align-items-center g-5">
-            <div class="col-lg-6">
-                <div class="position-relative">
-                    <div style="position: absolute; top: -15px; left: -15px; width: 80px; height: 80px; border-top: 3px solid var(--accent-gold); border-left: 3px solid var(--accent-gold);"></div>
-                    
-                    <img src="https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?q=80&w=1200" 
-                         class="img-fluid shadow-lg" 
-                         alt="Luxury Group Travel Bus" 
-                         style="border-radius: 4px;">
-                </div>
+
+    <section class="py-5">
+        <div class="container my-3">
+            <div class="text-center mb-5">
+                <h2 class="display-6 fw-bold">Our Premium Fleet</h2>
+                <div class="mx-auto" style="width: 60px; height: 3px; background: var(--brand-yellow);"></div>
             </div>
-
-            <div class="col-lg-6">
-                <h2 class="display-6 mb-4">Tours & Group Travelling</h2>
-                <div class="divider mb-4"></div>
-                
-                <p class="lead text-muted mb-4">
-                    Planning a corporate tour or a group outing? We facilitate seamless transportation for larger groups across the UK.
-                </p>
-                
-                <div class="p-4 bg-white border-start border-gold border-4 shadow-sm mb-4">
-                    <p class="mb-0 italic">
-                        "Customers can also send enquiries for <strong>bus bookings</strong> for tours or group travel. 
-                        We have a professional affiliation with a specialist bus company; if you submit a request, 
-                        we will forward your booking details directly to them to ensure you receive the best possible service."
-                    </p>
-                </div>
-                <!--
-                <ul class="list-unstyled mb-5">
-                    <li class="mb-2"><i class="fas fa-check text-gold me-2"></i> 16 to 49 Seater Luxury Coaches</li>
-                    <li class="mb-2"><i class="fas fa-check text-gold me-2"></i> Sightseeing & City Tours</li>
-                    <li class="mb-2"><i class="fas fa-check text-gold me-2"></i> Direct forwarding to trusted partners</li>
-                </ul>
-
-                <a href="#contact" class="btn btn-dark px-5 py-3 rounded-0 fw-bold">ENQUIRE FOR GROUP TRAVEL</a>-->
-            </div>
-        </div>
-    </div>
-</section>
-    <section class="testimonial-sec text-center">
-        <div class="container">
-            <h6 class="text-uppercase mb-3" style="color: var(--accent-gold); letter-spacing: 5px; font-size: 0.8rem;">
-                Testimonials</h6>
-            <h2 class="mb-5 h1 text-white">Client Experience</h2>
-
-            <i class="fa-solid fa-quote-left quote-icon"></i>
-
-            <div id="testimonialSlider" class="carousel slide" data-bs-ride="carousel">
-                <div class="carousel-indicators" style="bottom: -50px;">
-                    <button type="button" data-bs-target="#testimonialSlider" data-bs-slide-to="0"
-                        class="active"></button>
-                    <button type="button" data-bs-target="#testimonialSlider" data-bs-slide-to="1"></button>
-                    <button type="button" data-bs-target="#testimonialSlider" data-bs-slide-to="2"></button>
-                </div>
-
-                <div class="carousel-inner">
-                    <div class="carousel-item active" data-bs-interval="5000">
-                        <p class="testimonial-text">“I recently used Easy Express for my airport transfer, and I was
-                            impressed with their service. The driver was punctual, and the car was clean and
-                            comfortable. I would definitely recommend them.”</p>
-                        <p class="client-name">John Smith</p>
-                    </div>
-
-                    <div class="carousel-item" data-bs-interval="5000">
-                        <p class="testimonial-text">“I have been using Easy Express for my corporate transportation
-                            needs, and I am impressed with their professionalism and reliability. Their drivers are
-                            knowledgeable and courteous, and their cars are always pristine.”</p>
-                        <p class="client-name">Sarah Jones</p>
-                    </div>
-
-                    <div class="carousel-item" data-bs-interval="5000">
-                        <p class="testimonial-text">“I have used Easy Express for several intercity transfers and am
-                            impressed with the standard. Their drivers are experienced, and their cars are comfortable
-                            and spacious. Highly recommended.”</p>
-                        <p class="client-name">Michael Johnson</p>
+            <div class="row g-4">
+                <div class="col-lg-4 col-md-6">
+                    <div class="fleet-card p-4 border rounded text-center shadow-sm">
+                        <h6 class="text-uppercase text-muted">Standard Class</h6>
+                        <h5 class="fw-bold">Saloon Car</h5>
+                        <img src="images/saloon.png" class="img-fluid my-3" alt="Saloon Car">
+                        <div class="d-flex justify-content-center gap-3 mb-3 text-muted">
+                            <span><i class="fa-solid fa-user me-1 text-warning"></i> 4 Seats</span>
+                            <span><i class="fa-solid fa-suitcase-rolling me-1 text-warning"></i> 2 Bags</span>
+                        </div>
+                        <a href="contact.html" class="btn btn-dark w-100">Book Now</a>
                     </div>
                 </div>
-
-                <button class="carousel-control-prev" type="button" data-bs-target="#testimonialSlider"
-                    data-bs-slide="prev">
-                    <span class="carousel-control-prev-icon" aria-hidden="true" style="opacity: 0.3;"></span>
-                </button>
-                <button class="carousel-control-next" type="button" data-bs-target="#testimonialSlider"
-                    data-bs-slide="next">
-                    <span class="carousel-control-next-icon" aria-hidden="true" style="opacity: 0.3;"></span>
-                </button>
+                <div class="col-lg-4 col-md-6">
+                    <div class="fleet-card p-4 border rounded text-center shadow-sm">
+                        <h6 class="text-uppercase text-muted">Standard Class</h6>
+                        <h5 class="fw-bold">Estate Car</h5>
+                        <img src="images/Saloon-Executive.png" class="img-fluid my-3" alt="Estate Car">
+                        <div class="d-flex justify-content-center gap-3 mb-3 text-muted">
+                            <span><i class="fa-solid fa-user me-1 text-warning"></i> 4 Seats</span>
+                            <span><i class="fa-solid fa-suitcase-rolling me-1 text-warning"></i> 4 Bags</span>
+                        </div>
+                        <a href="contact.html" class="btn btn-dark w-100">Book Now</a>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="fleet-card p-4 border rounded text-center shadow-sm">
+                        <h6 class="text-uppercase text-muted">Business Class</h6>
+                        <h5 class="fw-bold">MPV (6-Seater)</h5>
+                        <img src="images/MPV5.png" class="img-fluid my-3" alt="MPV">
+                        <div class="d-flex justify-content-center gap-3 mb-3 text-muted">
+                            <span><i class="fa-solid fa-user me-1 text-warning"></i> 6 Seats</span>
+                            <span><i class="fa-solid fa-suitcase-rolling me-1 text-warning"></i> 4 Bags</span>
+                        </div>
+                        <a href="contact.html" class="btn btn-dark w-100">Book Now</a>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
-    <section class="cta-section">
-        <div class="container">
-            <div class="row g-0 cta-box align-items-center">
-                <div class="col-lg-6 text-center text-lg-start p-4 border-end-lg">
-                    <h6 class="text-uppercase mb-3" style="color: var(--accent-gold); letter-spacing: 3px;">Available
-                        24/7</h6>
-                    <h2 class="display-6 mb-4">Order Your Minicab Now!</h2>
-                    <p class="text-white-50">Experience the gold standard in chauffeur services. Our team is ready to
-                        assist you with your journey.</p>
-                    <p class="mb-1 mt-4 text-uppercase">Give us a call at:</p>
-                    <a href="tel:+447904577355" class="call-link">+44 790-457-7355</a>
-                </div>
 
-                <div class="col-lg-6 p-4 ps-lg-5">
-                    <h4 class="mb-4">Have a question?</h4>
-                    <p class="small text-white-50 mb-4">Leave a message and we'll get back to you shortly.</p>
-                    <form class="cta-form">
-                        <div class="row">
-                            <div class="col-md-6">
-                                <input type="text" class="form-control" placeholder="Full Name">
-                            </div>
-                            <div class="col-md-6">
-                                <input type="email" class="form-control" placeholder="Email Address">
-                            </div>
+    <section class="py-5 bg-dark text-white">
+        <div class="container my-3">
+            <div class="text-center mb-5">
+                <h2 class="display-5 fw-bold">Why Choose Us</h2>
+                <div class="mx-auto" style="width: 80px; height: 4px; background: var(--brand-yellow);"></div>
+            </div>
+            <div class="row g-4">
+                <div class="col-md-3 text-center">
+                    <i class="fas fa-clock fa-3x text-warning mb-3"></i>
+                    <h5>24/7 Availability</h5>
+                    <p class="small text-secondary">We are always ready to pick you up, day or night, every day of the
+                        year.</p>
+                </div>
+                <div class="col-md-3 text-center">
+                    <i class="fas fa-user-shield fa-3x text-warning mb-3"></i>
+                    <h5>Licensed Drivers</h5>
+                    <p class="small text-secondary">All our drivers are DBS checked and licensed by South Bucks District
+                        Council.</p>
+                </div>
+                <div class="col-md-3 text-center">
+                    <i class="fas fa-credit-card fa-3x text-warning mb-3"></i>
+                    <h5>Account Facilities</h5>
+                    <p class="small text-secondary">We offer convenient monthly account billing for our corporate and
+                        regular clients.</p>
+                </div>
+                <div class="col-md-3 text-center">
+                    <i class="fas fa-tags fa-3x text-warning mb-3"></i>
+                    <h5>Fixed Prices</h5>
+                    <p class="small text-secondary">Competitive and transparent fixed rates for all major UK airport
+                        transfers.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-5 bg-light">
+        <div class="container my-3">
+            <div class="row align-items-center">
+                <div class="col-lg-4">
+                    <h2 class="fw-bold mb-4">Areas We Cover</h2>
+                    <p>We provide extensive coverage across Buckinghamshire and surrounding regions. If your location is
+                        not listed, give us a call!</p>
+                    <div class="p-3 bg-white border-start border-4 border-warning shadow-sm">
+                        <h5 class="mb-0">Need a pickup outside these areas?</h5>
+                        <a href="tel:01494677022" class="text-dark fw-bold">Call 01494 677022</a>
+                    </div>
+                </div>
+                <div class="col-lg-8">
+                    <div class="row g-3 mt-4 mt-lg-0">
+                        <div class="col-6 col-md-4">
+                            <ul class="list-unstyled">
+                                <li><i class="fas fa-check-circle text-warning me-2"></i> Beaconsfield</li>
+                                <li><i class="fas fa-check-circle text-warning me-2"></i> Seer Green</li>
+                                <li><i class="fas fa-check-circle text-warning me-2"></i> Holtspur</li>
+                            </ul>
                         </div>
-                        <textarea class="form-control" rows="1" placeholder="Your Question / Trip Details"></textarea>
-                        <button type="submit" class="btn btn-gold w-100 mt-3">SEND MESSAGE</button>
-                    </form>
+                        <div class="col-6 col-md-4">
+                            <ul class="list-unstyled">
+                                <li><i class="fas fa-check-circle text-warning me-2"></i> Penn</li>
+                                <li><i class="fas fa-check-circle text-warning me-2"></i> Tylers Green</li>
+                                <li><i class="fas fa-check-circle text-warning me-2"></i> Jordans</li>
+                            </ul>
+                        </div>
+                        <div class="col-6 col-md-4">
+                            <ul class="list-unstyled">
+                                <li><i class="fas fa-check-circle text-warning me-2"></i> Knotty Green</li>
+                                <li><i class="fas fa-check-circle text-warning me-2"></i> Wooburn Green</li>
+                                <li><i class="fas fa-check-circle text-warning me-2"></i> Flackwell Heath</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="py-5">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h6 class="text-warning fw-bold">Customer Reviews</h6>
+                <h2 class="display-6 fw-bold">What Our Clients Say</h2>
+                <div class="mx-auto" style="width: 60px; height: 3px; background: var(--brand-yellow);"></div>
+            </div>
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="p-4 border rounded shadow-sm bg-white h-100">
+                        <div class="text-warning mb-2">
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                                class="fas fa-star"></i><i class="fas fa-star"></i>
+                        </div>
+                        <p class="fst-italic">"Excellent service! The driver arrived 5 minutes early for my airport
+                            transfer. Very professional and the car was spotless."</p>
+                        <h6 class="mb-0 fw-bold">- James W. (Beaconsfield)</h6>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="p-4 border rounded shadow-sm bg-white h-100 border-warning"
+                        style="border-width: 2px !important;">
+                        <div class="text-warning mb-2">
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                                class="fas fa-star"></i><i class="fas fa-star"></i>
+                        </div>
+                        <p class="fst-italic">"We use Fleet Taxis for our corporate account. They are always reliable
+                            and their monthly billing makes life so much easier."</p>
+                        <h6 class="mb-0 fw-bold">- Sarah L. (Local Business)</h6>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="p-4 border rounded shadow-sm bg-white h-100">
+                        <div class="text-warning mb-2">
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                                class="fas fa-star"></i><i class="fas fa-star"></i>
+                        </div>
+                        <p class="fst-italic">"The best taxi service in the area. Have been using them for years and
+                            they never disappoint. Highly recommended for local trips."</p>
+                        <h6 class="mb-0 fw-bold">- Robert T. (Holtspur)</h6>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="py-5" style="background-color: var(--brand-yellow);">
+        <div class="container text-center">
+            <div class="mb-4">
+                <span class="badge bg-dark text-white p-2 px-3">ESTABLISHED 1979</span>
+            </div>
+            <h2 class="fw-bold mb-3 text-dark">READY TO BOOK YOUR RIDE?</h2>
+            <p class="lead mb-4 text-dark">Available 24/7 for Local Journeys and Airport Transfers.</p>
+            <div class="row justify-content-center">
+                <div class="col-md-8">
+                    <div class="d-flex flex-wrap justify-content-center gap-3">
+                        <a href="tel:01494677022" class="btn btn-dark btn-md px-5 py-3 fw-bold">
+                            <i class="fas fa-phone-alt me-2 text-warning"></i> CALL 01494 677022
+                        </a>
+                        <a href="contact.html" class="btn btn-outline-dark btn-md px-5 py-3 fw-bold">
+                            BOOK ONLINE
+                        </a>
+                    </div>
+
                 </div>
             </div>
         </div>
@@ -412,9 +400,14 @@
         <div class="container">
             <div class="row g-5">
                 <div class="col-lg-4">
-                    <h5 class="fw-bold">EASY EXPRESS</h5>
-                    <p class="small">Committed to providing our clients with the best airport transportation experience
-                        with our professional chauffeurs.</p>
+                    <h5 class="fw-bold">FLEET TAXIS</h5>
+                    <p class="small">Established in 1979, we are committed to providing our clients with the best
+                        transportation experience. Licensed by South Bucks District Council with professional drivers at
+                        your service.</p>
+                    <div class="mt-3">
+                        <img src="images/pay-card.png" height="50" class="opacity-75">
+                        <p class="small mt-2">Account Facilities Available</p>
+                    </div>
                 </div>
                 <div class="col-lg-4">
                     <h5>Quick Links</h5>
@@ -423,7 +416,6 @@
                         <li class="mb-2"><a href="about.html">About Us</a></li>
                         <li class="mb-2"><a href="services.html">Services</a></li>
                         <li class="mb-2"><a href="#">Privacy Policy</a></li>
-
                     </ul>
                 </div>
                 <div class="col-lg-4">
@@ -431,53 +423,32 @@
                     <ul class="list-unstyled small">
                         <li class="mb-2">
                             <i class="fas fa-phone text-gold me-2"></i>
-                            <a href="tel:+44 20 3954 7443" class="text-decoration-none">
-                                +44 20 3954 7443
-                            </a>
+                            <strong>Main:</strong> <a href="tel:01494677022">01494 677022</a>
                         </li>
-
                         <li class="mb-2">
-                            <i class="fas fa-envelope text-gold me-2"></i>
-                            <a href="mailto:support@easyexpressairport.com" class="text-decoration-none">
-                                support@easyexpressairport.com
-                            </a>
+                            <i class="fas fa-phone text-gold me-2"></i>
+                            <strong>Other Lines:</strong> <br>
+                            <span class="ms-4">01494 670870 | 01494 681953</span> <br>
+                            <span class="ms-4">01494 677308 | 01753 885645</span>
                         </li>
-
+                        <li class="mb-2 mt-3">
+                            <i class="fas fa-envelope text-gold me-2"></i>
+                            <a href="mailto:fleetexecutive@gmail.com">fleetexecutive@gmail.com</a>
+                        </li>
                         <li class="mb-2">
                             <i class="fas fa-map-marker-alt text-gold me-2"></i>
-                            <a href="#" target="_blank" class="text-decoration-none">
-                                3, Surrey Court, 55 Woodcote Road, Wallington, Surrey, Greator London, SM6 0PN
-                            </a>
+                            <span>Licensed by South Bucks District Council</span>
                         </li>
                     </ul>
                 </div>
             </div>
-            <div class="border-top border-secondary mt-5 pt-4 text-center">
-                <p class="small">Copyright © 2026. Easy Express Airport Transfers. All Rights Reserved.</p>
+            <div class="footer-bottom pt-4 text-center">
+                <p class="small mb-0">Copyright © 2026. Fleet Taxis Beaconsfield. All Rights Reserved.</p>
             </div>
         </div>
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <!-- Whatsapp Chat Button -->
-    <script async src='https://d2mpatx37cqexb.cloudfront.net/delightchat-whatsapp-widget/embeds/embed.min.js'></script>
-    <script>
-        var wa_btnSetting = { "btnColor": "#16BE45", "ctaText": "WhatsApp Us", "cornerRadius": 40, "marginBottom": 20, "marginLeft": 20, "marginRight": 20, "btnPosition": "right", "whatsAppNumber": "+447905832632", "welcomeMessage": "", "zIndex": 999999, "btnColorScheme": "light" };
-        window.onload = () => {
-            _waEmbed(wa_btnSetting);
-        };
-
-        window.addEventListener("pageshow", function (event) {
-            var historyTraversal = event.persisted ||
-                (typeof window.performance != "undefined" &&
-                    window.performance.navigation.type === 2);
-            if (historyTraversal) {
-                // Handle page restore.
-                window.location.reload();
-            }
-        });
-
-    </script>
 </body>
 
 </html>
