@@ -43,62 +43,110 @@ vehicle dispatch system, taxi software">
 </head>
 
 <body>
-    <section class="features-ticker" style="background: #041d26; padding: 10px 0; overflow: hidden; border-top: 1px solid rgba(11, 142, 177, 0.3); border-bottom: 1px solid rgba(11, 142, 177, 0.3);">
     <style>
-        @keyframes ticker {
-            0% { transform: translateX(0); }
-            100% { transform: translateX(-50%); }
-        }
-        .ticker-wrapper {
-            display: flex;
-            width: fit-content;
-            animation: ticker 40s linear infinite; /* Speed control yahan se hoga */
-        }
-        .ticker-item {
-            display: flex;
-            align-items: center;
-            white-space: nowrap;
-            padding: 0 30px;
-            color: #ffffff;
-            font-size: 0.95rem;
-            font-weight: 600;
-            letter-spacing: 0.5px;
-        }
-        .ticker-item i {
-            color: #0b8eb1;
-            margin-right: 10px;
-            font-size: 1.1rem;
-        }
-        /* Hover par pause krne ke liye */
-        .features-ticker:hover .ticker-wrapper {
-            animation-play-state: paused;
-        }
-    </style>
+/* Custom Pagination Dots */
+.custom-pagination {
+    bottom: 20px; /* Neeche se position */
+}
 
-    <div class="ticker-wrapper">
-        <div class="ticker-item"><i class="fas fa-plane-arrival"></i> Flight tracking on returns</div>
-        <div class="ticker-item"><i class="fas fa-ban"></i> No cancellation fee up to 24 hours</div>
-        <div class="ticker-item"><i class="fas fa-user-check"></i> Meet &amp; greet available</div>
-        <div class="ticker-item"><i class="fas fa-baby"></i> Child seats on request</div>
-        <div class="ticker-item"><i class="fas fa-briefcase"></i> Corporate accounts available</div>
-        <div class="ticker-item"><i class="fas fa-credit-card"></i> Card &amp; cash accepted</div>
-        <div class="ticker-item"><i class="fas fa-building"></i> Terminal 1 &amp; Terminal 2</div>
-        <div class="ticker-item"><i class="fas fa-id-badge"></i> Licensed private hire operator</div>
-        <div class="ticker-item"><i class="fas fa-lock"></i> Fixed price guaranteed</div>
-        <div class="ticker-item"><i class="fas fa-calendar-alt"></i> 24/7 including bank holidays</div>
+.custom-pagination [data-bs-target] {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%; /* Circle shape */
+    background-color: #333; /* Default color dark grey */
+    border: none;
+    margin: 0 6px;
+    opacity: 0.3;
+    transition: all 0.3s ease;
+}
 
-        <div class="ticker-item"><i class="fas fa-plane-arrival"></i> Flight tracking on returns</div>
-        <div class="ticker-item"><i class="fas fa-ban"></i> No cancellation fee up to 24 hours</div>
-        <div class="ticker-item"><i class="fas fa-user-check"></i> Meet &amp; greet available</div>
-        <div class="ticker-item"><i class="fas fa-baby"></i> Child seats on request</div>
-        <div class="ticker-item"><i class="fas fa-briefcase"></i> Corporate accounts available</div>
-        <div class="ticker-item"><i class="fas fa-credit-card"></i> Card &amp; cash accepted</div>
-        <div class="ticker-item"><i class="fas fa-building"></i> Terminal 1 &amp; Terminal 2</div>
-        <div class="ticker-item"><i class="fas fa-id-badge"></i> Licensed private hire operator</div>
-        <div class="ticker-item"><i class="fas fa-lock"></i> Fixed price guaranteed</div>
-        <div class="ticker-item"><i class="fas fa-calendar-alt"></i> 24/7 including bank holidays</div>
+.custom-pagination .active {
+    background-color: #E5BC00; /* Active dot color (Yellow) */
+    opacity: 1;
+    width: 30px; /* Active dot thora lamba ho jayega (modern style) */
+    border-radius: 10px;
+}
+
+/* Bullet Icons Color */
+.custom-list li i {
+    color: #E5BC00;
+}
+
+/* Logo Card Styling */
+.logo-card {
+    background: #ffffff;
+    border: 1px solid #f0f0f0; /* Bohat halka border */
+    border-radius: 12px;       /* Round corners */
+    height: 90px;              /* Fixed height for alignment */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 12px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.02); /* Bohat soft shadow */
+    transition: all 0.3s ease-in-out;
+}
+
+/* Hover effect */
+.logo-card:hover {
+    border-color: #E5BC00;     /* Aapka brand yellow color */
+    box-shadow: 0 10px 20px rgba(0,0,0,0.08);
+    transform: translateY(-5px); /* Thora sa upar uthega */
+}
+
+/* Image behavior inside card */
+.logo-card img {
+    max-height: 100%;
+    max-width: 100%;
+    object-fit: contain;
+}
+  
+  .carousel-item {
+    padding: 60px 0; /* Adjust vertical spacing */
+    min-height: 500px;
+  }
+  section#slider-area {
+    background: #fff;
+    position: relative;
+    width: 100%;
+    background-image: url(https://tbmslive.com/images/bg-1.webp);
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+}
+</style>
+<!-- Logo Ticker Section -->
+<section class="logo-ticker-area pt-1" style=" border-bottom: 1px solid #eee;">
+    <div class="container-fluid">
+         <p class="text-center mb-1"  style="font-style: italic; font-size: 0.95rem; ">
+             <strong>We are proud to be integrated with</strong>
+        </p>
+        <div class="logo-slider-wrapper">
+            <div class="logo-slide-track">
+                <!-- Logos (Same list 2 baar repeat karni hai loop ke liye) -->
+                <div class="slide-item"><img src="images/city_airport_taxi_logo.png" alt="Partner"></div>
+                <div class="slide-item"><img src="images/clook logo png .png" alt="Partner"></div>
+                <div class="slide-item"><img src="images/cmac.png" alt="Partner"></div>
+                <div class="slide-item"><img src="images/holidaytaxi.jpg.jpeg" alt="Partner"></div>
+                <div class="slide-item"><img src="images/My Transfers logo.jpg" alt="Partner"></div>
+                <div class="slide-item"><img src="images/o_685.jpg" alt="Partner"></div>
+                <div class="slide-item"><img src="images/ONWARD TRAVEL.png" alt="Partner"></div>
+                <div class="slide-item"><img src="images/transferz-logo.webp" alt="Partner"></div>
+                
+                <!-- Duplicate for seamless loop -->
+                <div class="slide-item"><img src="images/city_airport_taxi_logo.png" alt="Partner"></div>
+                <div class="slide-item"><img src="images/clook logo png .png" alt="Partner"></div>
+                <div class="slide-item"><img src="images/cmac.png" alt="Partner"></div>
+                <div class="slide-item"><img src="images/holidaytaxi.jpg.jpeg" alt="Partner"></div>
+                <div class="slide-item"><img src="images/My Transfers logo.jpg" alt="Partner"></div>
+                <div class="slide-item"><img src="images/o_685.jpg" alt="Partner"></div>
+                <div class="slide-item"><img src="images/ONWARD TRAVEL.png" alt="Partner"></div>
+                <div class="slide-item"><img src="images/transferz-logo.webp" alt="Partner"></div>
+            </div>
+        </div>
+       
     </div>
 </section>
+
    <section class="top-header" id="top-header">
       <div class="container">
          <div class="row">
@@ -238,83 +286,6 @@ vehicle dispatch system, taxi software">
       </div>
 
    </section>
-   <!-- Logo Ticker Section -->
-<section class="logo-ticker-area py-3" style="background: #E5BC00; border-bottom: 1px solid #eee;">
-    <div class="container-fluid">
-         <p class="text-center"  style="font-style: italic; font-size: 0.95rem; ">
-           
-            <i class="fa fa-info-circle me-2"></i>
-            TBMS is structured to meet compliance standards for Redhill, Newport, Cardiff, Bucks, Worcester, Derby City, Kent, Transport for London and many other UK councils.
-            <br> We are proud to be integrated with
-        </p>
-        <div class="logo-slider-wrapper">
-            <div class="logo-slide-track">
-                <!-- Logos (Same list 2 baar repeat karni hai loop ke liye) -->
-                <div class="slide-item"><img src="images/city_airport_taxi_logo.png" alt="Partner"></div>
-                <div class="slide-item"><img src="images/clook logo png .png" alt="Partner"></div>
-                <div class="slide-item"><img src="images/cmac.png" alt="Partner"></div>
-                <div class="slide-item"><img src="images/holidaytaxi.jpg.jpeg" alt="Partner"></div>
-                <div class="slide-item"><img src="images/My Transfers logo.jpg" alt="Partner"></div>
-                <div class="slide-item"><img src="images/o_685.jpg" alt="Partner"></div>
-                <div class="slide-item"><img src="images/ONWARD TRAVEL.png" alt="Partner"></div>
-                <div class="slide-item"><img src="images/transferz-logo.webp" alt="Partner"></div>
-                
-                <!-- Duplicate for seamless loop -->
-                <div class="slide-item"><img src="images/city_airport_taxi_logo.png" alt="Partner"></div>
-                <div class="slide-item"><img src="images/clook logo png .png" alt="Partner"></div>
-                <div class="slide-item"><img src="images/cmac.png" alt="Partner"></div>
-                <div class="slide-item"><img src="images/holidaytaxi.jpg.jpeg" alt="Partner"></div>
-                <div class="slide-item"><img src="images/My Transfers logo.jpg" alt="Partner"></div>
-                <div class="slide-item"><img src="images/o_685.jpg" alt="Partner"></div>
-                <div class="slide-item"><img src="images/ONWARD TRAVEL.png" alt="Partner"></div>
-                <div class="slide-item"><img src="images/transferz-logo.webp" alt="Partner"></div>
-            </div>
-        </div>
-       
-    </div>
-</section>
-<style>
-.logo-slider-wrapper {
-    overflow: hidden;
-    background: white;
-    position: relative;
-}
-
-.logo-slide-track {
-    display: flex;
-    width: calc(250px * 16); /* Logo width * total logos (original + duplicates) */
-    animation: scroll 30s linear infinite; /* Speed yahan se control hogi */
-}
-
-.slide-item {
-    width: 200px;
-    height: 70px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 0 40px; /* Logos ke beech ka gap */
-}
-
-.slide-item img {
-    max-width: 150px;
-    max-height: 50px;
-    object-fit: contain;
-    transition: 0.3s;
-}
-
-
-
-/* Infinite Scroll Animation */
-@keyframes scroll {
-    0% { transform: translateX(0); }
-    100% { transform: translateX(calc(-200px * 8)); } /* Half width of track */
-}
-
-/* Mouse hover par ruk jaye (Optional) */
-.logo-slider-wrapper:hover .logo-slide-track {
-    animation-play-state: paused;
-}
-</style>
 <section class="slider-area" id="slider-area">
   <div id="heroCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="4000" data-bs-pause="false">
     <!-- Pagination Indicators (Dots) -->
@@ -461,77 +432,47 @@ vehicle dispatch system, taxi software">
   </div>
 </section>
 <style>
-/* Custom Pagination Dots */
-.custom-pagination {
-    bottom: 20px; /* Neeche se position */
+.logo-slider-wrapper {
+    overflow: hidden;
+    background: white;
+    position: relative;
 }
 
-.custom-pagination [data-bs-target] {
-    width: 12px;
-    height: 12px;
-    border-radius: 50%; /* Circle shape */
-    background-color: #333; /* Default color dark grey */
-    border: none;
-    margin: 0 6px;
-    opacity: 0.3;
-    transition: all 0.3s ease;
+.logo-slide-track {
+    display: flex;
+    width: calc(250px * 16); /* Logo width * total logos (original + duplicates) */
+    animation: scroll 30s linear infinite; /* Speed yahan se control hogi */
 }
 
-.custom-pagination .active {
-    background-color: #E5BC00; /* Active dot color (Yellow) */
-    opacity: 1;
-    width: 30px; /* Active dot thora lamba ho jayega (modern style) */
-    border-radius: 10px;
-}
-
-/* Bullet Icons Color */
-.custom-list li i {
-    color: #E5BC00;
-}
-
-/* Logo Card Styling */
-.logo-card {
-    background: #ffffff;
-    border: 1px solid #f0f0f0; /* Bohat halka border */
-    border-radius: 12px;       /* Round corners */
-    height: 90px;              /* Fixed height for alignment */
+.slide-item {
+    width: 200px;
+    height: 70px;
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 12px;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.02); /* Bohat soft shadow */
-    transition: all 0.3s ease-in-out;
+    padding: 0 40px; /* Logos ke beech ka gap */
 }
 
-/* Hover effect */
-.logo-card:hover {
-    border-color: #E5BC00;     /* Aapka brand yellow color */
-    box-shadow: 0 10px 20px rgba(0,0,0,0.08);
-    transform: translateY(-5px); /* Thora sa upar uthega */
-}
-
-/* Image behavior inside card */
-.logo-card img {
-    max-height: 100%;
-    max-width: 100%;
+.slide-item img {
+    max-width: 150px;
+    max-height: 50px;
     object-fit: contain;
+    transition: 0.3s;
 }
-  
-  .carousel-item {
-    padding: 60px 0; /* Adjust vertical spacing */
-    min-height: 500px;
-  }
-  section#slider-area {
-    background: #fff;
-    position: relative;
-    width: 100%;
-    background-image: url(https://tbmslive.com/images/bg-1.webp);
-    background-size: cover;
-    background-position: center center;
-    background-repeat: no-repeat;
+
+
+
+/* Infinite Scroll Animation */
+@keyframes scroll {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(calc(-200px * 8)); } /* Half width of track */
+}
+
+/* Mouse hover par ruk jaye (Optional) */
+.logo-slider-wrapper:hover .logo-slide-track {
+    animation-play-state: paused;
 }
 </style>
-
 
 <!--
 <section class="slider-area" id="slider-area">
@@ -577,6 +518,65 @@ vehicle dispatch system, taxi software">
   </div>
 </section>-->
 
+<style>
+  @media (min-width: 768px) {
+    .logo-swiper .swiper-slide img {
+      width: 120px;
+    }
+  }
+
+  @media (min-width: 1200px) {
+    .logo-swiper .swiper-slide img {
+      width: 140px;
+    }
+  }
+</style>
+
+<section class="pt-4 pb-4" style="background: #fff;">
+  <div class="container aos-init aos-animate py-4" data-aos="fade-up">
+    <div class="swiper mySwiper logo-swiper">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide text-center"><img src="images/3.png" class="img-fluid p-2" /></div>
+        <div class="swiper-slide text-center"><img src="images/4.png" class="img-fluid p-2" /></div>
+        <div class="swiper-slide text-center"><img src="images/5.png" class="img-fluid p-2" /></div>
+        <div class="swiper-slide text-center"><img src="images/6.png" class="img-fluid p-2" /></div>
+        <div class="swiper-slide text-center"><img src="images/7.png" class="img-fluid p-2" /></div>
+        <div class="swiper-slide text-center"><img src="images/8.png" class="img-fluid p-2" /></div>
+        <div class="swiper-slide text-center"><img src="images/9.png" class="img-fluid p-2" /></div>
+        <div class="swiper-slide text-center"><img src="images/10.png" class="img-fluid p-2" /></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Swiper JS -->
+<script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
+
+<script>
+  var swiper = new Swiper(".mySwiper", {
+    slidesPerView: 2, 
+    spaceBetween: 20,
+    loop: true,
+    autoplay: {
+      delay: 2000,
+      disableOnInteraction: false,
+    },
+    breakpoints: {
+      576: {
+        slidesPerView: 3,
+      },
+      768: {
+        slidesPerView: 4,
+      },
+      992: {
+        slidesPerView: 5,
+      },
+      1200: {
+        slidesPerView: 5,
+      },
+    },
+  });
+</script>
 <!------>
    <section class="color-bg py-5">
       <div class="container">
@@ -1120,65 +1120,6 @@ Customers can book rides anytime through your app or website with instant fare c
 </section>
 <!------>
 
-<style>
-  @media (min-width: 768px) {
-    .logo-swiper .swiper-slide img {
-      width: 120px;
-    }
-  }
-
-  @media (min-width: 1200px) {
-    .logo-swiper .swiper-slide img {
-      width: 140px;
-    }
-  }
-</style>
-
-<section class="pt-4 pb-4" style="background: #E5BC00;">
-  <div class="container aos-init aos-animate py-4" data-aos="fade-up">
-    <div class="swiper mySwiper logo-swiper">
-      <div class="swiper-wrapper">
-        <div class="swiper-slide text-center"><img src="images/3.png" class="img-fluid p-2" /></div>
-        <div class="swiper-slide text-center"><img src="images/4.png" class="img-fluid p-2" /></div>
-        <div class="swiper-slide text-center"><img src="images/5.png" class="img-fluid p-2" /></div>
-        <div class="swiper-slide text-center"><img src="images/6.png" class="img-fluid p-2" /></div>
-        <div class="swiper-slide text-center"><img src="images/7.png" class="img-fluid p-2" /></div>
-        <div class="swiper-slide text-center"><img src="images/8.png" class="img-fluid p-2" /></div>
-        <div class="swiper-slide text-center"><img src="images/9.png" class="img-fluid p-2" /></div>
-        <div class="swiper-slide text-center"><img src="images/10.png" class="img-fluid p-2" /></div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- Swiper JS -->
-<script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
-
-<script>
-  var swiper = new Swiper(".mySwiper", {
-    slidesPerView: 2, 
-    spaceBetween: 20,
-    loop: true,
-    autoplay: {
-      delay: 2000,
-      disableOnInteraction: false,
-    },
-    breakpoints: {
-      576: {
-        slidesPerView: 3,
-      },
-      768: {
-        slidesPerView: 4,
-      },
-      992: {
-        slidesPerView: 5,
-      },
-      1200: {
-        slidesPerView: 5,
-      },
-    },
-  });
-</script>
 
 
 <section class="py-5 color-bg">
