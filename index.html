@@ -43,6 +43,62 @@ vehicle dispatch system, taxi software">
 </head>
 
 <body>
+    <section class="features-ticker" style="background: #041d26; padding: 20px 0; overflow: hidden; border-top: 1px solid rgba(11, 142, 177, 0.3); border-bottom: 1px solid rgba(11, 142, 177, 0.3);">
+    <style>
+        @keyframes ticker {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+        .ticker-wrapper {
+            display: flex;
+            width: fit-content;
+            animation: ticker 40s linear infinite; /* Speed control yahan se hoga */
+        }
+        .ticker-item {
+            display: flex;
+            align-items: center;
+            white-space: nowrap;
+            padding: 0 30px;
+            color: #ffffff;
+            font-size: 0.95rem;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+        }
+        .ticker-item i {
+            color: #0b8eb1;
+            margin-right: 10px;
+            font-size: 1.1rem;
+        }
+        /* Hover par pause krne ke liye */
+        .features-ticker:hover .ticker-wrapper {
+            animation-play-state: paused;
+        }
+    </style>
+
+    <div class="ticker-wrapper">
+        <div class="ticker-item"><i class="fas fa-plane-arrival"></i> Flight tracking on returns</div>
+        <div class="ticker-item"><i class="fas fa-ban"></i> No cancellation fee up to 24 hours</div>
+        <div class="ticker-item"><i class="fas fa-user-check"></i> Meet &amp; greet available</div>
+        <div class="ticker-item"><i class="fas fa-baby"></i> Child seats on request</div>
+        <div class="ticker-item"><i class="fas fa-briefcase"></i> Corporate accounts available</div>
+        <div class="ticker-item"><i class="fas fa-credit-card"></i> Card &amp; cash accepted</div>
+        <div class="ticker-item"><i class="fas fa-building"></i> Terminal 1 &amp; Terminal 2</div>
+        <div class="ticker-item"><i class="fas fa-id-badge"></i> Licensed private hire operator</div>
+        <div class="ticker-item"><i class="fas fa-lock"></i> Fixed price guaranteed</div>
+        <div class="ticker-item"><i class="fas fa-calendar-alt"></i> 24/7 including bank holidays</div>
+
+        <div class="ticker-item"><i class="fas fa-plane-arrival"></i> Flight tracking on returns</div>
+        <div class="ticker-item"><i class="fas fa-ban"></i> No cancellation fee up to 24 hours</div>
+        <div class="ticker-item"><i class="fas fa-user-check"></i> Meet &amp; greet available</div>
+        <div class="ticker-item"><i class="fas fa-baby"></i> Child seats on request</div>
+        <div class="ticker-item"><i class="fas fa-briefcase"></i> Corporate accounts available</div>
+        <div class="ticker-item"><i class="fas fa-credit-card"></i> Card &amp; cash accepted</div>
+        <div class="ticker-item"><i class="fas fa-building"></i> Terminal 1 &amp; Terminal 2</div>
+        <div class="ticker-item"><i class="fas fa-id-badge"></i> Licensed private hire operator</div>
+        <div class="ticker-item"><i class="fas fa-lock"></i> Fixed price guaranteed</div>
+        <div class="ticker-item"><i class="fas fa-calendar-alt"></i> 24/7 including bank holidays</div>
+    </div>
+</section>
    <section class="top-header" id="top-header">
       <div class="container">
          <div class="row">
