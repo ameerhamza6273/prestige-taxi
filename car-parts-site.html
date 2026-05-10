@@ -1,0 +1,1126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Logic Auto Parts | Premium Car Parts Online</title>
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-red: #e31e24;
+            --primary-gold: #f2a900;
+            --dark-bg: #1a1a1a;
+            --light-gray: #f8f9fa;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #fff;
+        }
+
+
+        
+        /* Professional Search Bar - Restored & Polished */
+.search-wrapper {
+    position: relative;
+    width: 250px; /* Fixed professional width */
+}
+
+.search-bar-premium {
+    border: 2px solid #eee;
+    border-radius: 8px;
+    padding: 10px 50px 10px 15px;
+    font-size: 0.85rem;
+    font-weight: 500;
+    transition: 0.3s;
+    background-color: #fcfcfc;
+}
+
+.search-bar-premium:focus {
+    border-color: var(--primary-gold);
+    box-shadow: 0 0 10px rgba(242, 169, 0, 0.1);
+    outline: none;
+    background-color: #fff;
+}
+
+.search-btn-custom {
+    position: absolute;
+    right: 4px;
+    top: 4px;
+    bottom: 4px;
+    background-color: var(--primary-red); /* Logic Red Accent */
+    color: white;
+    border: none;
+    border-radius: 6px;
+    padding: 0 15px;
+    transition: 0.3s;
+}
+
+.search-btn-custom:hover {
+    background-color: #bd171d;
+    transform: scale(1.02);
+}
+
+/* Account Button - Clean Corporate Look */
+.account-btn {
+    color: #222;
+    font-weight: 700;
+    font-size: 0.8rem;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 15px;
+    border: 1px solid #eee;
+    border-radius: 6px;
+    letter-spacing: 0.5px;
+    transition: 0.3s;
+}
+
+.account-btn:hover {
+    border-color: var(--primary-gold);
+    background: #fff;
+    color: #000;
+}
+
+/* Sub-Nav Feature Bar Styling */
+.feature-bar {
+   background-color: #fafafa;
+    border-top: 1px solid #eee;
+    padding: 15px 0;
+}
+
+.feature-item {
+    font-size: 0.7rem;
+    font-weight: 800;
+    color: #444;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+}
+
+.feature-item i {
+    color: var(--primary-red);
+    font-size: 1.1rem;
+}
+
+        /* Hero Section Enhancements */
+        .hero {
+            position: relative;
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.5)),
+                url('https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?q=80&w=1920');
+            /* Dark overlay for better text contrast */
+            background-size: cover;
+            background-position: center;
+            padding: 100px 0;
+            min-height: 650px;
+            display: flex;
+            align-items: center;
+        }
+
+        .hero-title {
+            font-size: 3.5rem;
+            line-height: 1.1;
+            letter-spacing: -1px;
+        }
+
+        .hero-subtitle {
+            font-size: 1.25rem;
+            color: #ddd;
+            max-width: 500px;
+        }
+
+        /* Filter Card Styling */
+        .filter-card {
+            background: #ffffff;
+            border-radius: 10px;
+            padding: 30px;
+            border-top: 5px solid var(--primary-red);
+            /* Branding color */
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+        }
+
+        .filter-card h4 {
+            color: var(--dark-bg);
+            font-size: 1.5rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .form-select-lg {
+            font-size: 1rem;
+            border: 1px solid #e1e1e1;
+            border-radius: 6px;
+            padding: 12px;
+            background-color: #f9f9f9;
+        }
+
+        .form-select-lg:focus {
+            border-color: var(--primary-gold);
+            /* Branding[cite: 1, 2] */
+            box-shadow: none;
+        }
+
+        .btn-brand {
+            background-color: var(--primary-red);
+            color: white;
+            border-radius: 5px;
+            padding: 12px 25px;
+            border: none;
+            transition: 0.3s;
+        }
+
+        .btn-brand:hover {
+            background-color: #bd171d;
+            color: white;
+            transform: translateY(-2px);
+        }
+
+        /* Responsive Fixes */
+        @media (max-width: 991px) {
+            .hero {
+                padding: 60px 0;
+                text-align: center;
+            }
+
+            .hero-title {
+                font-size: 2.5rem;
+            }
+
+            .hero-subtitle {
+                margin: 0 auto 40px auto;
+            }
+
+            .filter-card {
+                max-width: 500px;
+                margin: 0 auto;
+            }
+        }
+
+        /* Categories Section Styling */
+        .category-section {
+            padding: 80px 0;
+            background-color: #ffffff;
+        }
+
+        .cat-card-premium {
+            position: relative;
+            overflow: hidden;
+            border-radius: 12px;
+            border: 1px solid #eee;
+            transition: all 0.4s ease;
+            background: #fff;
+            height: 100%;
+        }
+
+        .cat-card-premium:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            border-color: var(--primary-gold);
+            /* Hover par gold border */
+        }
+
+        .cat-image-wrapper {
+            height: 200px;
+            background-color: #f8f9fa;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .cat-image-wrapper img {
+            max-height: 100%;
+            width: auto;
+            transition: 0.4s;
+        }
+
+        .cat-card-premium:hover .cat-image-wrapper img {
+            transform: scale(1.1);
+        }
+
+        .cat-body {
+            padding: 20px;
+            text-align: center;
+            border-top: 1px solid #eee;
+        }
+
+        .cat-body h5 {
+            font-weight: 700;
+            font-size: 1.1rem;
+            margin-bottom: 5px;
+            color: var(--dark-bg);
+        }
+
+        .cat-link {
+            color: var(--primary-red);
+            /* Brand Red for link[cite: 1, 2] */
+            font-size: 0.85rem;
+            font-weight: 600;
+            text-decoration: none;
+            text-transform: uppercase;
+        }
+
+        .cat-link i {
+            font-size: 0.7rem;
+            margin-left: 5px;
+            transition: 0.3s;
+        }
+
+        .cat-card-premium:hover .cat-link i {
+            margin-left: 10px;
+        }
+
+        .section-title {
+            text-transform: uppercase;
+            margin-bottom: 15px;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 4px;
+            background: var(--primary-gold);
+            margin-top: 10px;
+        }
+
+        /* Trust Factors Section - Gray Background Version */
+        .trust-section {
+            background-color: #f8f9fa;
+            /* Light gray background to contrast with white sections */
+            padding: 80px 0;
+        }
+
+        .trust-card {
+            padding: 40px 30px;
+            background: #ffffff;
+            /* White cards on gray background */
+            border-radius: 15px;
+            height: 100%;
+            border: 1px solid #e9ecef;
+            transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+        }
+
+        .trust-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+            border-color: var(--primary-gold);
+            /* Logic branding[cite: 1, 2] */
+        }
+
+        /* Icon Hover Effect Fix */
+        .icon-box {
+            width: 80px;
+            height: 80px;
+            background: #f8f9fa;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            margin: 0 auto 25px;
+            color: var(--primary-red);
+            /* Brand Red[cite: 1, 2] */
+            transition: all 0.3s ease;
+            border: 1px solid #eee;
+        }
+
+        .trust-card:hover .icon-box {
+            background-color: var(--primary-red);
+            /* Hover par red background[cite: 1, 2] */
+            color: #ffffff;
+            /* Icon white ho jayega */
+            transform: rotateY(180deg);
+            /* Modern flip effect */
+            border-color: var(--primary-red);
+        }
+
+        .trust-card h3 {
+            font-size: 1.25rem;
+            font-weight: 800;
+            color: var(--dark-bg);
+            margin-bottom: 15px;
+            text-transform: uppercase;
+        }
+
+        .trust-card p {
+            font-size: 0.95rem;
+            color: #555;
+            line-height: 1.6;
+        }
+
+        .blog-card {
+            transition: 0.3s ease;
+            cursor: pointer;
+        }
+
+        .blog-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .blog-card img {
+            height: 200px;
+            object-fit: cover;
+        }
+
+        /* Text-Based Professional Brands Styling */
+        .brand-section-text {
+            background-color: #ffffff;
+            padding: 80px 0;
+            border-top: 1px solid #f0f0f0;
+        }
+
+        .brand-grid-text {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 20px;
+            align-items: center;
+        }
+
+        .brand-box {
+            padding: 25px 10px;
+            border: 1px solid #eee;
+            border-radius: 8px;
+            text-align: center;
+            transition: all 0.3s ease;
+            background: #fafafa;
+        }
+
+        .brand-box:hover {
+            background: var(--dark-bg);
+            /* Dark background on hover */
+            border-color: var(--dark-bg);
+            transform: translateY(-5px);
+        }
+
+        .brand-name {
+            font-family: 'Montserrat', sans-serif;
+            /* Ya koi b bold sans-serif font */
+            font-size: 1.1rem;
+            font-weight: 900;
+            letter-spacing: 4px;
+            /* Zyada spacing se premium look aati hai */
+            color: #444;
+            margin: 0;
+            transition: 0.3s;
+            text-transform: uppercase;
+        }
+
+        .brand-box:hover .brand-name {
+            color: var(--primary-gold);
+            /* Hover par gold text */
+        }
+
+        .section-label {
+            font-size: 0.7rem;
+            font-weight: 700;
+            letter-spacing: 3px;
+            color: var(--primary-red);
+            text-transform: uppercase;
+        }
+
+        /* CTA Section Styling */
+        .cta-section {
+            position: relative;
+            padding: 80px 0;
+            background: linear-gradient(45deg, var(--dark-bg) 30%, #1a1a1a 100%);
+            overflow: hidden;
+            color: #fff;
+        }
+
+        /* Background mein halka sa glow effect */
+        .cta-section::after {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -10%;
+            width: 400px;
+            height: 400px;
+            background: var(--primary-red);
+            filter: blur(150px);
+            opacity: 0.15;
+            border-radius: 50%;
+        }
+
+        .cta-content h2 {
+            font-size: 2.5rem;
+            font-weight: 800;
+            letter-spacing: -1px;
+        }
+
+        .cta-content p {
+            font-size: 1.1rem;
+            color: #bbb;
+            max-width: 600px;
+        }
+
+        .btn-cta-gold {
+            background-color: var(--primary-gold);
+            color: #000;
+            font-weight: 700;
+            padding: 15px 40px;
+            border-radius: 5px;
+            transition: 0.3s;
+            border: 2px solid var(--primary-gold);
+        }
+
+        .btn-cta-gold:hover {
+            background-color: transparent;
+            color: var(--primary-gold);
+            transform: scale(1.05);
+        }
+
+        .btn-cta-outline {
+            border: 2px solid #fff;
+            color: #fff;
+            font-weight: 700;
+            padding: 15px 40px;
+            border-radius: 5px;
+            margin-left: 15px;
+            transition: 0.3s;
+        }
+
+        .btn-cta-outline:hover {
+            background: #fff;
+            color: #000;
+        }
+
+        @media (max-width: 768px) {
+            .btn-cta-outline {
+                margin-left: 0;
+                margin-top: 15px;
+                display: block;
+            }
+        }
+
+        /* CTA Section - Distinct from Footer */
+        .cta-section-premium {
+            position: relative;
+            padding: 100px 0;
+            /* Red Gradient background taaki footer se alag dikhe */
+            background: linear-gradient(rgba(184, 24, 24, 0.9), rgba(139, 0, 0, 0.95)),
+                url('https://images.unsplash.com/photo-1486262715619-67b85e0b08d3?q=80&w=1600');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            /* Parallax effect for premium feel */
+            color: #fff;
+            border-bottom: 5px solid var(--primary-gold);
+            /* Gold divider line[cite: 1, 2] */
+        }
+
+        .cta-content h2 {
+            font-size: 3rem;
+            font-weight: 900;
+            text-transform: uppercase;
+            text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3);
+        }
+
+        .btn-cta-white {
+            background-color: #ffffff;
+            color: #000;
+            font-weight: 800;
+            padding: 18px 45px;
+            border-radius: 4px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: 0.3s;
+            border: none;
+        }
+
+        .btn-cta-white:hover {
+            background-color: var(--primary-gold);
+            /* Branding Gold[cite: 1, 2] */
+            color: #000;
+            transform: scale(1.05);
+        }
+
+        .btn-cta-outline-white {
+            border: 2px solid #fff;
+            color: #fff;
+            font-weight: 800;
+            padding: 16px 45px;
+            border-radius: 4px;
+            text-transform: uppercase;
+            margin-left: 20px;
+            transition: 0.3s;
+        }
+
+        .btn-cta-outline-white:hover {
+            background: #fff;
+            color: var(--primary-red);
+        }
+
+        .footer {
+            background-color: var(--dark-bg);
+            color: #ccc;
+            padding: 25px 0;
+            border-top: 5px solid var(--primary-gold);
+        }
+
+        /* 1. Heading with Gold Border-Left */
+        .footer-heading {
+            font-weight: 700;
+            padding-left: 15px;
+            border-left: 3px solid var(--primary-gold);
+            /* Gold Border */
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 25px;
+            color: #ffffff;
+        }
+
+        /* 2. Redesigned Social Icons Group */
+        .social-wrapper {
+            display: flex;
+            gap: 15px;
+            margin-top: 25px;
+        }
+
+        .social-icon-btn {
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.05);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-decoration: none;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.4s ease;
+            /* Smooth transition */
+        }
+
+        /* Hover Effect for Icons */
+        .social-icon-btn:hover {
+            background: var(--primary-gold);
+            /* Change to Brand Gold */
+            color: #ffffff;
+            border-color: var(--primary-gold);
+            box-shadow: 0 10px 20px rgba(188, 156, 100, 0.3);
+        }
+
+        /* 3. Quick Links Hover Effect */
+        .footer-links-list li {
+            margin-bottom: 12px;
+        }
+
+        .footer-links-list a {
+            color: rgba(255, 255, 255, 0.7);
+            text-decoration: none;
+            transition: 0.3s;
+        }
+
+        .footer-links-list a:hover {
+            color: var(--primary-gold);
+            padding-left: 10px;
+        }
+
+        /* 4. Contact Info Icons */
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 15px;
+            color: rgba(255, 255, 255, 0.8);
+        }
+
+        .contact-item i {
+            color: var(--primary-gold);
+            width: 20px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-white sticky-top py-1">
+    <div class="container">
+        <a class="navbar-brand" href="#">
+            <img src="images/logic-auto-parts-website-logo.jpeg" alt="Logic Auto Parts" height="70">
+        </a>
+
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarNav">
+            
+            <ul class="navbar-nav mx-auto">
+                <li class="nav-item"><a class="nav-link fw-bold text-dark px-3" href="#">BMW</a></li>
+                <li class="nav-item"><a class="nav-link fw-bold text-dark px-3" href="#">VOLVO</a></li>
+                <li class="nav-item"><a class="nav-link fw-bold text-dark px-3" href="#">AUDI</a></li>
+                <li class="nav-item"><a class="nav-link fw-bold text-dark px-3" href="#">VW</a></li>
+                <li class="nav-item"><a class="nav-link fw-bold text-dark px-3" href="#">MERCEDES</a></li>
+                <li class="nav-item"><a class="nav-link fw-bold text-dark px-3" href="#">PORSCHE</a></li>
+            </ul>
+
+            <div class="d-flex align-items-center gap-3">
+                <div class="search-wrapper d-none d-xl-block">
+                    <form action="#" class="d-flex">
+                        <input class="form-control search-bar-premium" type="search" 
+                               placeholder="Search Part # or Brand...">
+                        <button class="search-btn-custom" type="submit">
+                            <i class="fa-solid fa-magnifying-glass"></i>
+                        </button>
+                    </form>
+                </div>
+
+                <div class="dropdown">
+                    <a class="account-btn dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">
+                        <i class="fa-solid fa-user-circle fa-lg"></i>
+                        <span>My Account</span>
+                    </a>
+                    <ul class="dropdown-menu dropdown-menu-end shadow border-0 mt-2">
+                        <li><a class="dropdown-item py-2 fw-bold" href="#"><i class="fa-solid fa-right-to-bracket me-2 text-danger"></i> Sign In</a></li>
+                        <li><a class="dropdown-item py-2 fw-bold" href="#"><i class="fa-solid fa-user-plus me-2 text-danger"></i> Create Account</a></li>
+                        <li><hr class="dropdown-divider"></li>
+                        <li><a class="dropdown-item py-2 fw-bold" href="#"><i class="fa-solid fa-box-open me-2 text-danger"></i> Track Order</a></li>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</nav>
+
+<div class="feature-bar d-none d-md-block">
+    <div class="container">
+        <div class="row text-center">
+            <div class="col-md-4">
+                <div class="feature-item justify-content-center">
+                    <i class="fa-solid fa-truck-fast"></i> FAST GLOBAL SHIPPING
+                </div>
+            </div>
+            <div class="col-md-4 border-start border-end">
+                <div class="feature-item justify-content-center">
+                    <i class="fa-solid fa-rotate-left"></i> HASSLE-FREE RETURNS
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="feature-item justify-content-center">
+                    <i class="fa-solid fa-shield-halved"></i> LIFETIME REPLACEMENT
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+ 
+
+    <!-- Hero Section with Vehicle Filter -->
+    <section class="hero">
+        <div class="container">
+            <div class="row align-items-center">
+
+                <!-- Hero Text Content -->
+                <div class="col-lg-7 mb-5 mb-lg-0">
+                    <h1 class="hero-title fw-bold mb-4 text-white">
+                        DRIVEN BY <br>
+                        <span style="color: var(--primary-gold);">QUALITY</span> EXPERTISE
+                    </h1>
+                    <p class="hero-subtitle mb-0">
+                        Your trusted source for Genuine, OE, & OEM Online Car Parts.
+                        Specializing in high-performance European vehicles with precision and care.
+                    </p>
+                    <div class="mt-4 d-none d-lg-block">
+                        <span class="badge bg-danger p-2 px-3 me-2">LIFETIME WARRANTY</span>
+                        <span class="badge bg-warning text-dark p-2 px-3">FAST SHIPPING</span>
+                    </div>
+                </div>
+
+                <!-- Vehicle Filter Card[cite: 1] -->
+                <div class="col-lg-5">
+                    <div class="filter-card">
+                        <h4 class="mb-4 fw-bold text-center">Select Your Vehicle</h4>
+                        <form>
+                            <div class="mb-3">
+                                <label class="form-label small fw-bold text-muted">YEAR</label>
+                                <select class="form-select form-select-lg">
+                                    <option selected disabled>Select Year</option>
+                                    <option>2024</option>
+                                    <option>2023</option>
+                                    <option>2022</option>
+                                </select>
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label small fw-bold text-muted">MAKE</label>
+                                <select class="form-select form-select-lg">
+                                    <option selected disabled>Select Make</option>
+                                    <option>BMW</option>
+                                    <option>Mercedes-Benz</option>
+                                    <option>Audi</option>
+                                    <option>Volkswagen</option>
+                                </select>
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label small fw-bold text-muted">MODEL</label>
+                                <select class="form-select form-select-lg">
+                                    <option selected disabled>Select Model</option>
+                                </select>
+                            </div>
+                            <div class="mb-4">
+                                <label class="form-label small fw-bold text-muted">SUB MODEL</label>
+                                <select class="form-select form-select-lg">
+                                    <option selected disabled>Select Model</option>
+                                </select>
+                            </div>
+                            <button type="button" class="btn btn-brand w-100 fw-bold py-3">
+                                <i class="fa-solid fa-car-side me-2"></i> FIND MY PARTS
+                            </button>
+                        </form>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Categories Section -->
+    <section class="category-section">
+        <div class="container">
+            <div class="d-flex justify-content-between align-items-end mb-5">
+                <div>
+                    <h2 class="section-title mb-0 fw-bold">Shop by Category</h2>
+                    <p class="text-muted mt-2">Premium quality parts for your European vehicle.</p>
+                </div>
+                <a href="#" class="btn btn-outline-dark btn-sm fw-bold px-4">VIEW ALL CATEGORIES</a>
+            </div>
+
+            <div class="row g-4">
+                <!-- Category 1: Brakes -->
+                <div class="col-lg-3 col-md-6">
+                    <div class="cat-card-premium">
+                        <div class="cat-image-wrapper">
+                            <img src="images/Brake-Kits.png" alt="Brake Kits">
+                        </div>
+                        <div class="cat-body">
+                            <h5>Brake Kits</h5>
+                            <a href="#" class="cat-link">Shop Brakes <i class="fa-solid fa-chevron-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Category 2: Engine -->
+                <div class="col-lg-3 col-md-6">
+                    <div class="cat-card-premium">
+                        <div class="cat-image-wrapper">
+                            <img src="images/Engine-Parts.png" alt="Engine Parts">
+                        </div>
+                        <div class="cat-body">
+                            <h5>Engine Parts</h5>
+                            <a href="#" class="cat-link">Shop Engine <i class="fa-solid fa-chevron-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Category 3: Oil Change -->
+                <div class="col-lg-3 col-md-6">
+                    <div class="cat-card-premium">
+                        <div class="cat-image-wrapper">
+                            <img src="images/Oil-Change-Kits.png" alt="Oil Kits">
+                        </div>
+                        <div class="cat-body">
+                            <h5>Oil Change Kits</h5>
+                            <a href="#" class="cat-link">Shop Kits <i class="fa-solid fa-chevron-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Category 4: Suspension -->
+                <div class="col-lg-3 col-md-6">
+                    <div class="cat-card-premium">
+                        <div class="cat-image-wrapper">
+                            <img src="images/Suspension.png" alt="Suspension">
+                        </div>
+                        <div class="cat-body">
+                            <h5>Suspension</h5>
+                            <a href="#" class="cat-link">Shop Suspension <i class="fa-solid fa-chevron-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us Section with Gray BG -->
+    <section class="trust-section">
+        <div class="container">
+
+            <!-- Section Heading -->
+            <div class="text-center mb-5">
+                <span class="section-subtitle d-block mb-2"
+                    style="color: var(--primary-red); letter-spacing: 2px; font-weight: 700;">OUR PROMISE</span>
+                <h2 class="fw-bold text-dark display-6">Why Professionals Choose Logic</h2>
+                <div style="width: 60px; height: 4px; background: var(--primary-gold); margin: 15px auto;"></div>
+            </div>
+
+            <div class="row text-center g-4">
+
+                <!-- Lifetime Replacement -->
+                <div class="col-md-4">
+                    <div class="trust-card shadow-sm">
+                        <div class="icon-box">
+                            <i class="fa-solid fa-shield-halved fa-2x"></i>
+                        </div>
+                        <h3>Lifetime Guarantee</h3>
+                        <p>We provide an industry-leading lifetime replacement guarantee on every part we sell, ensuring
+                            your peace of mind[cite: 1].</p>
+                    </div>
+                </div>
+
+                <!-- Fast Shipping -->
+                <div class="col-md-4">
+                    <div class="trust-card shadow-sm">
+                        <div class="icon-box">
+                            <i class="fa-solid fa-truck-fast fa-2x"></i>
+                        </div>
+                        <h3>Global Logistics</h3>
+                        <p>With our optimized shipping routes, your premium auto parts reach your doorstep faster than
+                            the competition[cite: 1].</p>
+                    </div>
+                </div>
+
+                <!-- Expert Support -->
+                <div class="col-md-4">
+                    <div class="trust-card shadow-sm">
+                        <div class="icon-box">
+                            <i class="fa-solid fa-headset fa-2x"></i>
+                        </div>
+                        <h3>Technical Mastery</h3>
+                        <p>Connect with our expert team for precision part matching and technical advice tailored to
+                            your specific model[cite: 1].</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+    <section class="py-5 bg-white">
+        <div class="container">
+            <div class="d-flex justify-content-between align-items-end mb-4">
+                <div>
+                    <h2 class="fw-bold section-title">Expert DIY & Tech Articles</h2>
+                    <p class="text-muted">Maintenance tips and performance guides from our engineers.</p>
+                </div>
+                <a href="#" class="btn btn-outline-danger fw-bold">READ ALL POSTS</a>
+            </div>
+            <div class="row g-4">
+                <!-- Blog Card 1 -->
+                <div class="col-md-4">
+                    <div class="card h-100 border-0 shadow-sm blog-card">
+                        <img src="https://images.unsplash.com/photo-1486262715619-67b85e0b08d3?q=80&w=800"
+                            class="card-img-top" alt="Brake Fluid">
+                        <div class="card-body">
+                            <span class="badge bg-light text-danger mb-2">MAINTENANCE</span>
+                            <h5 class="card-title fw-bold">Brake Fluid Explained: What's Best For You?</h5>
+                            <p class="card-text text-muted small">The topic of brake fluid is often overlooked, but it's
+                                critical for safety...</p>
+                            <a href="#" class="text-dark fw-bold text-decoration-none small">READ MORE →</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Blog Card 2 -->
+                <div class="col-md-4">
+                    <div class="card h-100 border-0 shadow-sm blog-card">
+                        <img src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?q=80&w=800"
+                            class="card-img-top" alt="Lowering Car">
+                        <div class="card-body">
+                            <span class="badge bg-light text-danger mb-2">PERFORMANCE</span>
+                            <h5 class="card-title fw-bold">How To Lower Your Car The Right Way</h5>
+                            <p class="card-text text-muted small">Adding power is tricky, but your vehicle's ride height
+                                can be even more critical...</p>
+                            <a href="#" class="text-dark fw-bold text-decoration-none small">READ MORE →</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Blog Card 3 -->
+                <div class="col-md-4">
+                    <div class="card h-100 border-0 shadow-sm blog-card">
+                        <img src="https://images.unsplash.com/photo-1619642751034-765dfdf7c58e?q=80&w=800"
+                            class="card-img-top" alt="Exhaust Systems">
+                        <div class="card-body">
+                            <span class="badge bg-light text-danger mb-2">ENGINEERING</span>
+                            <h5 class="card-title fw-bold">What It Takes To Make A Great Exhaust</h5>
+                            <p class="card-text text-muted small">Dinan's engineering goes above and beyond the basics.
+                                A tour of their shop...</p>
+                            <a href="#" class="text-dark fw-bold text-decoration-none small">READ MORE →</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="py-5 bg-light">
+        <div class="container">
+            <div class="row align-items-center bg-white shadow-sm rounded-4 overflow-hidden">
+                <div class="col-lg-6 p-0">
+                    <img src="https://images.unsplash.com/photo-1502877338535-766e1452684a?q=80&w=1000"
+                        class="img-fluid" alt="Warehouse">
+                </div>
+                <div class="col-lg-6 p-5">
+                    <span class="text-danger fw-bold small text-uppercase">Established Expertise</span>
+                    <h2 class="fw-bold mt-2">The Logic Auto Parts Story</h2>
+                    <p class="text-muted mt-3">
+                        Driven by the pursuit of quality, Logic Auto Parts has evolved from a local specialist into a
+                        premier global distributor of Genuine, OE, and OEM parts. Our 100,000 sq. ft. distribution
+                        center holds over $10 Million in inventory, ready to ship same-day.
+                    </p>
+                    <div class="row mt-4">
+                        <div class="col-6 border-start border-3 border-warning ps-3">
+                            <h4 class="fw-bold mb-0">190,000+</h4>
+                            <p class="small text-muted">Quality Parts</p>
+                        </div>
+                        <div class="col-6 border-start border-3 border-warning ps-3">
+                            <h4 class="fw-bold mb-0">100%</h4>
+                            <p class="small text-muted">Genuine / OEM</p>
+                        </div>
+                    </div>
+                    <button class="btn btn-dark btn-lg mt-4 px-4">LEARN MORE ABOUT US</button>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Text-Only Professional Brands Showcase -->
+    <section class="brand-section-text">
+        <div class="container">
+            <div class="text-center mb-5">
+                <span class="section-label">Specialist Inventory</span>
+                <h2 class="fw-bold mt-2" style="letter-spacing: -1px;">Supported Manufacturers</h2>
+                <div style="width: 40px; height: 3px; background: var(--primary-gold); margin: 15px auto;"></div>
+            </div>
+
+            <div class="row g-3 justify-content-center">
+                <!-- Brand 1 -->
+                <div class="col-6 col-md-4 col-lg-2">
+                    <div class="brand-box">
+                        <p class="brand-name">BMW</p>
+                    </div>
+                </div>
+                <!-- Brand 2 -->
+                <div class="col-6 col-md-4 col-lg-2">
+                    <div class="brand-box">
+                        <p class="brand-name">AUDI</p>
+                    </div>
+                </div>
+                <!-- Brand 3 -->
+                <div class="col-6 col-md-4 col-lg-2">
+                    <div class="brand-box">
+                        <p class="brand-name">BENZ</p>
+                    </div>
+                </div>
+                <!-- Brand 4 -->
+                <div class="col-6 col-md-4 col-lg-2">
+                    <div class="brand-box">
+                        <p class="brand-name">VOLVO</p>
+                    </div>
+                </div>
+                <!-- Brand 5 -->
+                <div class="col-6 col-md-4 col-lg-2">
+                    <div class="brand-box">
+                        <p class="brand-name">PORSCHE</p>
+                    </div>
+                </div>
+                <!-- Brand 6 -->
+                <div class="col-6 col-md-4 col-lg-2">
+                    <div class="brand-box">
+                        <p class="brand-name">VW</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- High-Contrast CTA Section -->
+    <section class="cta-section-premium">
+        <div class="container text-center">
+            <div class="row justify-content-center">
+                <div class="col-lg-10">
+                    <h2 class="mb-4">NEVER PAY FOR THE SAME PART TWICE</h2>
+                    <p class="lead mb-5 fw-bold" style="opacity: 0.9;">
+                        Experience the ultimate peace of mind with our Lifetime Replacement Guarantee.
+                        From brake pads to engine components—we've got you covered.
+                    </p>
+                    <div class="d-flex flex-wrap justify-content-center gap-3">
+                        <a href="#" class="btn btn-cta-white">
+                            <i class="fa-solid fa-cart-shopping me-2"></i> START SHOPPING
+                        </a>
+                        <a href="#" class="btn btn-cta-outline-white">
+                            <i class="fa-solid fa-phone me-2"></i> CONTACT EXPERT
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row g-4 mt-3">
+                <div class="col-lg-4">
+                    <h4 class="footer-heading">Logic <span style="color:var(--primary-gold)">Auto Parts</span></h4>
+                    <p class="opacity-75">Premium European car parts specialist. We provide OE and OEM solutions for
+                        your vehicle's longevity.</p>
+
+                    <div class="social-wrapper">
+                        <a href="#" class="social-icon-btn">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="social-icon-btn">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" class="social-icon-btn">
+                            <i class="fab fa-whatsapp"></i>
+                        </a>
+                        <a href="#" class="social-icon-btn">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 ps-lg-5">
+                    <h5 class="footer-heading">Quick Links</h5>
+                    <ul class="list-unstyled footer-links-list">
+                        <li><a href="/about.php">About Us</a></li>
+                        <li><a href="/services.php">DIY Blog</a></li>
+                        <li><a href="/contact.php">Contact Us</a></li>
+                        <li><a href="#">Terms &amp; Conditions</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-lg-4">
+                    <h5 class="footer-heading">Contact Info</h5>
+                    <div class="contact-item">
+                        <i class="fa fa-phone"></i>
+                        <span>+000000000000</span>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fa fa-envelope"></i>
+                        <span>booking@logicautoparts.com</span>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fa fa-map-marker-alt"></i>
+                        <span>logicautoparts</span>
+                    </div>
+                </div>
+            </div>
+
+            <hr class="my-4 opacity-25">
+            <div class="text-center opacity-75 small">
+                © 2026 Logic Auto Parts. All Rights Reserved.
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

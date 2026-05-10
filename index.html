@@ -1,1558 +1,552 @@
-<!DOCTYPE html>
-<html lang="en">
+<!-- Meta Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '1341797453213607');
+fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=1341797453213607&ev=PageView&noscript=1"
+/></noscript>
+<!-- End Meta Pixel Code -->
 
-<head>
-   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-   <meta charset="utf-8">
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
 
-   <title>Taxi Dispatch System - TBMS</title>
-   <meta name="description" content="TBMS Taxi Dispatch System makes running your taxi business simple. Easily manage bookings, track drivers in real-time, assign rides automatically, and keep customers updated. Perfect for small and large taxi fleets.">
-   <link rel="canonical" href="https://tbmslive.com/" />
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
-   <meta name="keywords" content="taxi tracking software, taxi management solution,taxi dispatch system, Cab dispatch software,
-vehicle dispatch system, taxi software">
-   <meta name="google-site-verification" content="uq4233t0g86ryjAQCQtXOYegM_DGRG9MSOJl2v-xiYQ" />
-
-      <link rel="preload" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-
-   <script defer src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-   <script defer src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-   <link rel="stylesheet preload"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
- <!--  <script defer src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>-->
-   <!-- Bootstrap Bundle with Popper -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" 
-  integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
-  crossorigin="anonymous"></script>
-   <link rel="stylesheet preload" href="css/style.css">
-   <link rel="icon" href="images/logo.webp" />
-   <link rel="apple-touch-icon" href="images/logo.webp" />
-   <link rel="preload" href="/images/bg-1.webp" as="image">
-
-   <link rel="preconnect" href="https://fonts.googleapis.com">
-   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800&display=swap"
-      rel="preconnect">
-   <link async href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
-
-
-</head>
-
-<body>
-    <style>
-/* Custom Pagination Dots */
-.custom-pagination {
-    bottom: 20px; /* Neeche se position */
-}
-
-.custom-pagination [data-bs-target] {
-    width: 12px;
-    height: 12px;
-    border-radius: 50%; /* Circle shape */
-    background-color: #333; /* Default color dark grey */
-    border: none;
-    margin: 0 6px;
-    opacity: 0.3;
-    transition: all 0.3s ease;
-}
-
-.custom-pagination .active {
-    background-color: #E5BC00; /* Active dot color (Yellow) */
-    opacity: 1;
-    width: 30px; /* Active dot thora lamba ho jayega (modern style) */
-    border-radius: 10px;
-}
-
-/* Bullet Icons Color */
-.custom-list li i {
-    color: #E5BC00;
-}
-
-/* Logo Card Styling */
-.logo-card {
-    background: #ffffff;
-    border: 1px solid #f0f0f0; /* Bohat halka border */
-    border-radius: 12px;       /* Round corners */
-    height: 90px;              /* Fixed height for alignment */
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 12px;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.02); /* Bohat soft shadow */
-    transition: all 0.3s ease-in-out;
-}
-
-/* Hover effect */
-.logo-card:hover {
-    border-color: #E5BC00;     /* Aapka brand yellow color */
-    box-shadow: 0 10px 20px rgba(0,0,0,0.08);
-    transform: translateY(-5px); /* Thora sa upar uthega */
-}
-
-/* Image behavior inside card */
-.logo-card img {
-    max-height: 100%;
-    max-width: 100%;
-    object-fit: contain;
-}
-  
-  .carousel-item {
-    padding: 60px 0; /* Adjust vertical spacing */
-    min-height: 500px;
-  }
-  section#slider-area {
-    background: #fff;
-    position: relative;
+  .quiz-shell {
+    font-family: 'DM Sans', sans-serif;
+    background: #f5f3ee;
     width: 100%;
-    background-image: url(https://tbmslive.com/images/bg-1.webp);
-    background-size: cover;
-    background-position: center center;
-    background-repeat: no-repeat;
-}
-</style>
-<!-- Logo Ticker Section -->
-<section class="logo-ticker-area pt-1" style=" border-bottom: 1px solid #eee;">
-    <div class="container-fluid">
-         <p class="text-center mb-1"  style="font-style: italic; font-size: 0.95rem; ">
-             <strong>We are proud to be integrated with</strong>
-        </p>
-        <div class="logo-slider-wrapper">
-            <div class="logo-slide-track">
-                <!-- Logos (Same list 2 baar repeat karni hai loop ke liye) -->
-                <div class="slide-item"><img src="images/city_airport_taxi_logo.png" alt="Partner"></div>
-                <div class="slide-item"><img src="images/clook logo png .png" alt="Partner"></div>
-                <div class="slide-item"><img src="images/cmac.png" alt="Partner"></div>
-                <div class="slide-item"><img src="images/holidaytaxi.jpg.jpeg" alt="Partner"></div>
-                <div class="slide-item"><img src="images/My Transfers logo.jpg" alt="Partner"></div>
-                <div class="slide-item"><img src="images/o_685.jpg" alt="Partner"></div>
-                <div class="slide-item"><img src="images/ONWARD TRAVEL.png" alt="Partner"></div>
-                <div class="slide-item"><img src="images/transferz-logo.webp" alt="Partner"></div>
-                
-                <!-- Duplicate for seamless loop -->
-                <div class="slide-item"><img src="images/city_airport_taxi_logo.png" alt="Partner"></div>
-                <div class="slide-item"><img src="images/clook logo png .png" alt="Partner"></div>
-                <div class="slide-item"><img src="images/cmac.png" alt="Partner"></div>
-                <div class="slide-item"><img src="images/holidaytaxi.jpg.jpeg" alt="Partner"></div>
-                <div class="slide-item"><img src="images/My Transfers logo.jpg" alt="Partner"></div>
-                <div class="slide-item"><img src="images/o_685.jpg" alt="Partner"></div>
-                <div class="slide-item"><img src="images/ONWARD TRAVEL.png" alt="Partner"></div>
-                <div class="slide-item"><img src="images/transferz-logo.webp" alt="Partner"></div>
-            </div>
-        </div>
-       
-    </div>
-</section>
-
-   <section class="top-header" id="top-header">
-      <div class="container">
-         <div class="row">
-            <div class="col-md-8 col-sm-8 sol-xs-12">
-               <div class="top-header-center-side">
-                  <ul class="center-side">
-                     <li><a href="https://api.whatsapp.com/send?phone=447828926870"><span><i class="fa fa-whatsapp"
-                                 aria-hidden="true"></i>
-
-                              </i></span> +44 782 892 6870</a></li>
-                     <li><a href="tel:+442033557887"><span>Outside UK: </span> +44 203 355
-                           7887</a></li>
-                     <li><a href="mailto:info@taxibasesoftware.com"><i class="fa fa-envelope-o"
-                              aria-hidden="true"></i>info@taxibasesoftware.com</a></li>
-                  </ul>
-               </div>
-            </div>
-            <div class="col-xl-4 col-lg-12 col-md-12 col-sm-12 sol-xs-12">
-               <div class="top-header-left-side text-right">
-                  <ul class="left-side">
-                     <li class="mobile-num" style="border-right:none;">
-                        <a href="https://api.whatsapp.com/send?phone=447828926870" class="btn btn-warning text-dark">
-                           <i class="fa fa-whatsapp" aria-hidden="true"></i> Call Now
-                        </a>
-                     </li>
-
-                     <li><a href="https://www.facebook.com/taxibasesoftware"><i class="fa fa-facebook"
-                              aria-hidden="true"></i>
-                        </a></li>
-                     <li><a href="https://twitter.com/T_B_M_S"><i class="fa fa-twitter" aria-hidden="true"></i>
-                        </a></li>
-                     <li><a href="https://www.youtube.com/channel/UC7YFp_KZQX2aIezSOgPZBpw"><i
-                              class="fa fa-youtube-play" aria-hidden="true"></i></a></li>
-                  </ul>
-               </div>
-            </div>
-         </div>
-      </div>
-   </section>
-   <section class="logo-area" id="logo-area">
-
-      <div class="text-right navigation">
-         <nav class="navbar navbar-expand-lg navbar-white bg-white">
-            <div class="container-fluid">
-               <a class="navbar-brand" href="index.html">
-                  <img class="logo horizontal-logo" src="https://tbmslive.com/images/logo.webp" alt=" logo">
-               </a>
-      <button class="navbar-toggler" type="button" 
-        data-bs-toggle="collapse" 
-        data-bs-target="#navbarSupportedContent" 
-        aria-controls="navbarSupportedContent" 
-        aria-expanded="false" 
-        aria-label="Toggle navigation">
-   <span class="navbar-toggler-icon">
-      <i class="fa fa-bars" aria-hidden="true"></i>
-   </span>
-</button>
-
-               <div class="collapse navbar-collapse float-end" id="navbarSupportedContent">
-                  <ul class="navbar-nav ml-auto custom menu">
-                     <li class="nav-item">
-                        <a class="nav-link" href="index.html">Home</a>
-                     </li>
-                     <li class="nav-item dropdown">
-                        <a class="nav-link" href="benefits.html">
-                           Our Benefits
-                        </a>
-                     </li>
-                     <li class="nav-item dropdown">
-                        <a class="nav-link" href="features.html">
-                           Features
-                        </a>
-                     </li>
-                     <li class="nav-item dropdown">
-                                            <a class="nav-link dropdown-toggle" href="services.html"
-                                                id="servicesDropdown" role="button" data-toggle="dropdown"
-                                                aria-haspopup="true" aria-expanded="false">
-                                                Services
-                                            </a>
-                                            <div class="dropdown-menu" aria-labelledby="servicesDropdown">
-                                                <a class="dropdown-item"
-                                                    href="https://tbmslive.com/TBMSOperatorApp.html">TBMS Operator App</a>
-                                                <a class="dropdown-item"
-                                                    href="https://tbmslive.com/taxi-despatch-software-UAE.html">Taxi
-                                                    Despatch
-                                                    Software UAE</a>
-                                                <a class="dropdown-item"
-                                                    href="https://tbmslive.com/taxi-booking-software.html">Taxi
-                                                    Bookiing Software</a>
-                                                <a class="dropdown-item"
-                                                    href="https://tbmslive.com/taxi-booking-app.html">Taxi
-                                                    Booking App</a>
-                                            </div>
-                                        </li>
-                     <li class="nav-item dropdown">
-                        <a class="nav-link" href="pricing.html">
-                           Pricing
-                        </a>
-                     </li>
-                   <!-- <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="services.html" id="servicesDropdown" role="button"
-                           data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                           Services
-                        </a>
-                        <div class="dropdown-menu" aria-labelledby="servicesDropdown">
-                           <a class="dropdown-item" href="https://tbmslive.com/taxi-despatch-software-UAE.html">Taxi
-                              Despatch
-                              Software UAE</a>
-                           <a class="dropdown-item" href="https://tbmslive.com/taxi-booking-software.html">Taxi
-                              Bookiing Software</a>
-                           <a class="dropdown-item" href="https://tbmslive.com/taxi-booking-app.html">Taxi
-                              Booking App</a>
-                        </div>
-                     </li>--> 
-                     <li class="nav-item dropdown">
-                        <a class="nav-link" href="apps.html">
-                           Apps
-                        </a>
-                     </li>
-                     <li class="nav-item dropdown">
-                        <a class="nav-link" href="whyus.html">
-                           Why Us
-                        </a>
-                     </li>
-                     <!--  <li><a href="trial.html" class="trial-setting-area">Trial Now</a></li>-->
-                   <!-- <li class="nav-item "><a href="trial.html" class="nav-link">Trial </a></li>
-                     <li class="nav-item "><a href="https://tbmslive.com/blog.html" class="nav-link">Blog</a>
-                     </li>--> 
-                     <li class="nav-item">
-                        <a class="nav-link" href="contact-us.html">Contact Us</a>
-                     </li>
-                    
-                  </ul>
-               </div>
-            </div>
-         </nav>
-      </div>
-
-   </section>
-<section class="slider-area" id="slider-area">
-  <div id="heroCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="4000" data-bs-pause="false">
-    <!-- Pagination Indicators (Dots) -->
-    <div class="carousel-indicators custom-pagination">
-      <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-      <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
-    </div>
-
-    <div class="carousel-inner">
-      
-      <!-- Slide 1: Main Product Info -->
-      <div class="carousel-item active">
-        <div class="container">
-          <div class="row align-items-center py-0">
-            <div class="col-md-5 px-4 top-content">
-              <span style="font-size:20px;" class="fw-bold text-black text-uppercase">UPGRADE YOUR BUSINESS WITH</span>
-              <h1 class="fs-2 fw-lighter text-uppercase mb-3">
-                POWERFUL CLOUD BASED TAXI<br>
-                <span class="text-black fw-bold">DISPATCH SYSTEM</span>
-              </h1>
-              <p class="textx-justify" style="font-weight: 400;">
-                TBMS helps you manage operations, boost customer service, and run your fleet more efficiently whether it's taxis, private hire, airport transfers, school runs, or medical transport.
-                </p>
-              <ul class="list-unstyled">
-                <li><i class="fa fa-check-circle"></i> Track vehicles and drivers in real time with GPS</li>
-                <li><i class="fa fa-check-circle"></i> Get clear driver and customer statements</li>
-                <li><i class="fa fa-check-circle"></i> Use built-in payments and invoicing</li>
-                <li><i class="fa fa-check-circle"></i> Offer easy online bookings with a customer portal</li>
-                <li><i class="fa fa-check-circle"></i> Stay on top of all transport activities and expiry dates</li>
-              </ul>
-              <div>
-
-                <button type="button" style="background:#E5BC00; border-radius:25px;" class="btn px-4" onclick="window.location.href='https://tbmslive.com/contact-us.html';">
-                  Contact Us
-                </button>
-              </div>
-            </div>
-            <div class="col-md-7 col-sm-7">
-              <img src="images/main-banner-image.png" class="img-fluid mt-3" style="width:100%; border-radius: 10px;" alt="Dashboard View">
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Slide 2: Compliance & Logos -->
-      <div class="carousel-item">
-        <div class="container">
-          <div class="row align-items-center p-0">
-            <div class="col-md-5 px-4">
-              <h2 class="fw-bold text-black mb-4">TRUSTED & COMPLIANT</h2>
-              <p class="textx-justify" style="font-weight: 400;">
-                Trusted by operators working with major UK authorities, <strong>TBMS</strong> is structured to meet compliance standards set by councils such as:
-                </p>
-
-                <!-- New Bullet Points for Compliance -->
-               
-                <ul class="list-unstyled">
-                    <li><i class="fa fa-check-circle"></i> Fully GDPR & Data Protection Compliant</li>
-                    <li><i class="fa fa-check-circle"></i>  Automated Council-Specific Reporting</li>
-                    <li><i class="fa fa-check-circle"></i> Real-time Driver Document Expiry Alerts</li>
-                </ul>
-
-                <p class="text-muted small">
-                Redhill, Newport, Cardiff, Bucks, Worcester, Derby City, Kent, Transport for London and many more...
-                </p>
-              <div class="mt-4">
-                <button 
-                    type="button"
-                    style="background:#E5BC00; border-radius:25px;"
-                    class="btn px-4"
-                    onclick="window.location.href='https://tbmslive.com/contact-us.html';">
-                    Contact Us
-                </button>
-              </div>
-            </div>
-            
-            <div class="col-md-7 mt-3">
-                <!-- Professional Branded Logo Grid -->
-                <div class="row g-3 justify-content-center p-0">
-                    
-                    <!-- Logo Item -->
-                    <div class="col-4 col-sm-4 mb-2">
-                        <div class="logo-card">
-                            <img src="images/city_airport_taxi_logo.png" alt="City Airport Taxi">
-                        </div>
-                    </div>
-
-                    <div class="col-4 col-sm-4 mb-2">
-                        <div class="logo-card">
-                            <img src="images/clook logo png .png" alt="Clook">
-                        </div>
-                    </div>
-
-                    <div class="col-4 col-sm-4 mb-2">
-                        <div class="logo-card">
-                            <img src="images/cmac.png" alt="CMAC">
-                        </div>
-                    </div>
-
-                    <div class="col-4 col-sm-4 mb-2">
-                        <div class="logo-card">
-                            <img src="images/holidaytaxi.jpg.jpeg" alt="HolidayTaxis">
-                        </div>
-                    </div>
-
-                    <div class="col-4 col-sm-4 mb-2">
-                        <div class="logo-card">
-                            <img src="images/My Transfers logo.jpg" alt="My Transfers">
-                        </div>
-                    </div>
-
-                    <div class="col-4 col-sm-4 mb-2">
-                        <div class="logo-card">
-                            <img src="images/o_685.jpg" alt="Partner Logo">
-                        </div>
-                    </div>
-
-                    <div class="col-4 col-sm-4 mb-2">
-                        <div class="logo-card">
-                            <img src="images/ONWARD TRAVEL.png" alt="OTS">
-                        </div>
-                    </div>
-
-                    <div class="col-4 col-sm-4 mb-2">
-                        <div class="logo-card">
-                            <img src="images/transferz-logo.webp" alt="Transferz">
-                        </div>
-                    </div>
-
-                    <div class="col-4 col-sm-4 mb-2">
-                        <div class="logo-card">
-                            <img src="images/taxisnetwork jpg.jpg" alt="Taxis Network">
-                        </div>
-                    </div>
-
-                </div>
-            </div>
-        </div>
-      </div>
-
-    </div>
-
-   
-  </div>
-</section>
-<style>
-.logo-slider-wrapper {
-    overflow: hidden;
-    background: white;
-    position: relative;
-}
-
-.logo-slide-track {
+    padding: 40px 16px;
     display: flex;
-    width: calc(250px * 16); /* Logo width * total logos (original + duplicates) */
-    animation: scroll 30s linear infinite; /* Speed yahan se control hogi */
-}
+    justify-content: center;
+  }
 
-.slide-item {
-    width: 200px;
-    height: 70px;
+  .quiz-inner {
+    width: 100%;
+    max-width: 560px;
+  }
+
+  .quiz-header {
+    text-align: center;
+    margin-bottom: 32px;
+  }
+
+  .quiz-eyebrow {
+    display: inline-block;
+    background: #0F6E56;
+    color: #E1F5EE;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    padding: 5px 14px;
+    border-radius: 20px;
+    margin-bottom: 16px;
+  }
+
+  .quiz-title {
+    font-family: 'DM Serif Display', serif;
+    font-size: 30px;
+    color: #1a1a18;
+    line-height: 1.25;
+    margin-bottom: 10px;
+  }
+
+  .quiz-subtitle {
+    font-size: 15px;
+    color: #5a5a55;
+    line-height: 1.6;
+  }
+
+  .progress-track {
+    display: flex;
+    gap: 5px;
+    margin-bottom: 28px;
+  }
+
+  .progress-pip {
+    flex: 1;
+    height: 3px;
+    background: #d9d7cf;
+    border-radius: 2px;
+    transition: background 0.35s ease;
+  }
+
+  .progress-pip.done { background: #0F6E56; }
+  .progress-pip.active { background: #5DCAA5; }
+
+  .card {
+    background: #ffffff;
+    border-radius: 16px;
+    padding: 36px 36px 28px;
+    border: 1px solid #e4e2da;
+  }
+
+  .q-counter {
+    font-size: 12px;
+    font-weight: 600;
+    color: #0F6E56;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+  }
+
+  .q-text {
+    font-family: 'DM Serif Display', serif;
+    font-size: 22px;
+    color: #1a1a18;
+    line-height: 1.35;
+    margin-bottom: 24px;
+  }
+
+  .opts { display: flex; flex-direction: column; gap: 10px; margin-bottom: 24px; }
+
+  .opt {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 14px 16px;
+    border: 1.5px solid #e4e2da;
+    border-radius: 12px;
+    cursor: pointer;
+    background: #faf9f6;
+    transition: border-color 0.2s, background 0.2s, transform 0.1s;
+    user-select: none;
+  }
+
+  .opt:hover { border-color: #5DCAA5; background: #f0faf6; transform: translateY(-1px); }
+  .opt.selected { border-color: #0F6E56; background: #E1F5EE; }
+
+  .opt-key {
+    width: 28px;
+    height: 28px;
+    min-width: 28px;
+    border-radius: 50%;
+    border: 1.5px solid #c8c6be;
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 0 40px; /* Logos ke beech ka gap */
-}
+    font-size: 12px;
+    font-weight: 600;
+    color: #8a8880;
+    transition: background 0.2s, border-color 0.2s, color 0.2s;
+  }
 
-.slide-item img {
-    max-width: 150px;
-    max-height: 50px;
-    object-fit: contain;
-    transition: 0.3s;
-}
+  .opt.selected .opt-key { background: #0F6E56; border-color: #0F6E56; color: #fff; }
+  .opt-label { font-size: 15px; color: #2c2c28; line-height: 1.45; }
+  .opt.selected .opt-label { color: #085041; font-weight: 500; }
 
+  .btn-next {
+    width: 100%;
+    padding: 15px;
+    background: #0F6E56;
+    color: #fff;
+    border: none;
+    border-radius: 10px;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s, transform 0.1s, opacity 0.2s;
+    letter-spacing: 0.01em;
+  }
 
+  .btn-next:hover:not(:disabled) { background: #085041; transform: translateY(-1px); }
+  .btn-next:disabled { opacity: 0.35; cursor: not-allowed; }
 
-/* Infinite Scroll Animation */
-@keyframes scroll {
-    0% { transform: translateX(0); }
-    100% { transform: translateX(calc(-200px * 8)); } /* Half width of track */
-}
+  .result-wrap { text-align: center; }
 
-/* Mouse hover par ruk jaye (Optional) */
-.logo-slider-wrapper:hover .logo-slide-track {
-    animation-play-state: paused;
-}
+  .result-icon {
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    margin: 0 auto 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 28px;
+  }
+
+  .icon-high { background: #E1F5EE; color: #0F6E56; }
+  .icon-med  { background: #FAEEDA; color: #854F0B; }
+
+  .result-badge {
+    display: inline-block;
+    padding: 5px 16px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.07em;
+    text-transform: uppercase;
+    margin-bottom: 16px;
+  }
+
+  .badge-high { background: #E1F5EE; color: #085041; }
+  .badge-med  { background: #FAEEDA; color: #633806; }
+
+  .result-title {
+    font-family: 'DM Serif Display', serif;
+    font-size: 26px;
+    color: #1a1a18;
+    line-height: 1.3;
+    margin-bottom: 14px;
+  }
+
+  .result-desc {
+    font-size: 15px;
+    color: #5a5a55;
+    line-height: 1.7;
+    margin-bottom: 28px;
+    max-width: 440px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .score-bar-wrap {
+    background: #f5f3ee;
+    border-radius: 8px;
+    padding: 16px 20px;
+    margin-bottom: 28px;
+    text-align: left;
+  }
+
+  .score-bar-label {
+    font-size: 12px;
+    font-weight: 600;
+    color: #8a8880;
+    text-transform: uppercase;
+    letter-spacing: 0.07em;
+    margin-bottom: 8px;
+  }
+
+  .score-bar-track {
+    height: 8px;
+    background: #e4e2da;
+    border-radius: 4px;
+    overflow: hidden;
+  }
+
+  .score-bar-fill {
+    height: 100%;
+    border-radius: 4px;
+    background: #0F6E56;
+    transition: width 1s cubic-bezier(0.22, 1, 0.36, 1);
+    width: 0%;
+  }
+
+  .score-number { font-size: 13px; color: #5a5a55; margin-top: 6px; }
+
+  .btn-cta {
+    display: block;
+    width: 100%;
+    padding: 16px;
+    background: #0F6E56;
+    color: #fff;
+    border: none;
+    border-radius: 10px;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 17px;
+    font-weight: 600;
+    cursor: pointer;
+    text-decoration: none;
+    text-align: center;
+    transition: background 0.2s, transform 0.1s;
+    margin-bottom: 12px;
+  }
+
+  .btn-cta:hover { background: #085041; transform: translateY(-1px); }
+
+  .cta-sub { font-size: 13px; color: #8a8880; line-height: 1.5; }
+
+  .divider { height: 1px; background: #e4e2da; margin: 20px 0; }
+
+  .reassurance { display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; }
+
+  .reassurance-item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 13px;
+    color: #8a8880;
+  }
+
+  .check {
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background: #E1F5EE;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+
+  .check svg { width: 9px; height: 9px; }
+
+  @media (max-width: 480px) {
+    .card { padding: 24px 20px 20px; }
+    .q-text { font-size: 19px; }
+    .quiz-title { font-size: 24px; }
+  }
 </style>
 
-<!--
-<section class="slider-area" id="slider-area">
-  <div class="container">
-    <div class="row align-items-center">
+<div class="quiz-shell">
+  <div class="quiz-inner">
 
-      <div class="col-md-5 px-4 top-content">
-        <span style="font-size:20px;" class="fw-bold text-black text-uppercase">UPGRADE YOUR BUSINESS WITH</span>
+    <div class="quiz-header">
+      <span class="quiz-eyebrow">2-min fit check</span>
+      <h2 class="quiz-title">Is your business ready to own<br>your neighborhood on Google?</h2>
+      <p class="quiz-subtitle">Answer 7 quick questions and we'll show you exactly where you stand — and whether the free 10-day boost is right for you.</p>
+    </div>
 
-        <h1 class="fs-2 fw-lighter text-uppercase mb-3">
-          POWERFUL CLOUD BASED TAXI<br>
-          <span class="text-black fw-bold">DISPATCH SYSTEM</span>
-        </h1>
+    <div class="progress-track" id="qPips"></div>
 
-        <p class="textx-justify">
-          TBMS helps you manage operations, boost customer service, and run your fleet more efficiently whether it's taxis, private hire, airport transfers, school runs, or medical transport.
-        </p>
+    <div class="card" id="qCard"></div>
 
-        <ul class="list-unstyled">
-          <li><i class="fa fa-check-circle"></i> Track vehicles and drivers in real time with GPS</li>
-          <li><i class="fa fa-check-circle"></i> Get clear driver and customer statements</li>
-          <li><i class="fa fa-check-circle"></i> Use built-in payments and invoicing</li>
-          <li><i class="fa fa-check-circle"></i> Offer easy online bookings with a customer portal</li>
-          <li><i class="fa fa-check-circle"></i> Stay on top of all transport activities and expiry dates</li>
-        </ul>
-
-        <div>
-          <button 
-            type="button"
-            style="background:#E5BC00; border-radius:25px;"
-            class="btn px-4"
-            onclick="window.location.href='https://tbmslive.com/contact-us.html';">
-            Contact Us
-          </button>
-        </div>
-      </div>
-
-      <div class="col-md-7 col-sm-7 mt-3">
-        <img src="https://tbmslive.com/images/main-laptop.webp" class="img-fluid mt-3" style="width:1000px; height:440px; object-fit:cover;">
-      </div>
-
-    </div> 
   </div>
-</section>-->
+</div>
 
-<style>
-  @media (min-width: 768px) {
-    .logo-swiper .swiper-slide img {
-      width: 120px;
+<script>
+  // GHL API Settings
+  var GHL_URL = "https://services.leadconnectorhq.com/hooks/YOUR_WEBHOOK_URL_OR_API"; // Apna sahi endpoint yahan dalen
+  var GHL_AUTH = "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJsb2NhdGlvbl9pZCI6Ik5hT2dORVR4SE5IaFBSTFRsZWM1IiwiY29tcGFueV9pZCI6IjhNbnU4ZXNITHUzVDV2d25GeGFrIiwidmVyc2lvbiI6MSwiaWF0IjoxNjkwNTYxNzc5OTkyLCJzdWIiOiJ1c2VyX2lkIn0.oj-bctQvctKuoEAHWWKRYWekZVJBHxEhw1aZ41Vg3XE";
+
+  var questions = [
+    { q: "Does your business have a Google Business Profile set up?", opts: [{ text: "Yes — verified and actively managed", pts: 3 }, { text: "Yes, but I haven't really touched it", pts: 2 }, { text: "I think so — not sure if it's verified", pts: 1 }, { text: "No, I don't have one yet", pts: 0 }] },
+    { q: "How is most of your new business coming in right now?", opts: [{ text: "Referrals and word of mouth mostly", pts: 1 }, { text: "I run paid ads (Google or Facebook)", pts: 2 }, { text: "A mix of ads, SEO, and referrals", pts: 3 }, { text: "It's inconsistent — I need more leads", pts: 3 }] },
+    { q: "When a homeowner searches your service in your city, where do you show up?", opts: [{ text: "Top 3 on Google Maps consistently", pts: 1 }, { text: "Sometimes in the map pack, sometimes not", pts: 2 }, { text: "I rarely show up in the map pack", pts: 3 }, { text: "Honestly, I have no idea where I rank", pts: 3 }] },
+    { q: "How competitive is your local market?", opts: [{ text: "Very competitive — lots of established players", pts: 3 }, { text: "Moderate — some competition, room to grow", pts: 2 }, { text: "Low — not many competitors in my area", pts: 1 }, { text: "Not sure", pts: 2 }] },
+    { q: "What's your biggest frustration getting new clients?", opts: [{ text: "Paying too much per lead through ads", pts: 3 }, { text: "Getting leads but the quality is low", pts: 2 }, { text: "Just not enough volume consistently", pts: 3 }, { text: "Not sure what's not working", pts: 2 }] },
+    { q: "Are you the owner or decision-maker for marketing?", opts: [{ text: "Yes, I make all marketing decisions", pts: 3 }, { text: "I share decisions with a partner", pts: 2 }, { text: "I have someone else handle marketing", pts: 1 }, { text: "No — I'd need to check with someone", pts: 0 }] },
+    { q: "If we showed you real ranking movement in 10 days at zero cost, what would you do?", opts: [{ text: "Ready to move forward immediately", pts: 3 }, { text: "I'd review the results then decide", pts: 2 }, { text: "I'd need to compare a few options first", pts: 1 }, { text: "I'm just browsing for now", pts: 0 }] }
+  ];
+
+  var current = 0;
+  var scores = [];
+  var selected = null;
+  var keys = ['A','B','C','D'];
+
+  function buildPips() {
+    var c = document.getElementById('qPips');
+    if(!c) return;
+    c.innerHTML = '';
+    for (var i = 0; i < questions.length; i++) {
+      var pip = document.createElement('div');
+      pip.className = 'progress-pip' + (i < current ? ' done' : i === current ? ' active' : '');
+      c.appendChild(pip);
     }
   }
 
-  @media (min-width: 1200px) {
-    .logo-swiper .swiper-slide img {
-      width: 140px;
+  function renderQuestion() {
+    selected = null;
+    buildPips();
+    var q = questions[current];
+    var optsHtml = '';
+    for (var i = 0; i < q.opts.length; i++) {
+      optsHtml += '<div class="opt" data-i="' + i + '" onclick="selectOpt(this,' + i + ')">'
+        + '<span class="opt-key">' + keys[i] + '</span>'
+        + '<span class="opt-label">' + q.opts[i].text + '</span>'
+        + '</div>';
     }
+    document.getElementById('qCard').innerHTML =
+      '<p class="q-counter">Question ' + (current + 1) + ' of ' + questions.length + '</p>'
+      + '<p class="q-text">' + q.q + '</p>'
+      + '<div class="opts">' + optsHtml + '</div>'
+      + '<button class="btn-next" id="btnNext" disabled onclick="advance()">'
+      + (current < questions.length - 1 ? 'Next question &rarr;' : 'See my results &rarr;')
+      + '</button>';
   }
-</style>
 
-<section class="pt-4 pb-4" style="background: #fff;">
-  <div class="container aos-init aos-animate py-4" data-aos="fade-up">
-    <div class="swiper mySwiper logo-swiper">
-      <div class="swiper-wrapper">
-        <div class="swiper-slide text-center"><img src="images/3.png" class="img-fluid p-2" /></div>
-        <div class="swiper-slide text-center"><img src="images/4.png" class="img-fluid p-2" /></div>
-        <div class="swiper-slide text-center"><img src="images/5.png" class="img-fluid p-2" /></div>
-        <div class="swiper-slide text-center"><img src="images/6.png" class="img-fluid p-2" /></div>
-        <div class="swiper-slide text-center"><img src="images/7.png" class="img-fluid p-2" /></div>
-        <div class="swiper-slide text-center"><img src="images/8.png" class="img-fluid p-2" /></div>
-        <div class="swiper-slide text-center"><img src="images/9.png" class="img-fluid p-2" /></div>
-        <div class="swiper-slide text-center"><img src="images/10.png" class="img-fluid p-2" /></div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- Swiper JS -->
-<script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
-
-<script>
-  var swiper = new Swiper(".mySwiper", {
-    slidesPerView: 2, 
-    spaceBetween: 20,
-    loop: true,
-    autoplay: {
-      delay: 2000,
-      disableOnInteraction: false,
-    },
-    breakpoints: {
-      576: {
-        slidesPerView: 3,
-      },
-      768: {
-        slidesPerView: 4,
-      },
-      992: {
-        slidesPerView: 5,
-      },
-      1200: {
-        slidesPerView: 5,
-      },
-    },
-  });
-</script>
-<!------>
-   <section class="color-bg py-5">
-      <div class="container">
-         <div class="row align-items-center">
-
-            <div class="col-md-6 ">
-               <div class="text-area-setting">
-   <h2 class=" fw-lighter text-uppercase mb-3">Who is TBMS ?  <br><span class="text-black fw-bold"> (Taxi base Management System)</span>
-                </h2>
-                <p>TBMS is a UK-based, cloud-powered system built to help taxi, minicab, chauffeur, and airport transfer businesses manage bookings, dispatch drivers quickly, and deliver great customer service—all from one platform. Whether you run a small or large fleet, TBMS Live fits your needs.</p>
-                <p>
-With over 15 years of industry experience since 2010, we’ve helped hundreds of taxi businesses grow with reliable software, real-time tracking, smart route planning, and dedicated support.
-</p>
-               </div>
-            </div>
-
-            <div class="col-md-6 col-sm-12 col-xs-12">
-                <img src="https://tbmslive.com/images/tbms1.jpg" class="img-fluid">
-            </div>
-
-         </div>
-      </div>
-   </section>
-
-   <section class="py-5">
-<div class="container py-5">
-   <div class="row">
-      <div class="col-md-8 text-center mx-auto mb-5">
-         <h2 class="fw-bold">How TBMS Simplifies Your Taxi Business</h2>
-         <p>TBMS helps you run your taxi business smoothly by automating bookings, dispatch, tracking, and payments—all from one easy-to-use platform.</p>
-      </div>
-      </div>
-      <div class="row d-flex align-items-center justify-content-center">
-      <div class="col-md-6">
-           <img src="https://tbmslive.com/images/tbms2.jpg" class="img-fluid">
-
-      </div>
-      <div class="col-md-6">
-        <p class="fs-6" ><span class="fs-5 fw-bold">Easy Booking:</span><br>
-Customers can book rides anytime through your app or website with instant fare calculation, or staff can manually add bookings via the dispatch system.</p>
-<p class="fs-6">
-  <span class="fs-5 fw-bold">Smart Driver Allocation:</span><br>
-  The system finds the nearest available driver and assigns jobs automatically, even months in advance.
-</p>
-
-<p class="fs-6">
-  <span class="fs-5 fw-bold">Instant Driver Updates:</span><br>
-  Drivers get all trip details instantly on their app, so they’re ready to go without delay.
-</p>
-
-<p class="fs-6">
-  <span class="fs-5 fw-bold">Live Tracking:</span><br>
-  You and your customers can track drivers in real time.
-</p>
-
-<p class="fs-6">
-  <span class="fs-5 fw-bold">Secure Payments:</span><br>
-  Payments are processed automatically after each trip, with support for multiple payment methods.
-</p>
-
-<p class="fs-6">
-  <span class="fs-5 fw-bold">Fleet Management Dashboard:</span><br>
-  Monitor bookings, driver status, and performance reports at a glance to make informed decisions.
-</p>
-
-      </div>
-   </div>
-</div>
-     
-</div>
-</div>
-   </section>
-
-
-
-
-
-   <!------->
-   <section class="tabsection">
-      <div class="container">
-         <div class="tabs">
-            <div class="tab active" onclick="changeTab(0)">Passenger App</div>
-            <div class="tab" onclick="changeTab(1)">Driver App</div>
-            <div class="tab" onclick="changeTab(2)">Online Booking</div>
-            <div class="tab" onclick="changeTab(3)">Dispatch System</div>
-            <div class="tab" onclick="changeTab(4)">Online Office</div>
-         </div>
-
-         <div class="slider">
-
-            <div class="slide py-5">
-               <div class="tab-content active">
-                  <div class="row justify-content-around align-items-center">
-                     <div class="col-md-6">
-                       
-                          <h2 class=" fw-lighter text-uppercase mb-3"><span class="text-black fw-bold ml-0">Effortless Booking</span> <br> in the Palm of your Hand </h2>
-
-                        <p>
-                           <b>Stay competitive, attract new customers</b> and automate bookings with your very own
-                           passenger apps.
-                        </p>
-                     </div>
-                     <div class="col-md-6 ">
-                        <img src="https://tbmslive.com/images/passenger-app.webp" class=" float-end img-fluid">
-                     </div>
-                  </div>
-               </div>
-            </div>
-
-            <div class="slide py-5">
-               <div class="tab-content">
-                  <div class="row justify-content-around align-items-center">
-                     <div class="col-md-6">
-                        <h2>Such a simple and<b><br> stress-free solution</b></h2>
-                        <p>
-                           Offer your drivers more ways to accept jobs, with all the tools needed to<b> keep them happy
-                              and productive.</b>
-                        </p>
-                     </div>
-                     <div class="col-md-6 text-center">
-                        <img src="images/driver-app.webp" class="  float-end img-fluid">
-                     </div>
-                  </div>
-               </div>
-            </div>
-            <div class="slide py-5">
-               <div class="tab-content">
-                  <div class="row justify-content-around align-items-center">
-                     <div class="col-md-6">
-                        <h2>More booking channels <br><b> means more business</b></h2>
-                        <p>
-                           <b> Attract corporate customers </b>acquire new contracts and increase your online presence
-                           with new booking platforms.
-                        </p>
-                     </div>
-                     <div class="col-md-6 text-center">
-                        <img src="images/Online Booking 2.webp" class=" float-end img-fluid">
-                     </div>
-                  </div>
-               </div>
-            </div>
-            <div class="slide py-5">
-               <div class="tab-content">
-                  <div class="row justify-content-around align-items-center">
-                     <div class="col-md-6">
-                        <h2>Dispatch has never been <br><b> this easy</b></h2>
-                        <p>
-                           <b> Track drivers in real time </b>fairly distribute jobs and use your own VoIP service for
-                           Caller ID recognition right from your PC.
-                        </p>
-                     </div>
-                     <div class="col-md-6 text-center">
-                        <img src="images/Offline Booking.webp" class="  float-end img-fluid">
-                     </div>
-                  </div>
-               </div>
-            </div>
-            <div class="slide py-5">
-               <div class="tab-content">
-                  <div class="row justify-content-around align-items-center">
-                     <div class="col-md-6">
-                        <h2><b>Monitor the pulse</b> <br>of your business</h2>
-                        <p>
-                           <b>Manage your company online </b>with analytics tools, custom reports and replay functions
-                           to track vehicle routes.
-                        </p>
-                     </div>
-                     <div class="col-md-6 text-center">
-                        <img src="images/Online Booking.webp" class="  float-end img-fluid">
-                     </div>
-                  </div>
-               </div>
-            </div>
-         </div>
-
-         <!--                        <div class="button-container">-->
-         <!--                           <button class="button" onclick="prevSlide()"><</button>-->
-         <!--                           <button class="button" onclick="nextSlide()">></button>-->
-         <!--                        </div>-->
-      </div>
-   </section>
-<!----->
-
-<section class="py-5">
-<div class="container py-5">
-   <div class="row">
-   <div class="col-md-10 mx-auto">
-
-<div class="row">
-
-<div class="col-md-6">
-	<div class="text-center shadow-lg rounded-3  py-4 px-5">
-<h2 class="fs-3 fw-light">
-
-<span class="text-black" style="font-weight:400"><strong> Driver</strong></span> Mobile App
-				</h2>
-	<p> Enables easy check-ins, task handling, and reporting from mobile devices, helping guards manage their duties efficiently.</p>
-
-				<div class=" d-flex gap-3 app justify-content-center my-3 app">
-<a href="https://play.google.com/store/apps/details?id=com.optiinfo.tbms_driver_new"><img  src="https://tbmslive.com/images/app-store.webp"></a>
-<a href="https://apps.apple.com/us/app/tbms-driver-taxi-system/id633426576"><img src="https://tbmslive.com/images/google-play.webp"></a>
-
-</div>
-<img src="https://tbmslive.com/images/driver-app.webp" class="img-fluid app-img" data-src="https://tbmslive.com/images/guard.png" style="height:300px;"  alt="Guard Mobile App" title="Guard Mobile App">
-</div>
-</div>
-
-<!----->
-<div class="col-md-6">
-	<div class="text-center  shadow-lg rounded-3  py-4 px-5">
-<h2 class="fs-3 fw-light">
-
-<span class="text-black" style="font-weight:400"><strong> Operator</strong></span> Mobile App
-				</h2>
-<p>Provides real-time access to reports, guard activities, and performance metrics, keeping clients fully informed at all times.</p>
-				<div class=" d-flex gap-3 app justify-content-center my-3 app">
-<a href="https://play.google.com/store/apps/details?id=com.tbms_operator_new"><img src="https://tbmslive.com/images/app-store.webp"></a>
-<a href="https://apps.apple.com/us/app/tbms-operator/id633429046"><img src="https://tbmslive.com/images/google-play.webp"></a>
-
-</div>
-		<img src="images/tbms-operator-app-new.jpeg" data-src="images/tbms-operator-app-new.jpeg" style="height:300px;border: 3px solid #000;border-radius: 15px;" class="img-fluid " alt="Client Mobile App" title="Client  Mobile App">
-
-</div>
-</div>
-
-</div>
-</div>
-</div>
-
-</div>
-</section>
-
-<section class="color-bg py-5">
-   <div class="container py-5">
-  <div class="row g-4">
-
-    <!-- Section Title -->
-    <div class="col-md-12 text-center mb-5">
-      <h2 class="fs-3 fw-semibold">Why Businesses Choose Our TBMS</h2>
-      <p>Discover the powerful features designed to streamline your taxi operations, improve efficiency, and enhance customer satisfaction.</p>
-    </div>
-
-    <!-- Each feature item -->
-    <!-- 1 -->
-    <div class="col-md-4">
-      <div class="card-fea border-0 shadow p-4 h-100">
-        <div class="d-flex align-items-center mb-3">
-          <div class="icon-wrapper d-flex align-items-center justify-content-center me-3 bg-light border border-2 border-dark p-2 rounded-circle">
-            <img src="images/invoice.png" alt="Comprehensive Invoicing" title="Comprehensive Invoicing" width="30">
-          </div>
-          <h5 class="mb-0 fw-semibold">Comprehensive Invoicing</h5>
-        </div>
-        <p class="mb-0">Generate detailed, accurate invoices with ease.</p>
-      </div>
-    </div>
-
-    <!-- 2 -->
-    <div class="col-md-4">
-      <div class="card-fea border-0 shadow p-4 h-100">
-        <div class="d-flex align-items-center mb-3">
-          <div class="icon-wrapper d-flex align-items-center justify-content-center me-3 bg-light border border-2 border-dark p-2 rounded-circle">
-            <img src="images/statements.png" alt="Driver Statements & Reports" title="Driver Statements & Reports" width="30">
-          </div>
-          <h5 class="mb-0 fw-semibold">Driver Statements &amp; Reports</h5>
-        </div>
-        <p class="mb-0">Clear summaries of driver activity and earnings.</p>
-      </div>
-    </div>
-
-    <!-- 3 -->
-    <div class="col-md-4">
-      <div class="card-fea border-0 shadow p-4 h-100">
-        <div class="d-flex align-items-center mb-3">
-          <div class="icon-wrapper d-flex align-items-center justify-content-center me-3 bg-light border border-2 border-dark p-2 rounded-circle">
-            <img src="images/tracking.png" alt="Real-Time Vehicle Tracking" title="Real-Time Vehicle Tracking" width="30">
-          </div>
-          <h5 class="mb-0 fw-semibold">Real-Time Vehicle Tracking</h5>
-        </div>
-        <p class="mb-0">Monitor your fleet live for better control.</p>
-      </div>
-    </div>
-
-    <!-- 4 -->
-    <div class="col-md-4">
-      <div class="card-fea border-0 shadow p-4 h-100">
-        <div class="d-flex align-items-center mb-3">
-          <div class="icon-wrapper d-flex align-items-center justify-content-center me-3 bg-light border border-2 border-dark p-2 rounded-circle">
-            <img src="images/dispatch.png" alt="Smart Driver Dispatch" title="Smart Driver Dispatch" width="30">
-          </div>
-          <h5 class="mb-0 fw-semibold">Smart Driver Dispatch</h5>
-        </div>
-        <p class="mb-0">Assign drivers based on location and availability.</p>
-      </div>
-    </div>
-
-    <!-- 5 -->
-    <div class="col-md-4">
-      <div class="card-fea border-0 shadow p-4 h-100">
-        <div class="d-flex align-items-center mb-3">
-          <div class="icon-wrapper d-flex align-items-center justify-content-center me-3 bg-light border border-2 border-dark p-2 rounded-circle">
-            <img src="images/driver-management.png" alt="Driver Management" title="Driver Management" width="30">
-          </div>
-          <h5 class="mb-0 fw-semibold">Driver Management</h5>
-        </div>
-        <p class="mb-0">Track performance and manage drivers efficiently.</p>
-      </div>
-    </div>
-
-    <!-- 6 -->
-    <div class="col-md-4">
-      <div class="card-fea border-0 shadow p-4 h-100">
-        <div class="d-flex align-items-center mb-3">
-          <div class="icon-wrapper d-flex align-items-center justify-content-center me-3 bg-light border border-2 border-dark rounded-circle p-2">
-            <img src="images/custom-ride.png" alt="Custom Ride Options" title="Custom Ride Options" width="30">
-          </div>
-          <h5 class="mb-0 fw-semibold">Custom Ride Options</h5>
-        </div>
-        <p class="mb-0">Handle both on-demand and pre-scheduled rides.</p>
-      </div>
-    </div>
-
-<div class="col-md-4">
-  <div class="card-fea border-0 shadow p-4 h-100">
-    <div class="d-flex align-items-center mb-3">
-      <div class="icon-wrapper d-flex align-items-center justify-content-center me-3 bg-light border border-2 border-dark rounded-circle p-2">
-        <img src="images/scalable.png" alt="Scalable System" title="Scalable System" width="30">
-      </div>
-      <h5 class="mb-0 fw-semibold">Scalable System</h5>
-    </div>
-    <p class="mb-0">Suitable for small startups to large fleets</p>
-  </div>
-</div>
-
-<div class="col-md-4">
-  <div class="card-fea border-0 shadow p-4 h-100">
-    <div class="d-flex align-items-center mb-3">
-      <div class="icon-wrapper d-flex align-items-center justify-content-center me-3 bg-light border border-2 border-dark rounded-circle p-2">
-        <img src="images/messaging.png" alt="Driver-Passenger Messaging" title="Driver-Passenger Messaging" width="30">
-      </div>
-      <h5 class="mb-0 fw-semibold">Driver-Passenger Messaging</h5>
-    </div>
-    <p class="mb-0">Real-time communication for smooth rides</p>
-  </div>
-</div>
-
-<div class="col-md-4">
-  <div class="card-fea border-0 shadow p-4 h-100">
-    <div class="d-flex align-items-center mb-3">
-      <div class="icon-wrapper d-flex align-items-center justify-content-center me-3 bg-light border border-2 border-dark rounded-circle p-2">
-        <img src="images/accounts.png" alt="Detailed Account Tools" title="Detailed Account Tools" width="30">
-      </div>
-      <h5 class="mb-0 fw-semibold">Detailed Account Tools</h5>
-    </div>
-    <p class="mb-0">Manage accounts with full invoicing and reporting</p>
-  </div>
-</div>
-
-<div class="col-md-4">
-  <div class="card-fea border-0 shadow p-4 h-100">
-    <div class="d-flex align-items-center mb-3">
-      <div class="icon-wrapper d-flex align-items-center justify-content-center me-3 bg-light border border-2 border-dark rounded-circle p-2">
-        <img src="images/security.png" alt="Secure & Reliable" title="Secure & Reliable" width="30">
-      </div>
-      <h5 class="mb-0 fw-semibold">Secure &amp; Reliable</h5>
-    </div>
-    <p class="mb-0">Data backup, server redundancy, and enterprise-grade security</p>
-  </div>
-</div>
-
-<div class="col-md-4">
-  <div class="card-fea border-0 shadow p-4 h-100">
-    <div class="d-flex align-items-center mb-3">
-      <div class="icon-wrapper d-flex align-items-center justify-content-center me-3 bg-light border border-2 border-dark rounded-circle p-2">
-        <img src="images/booking.png" alt="Flexible Booking Options" title="Flexible Booking Options" width="30">
-      </div>
-      <h5 class="mb-0 fw-semibold">Flexible Booking Options</h5>
-    </div>
-    <p class="mb-0">Accept bookings via app, website, phone, SMS, or email</p>
-  </div>
-</div>
-
-<div class="col-md-4">
-  <div class="card-fea border-0 shadow p-4 h-100">
-    <div class="d-flex align-items-center mb-3">
-      <div class="icon-wrapper d-flex align-items-center justify-content-center me-3 bg-light border border-2 border-dark rounded-circle p-2">
-        <img src="images/analytics.png" alt="Advanced Analytics" title="Advanced Analytics" width="30">
-      </div>
-      <h5 class="mb-0 fw-semibold">Advanced Analytics</h5>
-    </div>
-    <p class="mb-0">Gain business insights with detailed reporting</p>
-  </div>
-</div>
-
-<div class="col-md-4">
-  <div class="card-fea border-0 shadow p-4 h-100">
-    <div class="d-flex align-items-center mb-3">
-      <div class="icon-wrapper d-flex align-items-center justify-content-center me-3 bg-light border border-2 border-dark rounded-circle p-2">
-        <img src="images/cloud.png" alt="Cloud-Based Platform" title="Cloud-Based Platform" width="30">
-      </div>
-      <h5 class="mb-0 fw-semibold">Cloud-Based Platform</h5>
-    </div>
-    <p class="mb-0">Access from any device, anywhere</p>
-  </div>
-</div>
-
-<div class="col-md-4">
-  <div class="card-fea border-0 shadow p-4 h-100">
-    <div class="d-flex align-items-center mb-3">
-      <div class="icon-wrapper d-flex align-items-center justify-content-center me-3 bg-light border border-2 border-dark rounded-circle p-2">
-        <img src="images/payment.png" alt="Secure Payment Integration" title="Secure Payment Integration" width="30">
-      </div>
-      <h5 class="mb-0 fw-semibold">Secure Payment Integration</h5>
-    </div>
-    <p class="mb-0">Supports multiple payment methods</p>
-  </div>
-</div>
-
-<div class="col-md-4">
-  <div class="card-fea border-0 shadow p-4 h-100">
-    <div class="d-flex align-items-center mb-3">
-      <div class="icon-wrapper d-flex align-items-center justify-content-center me-3 bg-light border border-2 border-dark rounded-circle p-2">
-        <img src="images/route.png" alt="Intelligent Route Planning" title="Intelligent Route Planning" width="30">
-      </div>
-      <h5 class="mb-0 fw-semibold">Intelligent Route Planning</h5>
-    </div>
-    <p class="mb-0">Reduce travel time and save fuel</p>
-  </div>
-</div>
-<div class="col-md-4">
-</div>
-<div class="col-md-4">
-  <div class="card-fea border-0 shadow p-4 h-100">
-    <div class="d-flex align-items-center mb-3">
-      <div class="icon-wrapper d-flex align-items-center justify-content-center me-3 bg-light border border-2 border-dark rounded-circle p-2">
-        <img src="images/pricing.png" alt="Dynamic Pricing" title="Dynamic Pricing" width="30">
-      </div>
-      <h5 class="mb-0 fw-semibold">Dynamic Pricing</h5>
-    </div>
-    <p class="mb-0">Set surge or off-peak fares automatically</p>
-  </div>
-</div>
-<div class="col-md-4">
-</div>
-  </div>
-</div>
-
-</section>
-
-<section class="tagline-area-points mt-5 py-5" id="tagline-area-points">
-      <div class="container">
-         <div class="row d-flex align-items-center justify-content-center">
-            <div class="col-md-6">
-               <div class="points-area-marked">
-                  <div class="below-banner-text">
-                     <img src="images/app-images-n.png" class="img-fluid " style="    height: 450px;  width: 450px;">
-                  </div>
-               </div>
-
-            </div>
-                <div class="col-md-6">
-                  <h2>TBMS Driver App Features</h2>
-                  <ul class="list-unstyled">
-                    <li class="mb-2"><i class="fa fa-check-circle text-info"></i> Passenger Apps (Android and iOS)</li>
-                    <li class="mb-2"><i class="fa fa-check-circle text-info"></i> Payment Gateways</li>
-                    <li class="mb-2"><i class="fa fa-check-circle text-info"></i> GDPR Compliance</li>
-                    <li class="mb-2"><i class="fa fa-check-circle text-info"></i> Manual / Auto Dispatch</li>
-                    <li class="mb-2"><i class="fa fa-check-circle text-info"></i> User Access Restrictions</li>
-                    <li class="mb-2"><i class="fa fa-check-circle text-info"></i> Google Translate </li>
-                    <li class="mb-2"><i class="fa fa-check-circle text-info"></i> Driver App</li>
-                    <li><i class="fa fa-check-circle text-info"></i> Caller ID </li>
-                  </ul>
-                </div>
-
-
-         </div>
-         <div class="row mt-5">
-            <div class="col-md-12">
-               <a class="tc-infobox shadow-lg bouncing-btn" href="features.html" >
-                  Want more reasons to love <strong>TBMSLIVE?</strong> Explore More Features
-               </a>
-            </div>
-         </div>
-
-      </div>
-   </section>
-<!------>
-<!--------------------->
-<section class="color-bg py-5">
-   <div class="container">
-       <div class="row d-flex align-items-center justify-content-center">
-  
-      <div class="col-md-6">
-          
-        <h2 >TBMS Operator App Features</h2>
-        <ul class="list-unstyled">
-          <li class="mb-2"><i class="fa fa-check-circle text-info"></i> Passenger Apps (Android and iOS)</li>
-            <li class="mb-2"><i class="fa fa-check-circle text-info"></i> Payment Gateways</li>
-            <li class="mb-2"><i class="fa fa-check-circle text-info"></i> GDPR Compliance</li>
-            <li class="mb-2"><i class="fa fa-check-circle text-info"></i> Manual / Auto Dispatch</li>
-            <li class="mb-2"><i class="fa fa-check-circle text-info"></i> User Access Restrictions</li>
-            <li class="mb-2"><i class="fa fa-check-circle text-info"></i> Google Translate </li>
-            <li class="mb-2"><i class="fa fa-check-circle text-info"></i> Driver App</li>
-            <li><i class="fa fa-check-circle text-info"></i> Caller ID </li>
-        </ul>
-
-    </div>
-
-        <div class="col-md-6 text-center">
-            <img src="images/tbms-operator-app-new.jpeg" class=" img-fluid" style="height:500px;border: 4px solid #000;border-radius: 18px;">
-        </div>
-    </div>
-   </div>
-</section>
-<!----------------------->
-
-<!----->
-<section class=" py-5">
-   <div class="container">
-       <div class="row d-flex align-items-center justify-content-center">
-  
-      <div class="col-md-6">
-                 <h2 >Why TBMS Over Other Systems?: </h2>
-<ul class="list-unstyled">
-   <li class="mb-2"><i class="fa fa-check-circle text-info"></i> Proven reliability with 15+ years of industry experience.</li>
-    <li class="mb-2"><i class="fa fa-check-circle text-info"></i> User-friendly interfaces for both operators and drivers.</li>
-    <li class="mb-2"><i class="fa fa-check-circle text-info"></i> Flexible pricing models with no long-term contracts.</li>
-    <li class="mb-2"><i class="fa fa-check-circle text-info"></i> Dedicated customer support and onboarding assistance.</li>
-    <li class="mb-2"><i class="fa fa-check-circle text-info"></i> Continuous updates and new features are driven by customer feedback.</li>
-</ul> 
-       				<button type="button" style="background:#E5BC00 ;border-radius:25px; font-size:16px;" class="btn btn-lg fw-bold px-4 " onclick="window.location.href='contact.php';">GET STARTED</button>
-  </div>
-
-          <div class="col-md-6">
-           <img src="https://tbmslive.com/images/tbms5.png" class="img-fluid">
-
-      </div>
-   </div>
-   </div>
-</section>
-<!------>
-
-
-
-<section class="py-5 color-bg">
-  <div class="container">
-    <div class="row">
-      <div class="col-md-12 text-center mb-4">
-        <h2 class="fs-3 fw-light text-secondary text-capitalize">
-          <span class="text-black" style="font-weight:400"><strong>Customer Success Stories / Testimonials</strong></span>
-        </h2>
-        <p class="text-muted">Hear from Our Happy Customers</p>
-      </div>
-      <div class="col-md-12 mb-3">
-        <!-- Swiper -->
-        <div class="swiper testimonial-swiper">
-          <div class="swiper-wrapper">
-
-            <!-- Slide 1 -->
-            <div class="swiper-slide">
-              <div class="testimonial-card d-flex flex-column h-100">
-                <div style="margin-bottom:10px;">
-                  <img src="https://storage.googleapis.com/msgsndr/MLvKvVyGos8j4OV4y4Zt/media/67c6a0a3124fd60893a3e622.png" alt="user" style="max-width:150px;">
-                </div>
-                <p class="text">“TBMS Live makes it really easy to manage our taxi bookings. Drivers get their jobs fast, and customers like seeing where their taxi is. This taxi dispatch system helps us work better daily.”</p>
-                <div class="icon-box d-flex align-items-center gap-2 mt-auto pt-3">
-                  <img src="images/user1.png" alt="James T." class="rounded-circle" width="45" height="45">
-                  <div><h3 class="title mb-0">James T.</h3></div>
-                </div>
-              </div>
-            </div>
-
-            <!-- Slide 2 -->
-            <div class="swiper-slide">
-              <div class="testimonial-card d-flex flex-column h-100">
-                <div style="margin-bottom:10px;">
-                  <img src="https://storage.googleapis.com/msgsndr/MLvKvVyGos8j4OV4y4Zt/media/67c6a0a3124fd60893a3e622.png" alt="user" style="max-width:150px;">
-                </div>
-                <p class="text">“We started using TBMS Live taxi dispatch software, and it helped us a lot. It sends rides to drivers quickly, and the routes save time and fuel. Our customers are happier now.”</p>
-                <div class="icon-box d-flex align-items-center gap-2 mt-auto pt-3">
-                  <img src="images/user2.png" alt="Aisha R." class="rounded-circle" width="45" height="45">
-                  <div><h3 class="title mb-0">Aisha R.</h3></div>
-                </div>
-              </div>
-            </div>
-
-            <!-- Slide 3 -->
-            <div class="swiper-slide">
-              <div class="testimonial-card d-flex flex-column h-100">
-                <div style="margin-bottom:10px;">
-                  <img src="https://storage.googleapis.com/msgsndr/MLvKvVyGos8j4OV4y4Zt/media/67c6a0a3124fd60893a3e622.png" alt="user" style="max-width:150px;">
-                </div>
-                <p class="text">“Managing our big taxi fleet is easy with TBMS Live. The system shows us all the bookings and driver info in one place. It’s simple to use and very reliable.”</p>
-                <div class="icon-box d-flex align-items-center gap-2 mt-auto pt-3">
-                  <img src="images/user3.png" alt="Michael S." class="rounded-circle" width="45" height="45">
-                  <div><h3 class="title mb-0">Michael S.</h3></div>
-                </div>
-              </div>
-            </div>
-
-
-
-          </div>
-
-          <!-- Pagination --><br><br>
-          <div class="swiper-pagination mt-4"></div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-
-<!-- Swiper CSS -->
-<link
-  rel="stylesheet"
-  href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
-/>
-
-<!-- Swiper JS -->
-<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-<script>
-  var swiper = new Swiper(".testimonial-swiper", {
-    slidesPerView: 3,
-    spaceBetween: 30,
-    loop: true,
-    autoplay: {
-      delay: 3000,
-      disableOnInteraction: false,
-    },
-    pagination: {
-      el: ".swiper-pagination",
-      clickable: true,
-    },
-    breakpoints: {
-      0: {
-        slidesPerView: 1,
-      },
-      768: {
-        slidesPerView: 2,
-      },
-      992: {
-        slidesPerView: 3,
-      }
-    }
-  });
-</script>
-
-<section class="py-5">
-  <div class="container">
-    <div class="row">
-      <div class="col-md-12 text-center mb-3">
-        <h2 class="fs-3 fw-light text-secondary text-capitalize">
-          <br><span class="text-black" style="font-weight:400"><strong>Frequently Asked Questions (FAQs)</strong></span>
-        </h2>
-      </div>
-      <div class="col-md-12 text-center mb-3">
-        <div class="faq-main">
-          <div class="faq-col">
-            <div class="accordion">
-
-              <!-- Q1 -->
-              <div class="accordion-item">
-                <div class="accordion-item-header active">
-                  <div>How will this software help me save time and reduce manual work?</div>
-                  <span class="accordion-icon">+</span>
-                </div>
-                <div class="accordion-item-body">
-                  <div class="accordion-item-body-content">
-                    TBMS automates tasks you’d normally do manually—like finding and contacting drivers. Instead of calling around, the system instantly assigns jobs to the nearest available driver.
-                    It also keeps all your bookings, payments, and driver locations in one place, so there's no need to juggle paperwork or multiple tools.
-                    With TBMS Live, you save time, reduce errors, and run your business more efficiently—giving you more time to focus on growth.
-                  </div>
-                </div>
-              </div>
-
-              <!-- Q2 -->
-              <div class="accordion-item">
-                <div class="accordion-item-header">
-                  <div>How does the system improve customer experience?</div>
-                  <span class="accordion-icon">+</span>
-                </div>
-                <div class="accordion-item-body">
-                  <div class="accordion-item-body-content">
-                    Customers can quickly book taxis through your website, app, or by phone. When they enter pickup and drop-off locations and choose a vehicle, the price is shown instantly. They also get live updates on where their taxi is and when it will arrive.
-                    This keeps customers informed and confident, making them more likely to use your service again.
-                  </div>
-                </div>
-              </div>
-
-              <!-- Q3 -->
-              <div class="accordion-item">
-                <div class="accordion-item-header">
-                  <div>Will it help me increase driver efficiency and reduce idle time?</div>
-                  <span class="accordion-icon">+</span>
-                </div>
-                <div class="accordion-item-body">
-                  <div class="accordion-item-body-content">
-                    Yes, it will. The system quickly finds the closest driver for each ride and sends them the best route to take. This means drivers spend less time waiting or driving without passengers, so they can complete more rides.
-                  </div>
-                </div>
-              </div>
-
-              <!-- Q4 -->
-              <div class="accordion-item">
-                <div class="accordion-item-header">
-                  <div>Is it easy for drivers to use?</div>
-                  <span class="accordion-icon">+</span>
-                </div>
-                <div class="accordion-item-body">
-                  <div class="accordion-item-body-content">
-                    Yes, TBMS Live is designed to be very simple and user-friendly for drivers. Each driver gets a mobile app that shows them all the important information they need like where to pick up passengers, where to drop them off, and details about each ride. The app gives clear instructions and updates in real-time, so drivers always know what to do next without confusion. This helps drivers focus on the road and complete rides faster, which means happier customers and more earnings.
-                  </div>
-                </div>
-              </div>
-
-              <!-- Q5 -->
-              <div class="accordion-item">
-                <div class="accordion-item-header">
-                  <div>Can it handle my fleet size now and as I grow?</div>
-                  <span class="accordion-icon">+</span>
-                </div>
-                <div class="accordion-item-body">
-                  <div class="accordion-item-body-content">
-                    Yes! TBMS Live works great whether you have just a few vehicles or hundreds. The system is designed to grow with your business, so you can easily add more drivers and cars as your fleet grows. You won’t have to switch to a new system; TBMS Live can handle it all.
-                  </div>
-                </div>
-              </div>
-
-              <!-- Q6 -->
-              <div class="accordion-item">
-                <div class="accordion-item-header">
-                  <div>Can I manage my taxi business from anywhere?</div>
-                  <span class="accordion-icon">+</span>
-                </div>
-                <div class="accordion-item-body">
-                  <div class="accordion-item-body-content">
-                    Yes! TBMS Live is cloud-based, meaning you can manage your taxi business using any phone, tablet, or computer with internet access. You can assign rides, track your drivers, and check bookings anywhere—at the office, at home, or even while travelling.
-                  </div>
-                </div>
-              </div>
-
-              <!-- Q7 -->
-              <div class="accordion-item">
-                <div class="accordion-item-header">
-                  <div>What kind of support and training will I get?</div>
-                  <span class="accordion-icon">+</span>
-                </div>
-                <div class="accordion-item-body">
-                  <div class="accordion-item-body-content">
-                    We teach you how to use the software step-by-step. Our support team is also always ready to help if you have any questions or problems.
-                  </div>
-                </div>
-              </div>
-
-            </div><!-- end accordion -->
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!------->
-
-
-   <footer id="main-footer-area-start">
-
-      <section class="footer-part-area">
-         <div class="container">
-            <div class="row">
-               <div class="col-md-3 col-sm-3">
-                  <div class="footer-logo">
-                     <img src="https://tbmslive.com/images/logo.webp">
-                     <p class="text-left"> <b>Cloud version of our Taxi Dispatch System</b>
-                     </p>
-                     <ul class="social-media-footer text-left">
-                        <li><a href="https://www.facebook.com/taxibasesoftware"><i class="fa fa-facebook"
-                                 aria-hidden="true"></i></a></li>
-                        <li><a href="https://twitter.com/T_B_M_S"><i class="fa fa-twitter" aria-hidden="true"></i></a>
-                        </li>
-                        <li><a href="https://www.youtube.com/channel/UC7YFp_KZQX2aIezSOgPZBpw"><i
-                                 class="fa fa-youtube-play" aria-hidden="true"></i>
-                           </a></li>
-                     </ul>
-                  </div>
-               </div>
-               <div class="col-md-3 col-sm-3">
-                  <div class="menu-setting">
-                     <h4 class="footer-heading">Company</h4>
-                     <ul class="footer-navigation">
-                        <li><a href="benefits.html">Our Benefits</a></li>
-                        <li><a href="features.html">Features</a></li>
-                        <li><a href="whyus.html">Why Us</a></li>
-                        <li><a href="trial.html">Trial</a></li>
-
-                        <li><a href="taxi-despatch-software-UAE.html">Taxi Despatch Software UAE</a></li>
-                        <li><a href="taxi-booking-software.html">Taxi Booking Software</a></li>
-                        <li><a href="https://tbmslive.com/taxi-booking-app.html">Taxi Bookiing App</a></li>
-                     </ul>
-                  </div>
-               </div>
-               <div class="col-md-3 col-sm-3">
-                  <div class="menu-setting">
-                     <h4 class="footer-heading">Resources</h4>
-                     <ul class="footer-navigation">
-                        <li><a href="https://tbmslive.com/blog.html">Blogs</a></li>
-                        <li><a href="terms-and-conditions.html">Terms & Conditions</a></li>
-                        <li><a href="privacy-policy.html">Privacy Policy</a></li>
-                     </ul>
-                  </div>
-               </div>
-               <div class="col-md-3 col-sm-3">
-                  <div class="contact-section">
-                     <h4 class="footer-heading">Contact</h4>
-                     <ul class="center-side">
-                        <li><a href="https://api.whatsapp.com/send?phone=447828926870"><span><i class="fa fa-whatsapp"
-                                    aria-hidden="true"></i>
-                              </span> +44 782 892 6870</a></li>
-                        <li><a href="tel:+442033557887"><i class="fa fa-phone" aria-hidden="true"></i> +44 203 355
-                              7887</a></li>
-                        <li><a href="mailto:info@taxibasesoftware.com"><i class="fa fa-envelope-o"
-                                 aria-hidden="true"></i>info@taxibasesoftware.com</a></li>
-                        <li><a href="https://maps.app.goo.gl/i5dgEU18sswWJja39"><i class="fa fa-map-marker"></i>T367 W
-                              Wycombe
-                              Rd, High Wycombe HP12 4AE, United Kingdom</a></li>
-                     </ul>
-                  </div>
-               </div>
-            </div>
-         </div>
-      </section>
-
-
-
-      <section class="copy-rigth-footer-part-area">
-         <div class="container">
-            <div class="row text-center">
-               <p class="text-white"> 2025. Tbmslive Dispatch Software. All Rights Reserved. </p>
-            </div>
-         </div>
-      </section>
-   </footer>
-
-
-   <script>
-      let currentTab = 0;
-
-      function changeTab(tabIndex) {
-         document.querySelectorAll('.tab').forEach((tab, index) => {
-            if (index === tabIndex) {
-               tab.classList.add('active');
-            } else {
-               tab.classList.remove('active');
-            }
-         });
-
-         document.querySelectorAll('.tab-content').forEach((content, index) => {
-            if (index === tabIndex) {
-               content.classList.add('active');
-            } else {
-               content.classList.remove('active');
-            }
-         });
-
-         currentTab = tabIndex;
-         updateSlider();
-      }
-
-      function nextSlide() {
-         if (currentTab < document.querySelectorAll('.slide').length - 1) {
-            currentTab++;
-            updateSlider();
-            highlightActiveTab(currentTab);
-         }
-      }
-
-      function prevSlide() {
-         if (currentTab > 0) {
-            currentTab--;
-            updateSlider();
-            highlightActiveTab(currentTab);
-         }
-      }
-
-      function updateSlider() {
-         const slider = document.querySelector('.slider');
-         const slideWidth = document.querySelector('.slide').offsetWidth;
-         slider.style.transform = `translateX(-${currentTab * slideWidth}px)`;
-      }
-
-      function highlightActiveTab(tabIndex) {
-         document.querySelectorAll('.tab').forEach((tab, index) => {
-            if (index === tabIndex) {
-               tab.classList.add('active');
-            } else {
-               tab.classList.remove('active');
-            }
-         });
-      }
-   </script>
-
-   <script>
-      const $dropdown = $(".dropdown");
-      const $dropdownToggle = $(".dropdown-toggle");
-      const $dropdownMenu = $(".dropdown-menu");
-      const showClass = "show";
-
-      $(window).on("load resize", function () {
-         if (this.matchMedia("(min-width: 1113px)").matches) {
-            $dropdown.hover(
-               function () {
-                  const $this = $(this);
-                  $this.addClass(showClass);
-                  $this.find($dropdownToggle).attr("aria-expanded", "true");
-                  $this.find($dropdownMenu).addClass(showClass);
-               },
-               function () {
-                  const $this = $(this);
-                  $this.removeClass(showClass);
-                  $this.find($dropdownToggle).attr("aria-expanded", "false");
-                  $this.find($dropdownMenu).removeClass(showClass);
-               }
-            );
-         } else {
-            $dropdown.off("mouseenter mouseleave");
-         }
-      });
-
-   </script>
-
-
+  function selectOpt(el, i) {
+    var opts = document.querySelectorAll('.opt');
+    for (var j = 0; j < opts.length; j++) opts[j].classList.remove('selected');
+    el.classList.add('selected');
+    selected = i;
+    document.getElementById('btnNext').disabled = false;
+  }
+
+  function advance() {
+    if (selected === null) return;
     
-   <script>
-      (function () {
-         var options = {
-            whatsapp: "+447828926870", // WhatsApp number
-            call_to_action: "Message us", // Call to action
-            position: "left", // Position may be 'right' or 'left'
-         };
-         var proto = document.location.protocol, host = "getbutton.io", url = proto + "//static." + host;
-         var s = document.createElement('script'); s.type = 'text/javascript'; s.async = true; s.src = url + '/widget-send-button/js/init.js';
-         s.onload = function () { WhWidgetSendButton.init(host, proto, options); };
-         var x = document.getElementsByTagName('script')[0]; x.parentNode.insertBefore(s, x);
-      })();
-   </script>
-
-
-<script>
-  document.addEventListener("DOMContentLoaded", function () {
-    const headers = document.querySelectorAll(".accordion-item-header");
-
-    headers.forEach(header => {
-      header.addEventListener("click", () => {
-        const currentlyActive = document.querySelector(".accordion-item-header.active");
-        if (currentlyActive && currentlyActive !== header) {
-          currentlyActive.classList.remove("active");
-          currentlyActive.nextElementSibling.style.maxHeight = 0;
-        }
-
-        header.classList.toggle("active");
-
-        const body = header.nextElementSibling;
-        if (header.classList.contains("active")) {
-          body.style.maxHeight = body.scrollHeight + "px";
-        } else {
-          body.style.maxHeight = 0;
-        }
-      });
-    });
-
-    // Expand any items already marked as active on load
-    const activeItem = document.querySelector(".accordion-item-header.active");
-    if (activeItem) {
-      const body = activeItem.nextElementSibling;
-      body.style.maxHeight = body.scrollHeight + "px";
+    // LocalStorage mein answer save karein
+    localStorage.setItem("quiz_q" + (current + 1), questions[current].opts[selected].text);
+    scores.push(questions[current].opts[selected].pts);
+    
+    current++;
+    if (current < questions.length) {
+      renderQuestion();
+    } else {
+      renderLeadForm();
     }
-  });
+  }
+
+  function renderLeadForm() {
+    buildPips(); 
+    document.getElementById('qCard').innerHTML = `
+      <div class="result-wrap">
+        <p class="q-counter">Almost there!</p>
+        <p class="q-text">Where should we send your personalized Local SEO report?</p>
+        <div class="opts" style="text-align: left; gap: 15px;">
+          <div style="display: flex; flex-direction: column; gap: 5px;">
+            <label style="font-size: 13px; font-weight: 600; color: #5a5a55;">Full Name</label>
+            <input type="text" id="userName" placeholder="John Doe" style="padding: 12px; border-radius: 8px; border: 1.5px solid #e4e2da; width:100%;">
+          </div>
+          <div style="display: flex; flex-direction: column; gap: 5px;">
+            <label style="font-size: 13px; font-weight: 600; color: #5a5a55;">Email Address</label>
+            <input type="email" id="userEmail" placeholder="john@example.com" style="padding: 12px; border-radius: 8px; border: 1.5px solid #e4e2da; width:100%;">
+          </div>
+          <div style="display: flex; flex-direction: column; gap: 5px;">
+            <label style="font-size: 13px; font-weight: 600; color: #5a5a55;">Phone Number</label>
+            <input type="tel" id="userPhone" placeholder="(555) 000-0000" style="padding: 12px; border-radius: 8px; border: 1.5px solid #e4e2da; width:100%;">
+          </div>
+        </div>
+        <button class="btn-next" onclick="submitLeadForm()">Reveal My Score &rarr;</button>
+      </div>
+    `;
+  }
+
+ function submitLeadForm() {
+    var name = document.getElementById('userName').value.trim();
+    var email = document.getElementById('userEmail').value.trim();
+    var phone = document.getElementById('userPhone').value.trim();
+
+    // 1. Name Validation (Kam az kam 2 huroof hon)
+    if (name.length < 2) {
+        alert("Please enter your full name.");
+        document.getElementById('userName').focus();
+        return;
+    }
+
+    // 2. Email Validation (Regex pattern jo check karega @ aur . sahi jagah hain)
+    var emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailPattern.test(email)) {
+        alert("Please enter a valid email address (e.g. name@company.com).");
+        document.getElementById('userEmail').focus();
+        return;
+    }
+
+    // 3. Phone Validation (Sirf numbers aur kam az kam 10 digits)
+    var phoneDigits = phone.replace(/\D/g, ''); // Numbers ke ilawa sab hata do
+    if (phoneDigits.length < 10) {
+        alert("Please enter a valid phone number (at least 10 digits).");
+        document.getElementById('userPhone').focus();
+        return;
+    }
+
+    // Agar sab theek hai, toh save karein aur result dikhayein
+    localStorage.setItem("user_name", name);
+    localStorage.setItem("user_email", email);
+    localStorage.setItem("user_phone", phone);
+
+    showResult();
+}
+
+  function showResult() {
+    var total = 0;
+    for (var i = 0; i < scores.length; i++) total += scores[i];
+    var pct = Math.round((total / (questions.length * 3)) * 100);
+    localStorage.setItem("quiz_score", pct);
+
+    var isHigh = pct >= 65;
+    var badge = isHigh ? 'Strong fit — high priority' : "Good potential — let's talk";
+    var title = isHigh ? 'Prime candidate for the free 10-day boost' : "There's opportunity here";
+
+    document.getElementById('qCard').innerHTML = `
+      <div class="result-wrap">
+        <div class="result-icon ${isHigh ? 'icon-high' : 'icon-med'}">${isHigh ? '✓' : '→'}</div>
+        <span class="result-badge ${isHigh ? 'badge-high' : 'badge-med'}">${badge}</span>
+        <p class="result-title">${title}</p>
+        <div class="score-bar-wrap">
+          <p class="score-bar-label">Your fit score</p>
+          <div class="score-bar-track"><div class="score-bar-fill" style="width: ${pct}%"></div></div>
+          <p class="score-number">${pct}% match</p>
+        </div>
+        <button class="btn-cta" id="finalSubmitBtn" onclick="sendToGHL()">Claim My Free 10-Day SEO Boost &rarr;</button>
+        <p class="cta-sub">Click above to finalize your request.</p>
+      </div>`;
+  }
+
+ async function sendToGHL() {
+    const btn = document.getElementById('finalSubmitBtn');
+    btn.innerText = "Processing...";
+    btn.disabled = true;
+
+    // GHL V2 API URL
+    const url = "https://services.leadconnectorhq.com/contacts/"; 
+    const PIT_TOKEN = "pit-94c417b5-2dee-4a53-8ea7-4202ccb28942"; 
+    const MY_LOCATION_ID = "84sadHh8FJOAdArRZ3QQ"; 
+
+    // Name splitting logic (GHL V2 prefers firstName and lastName)
+    let fullName = (localStorage.getItem("user_name") || "Quiz User").trim();
+    let nameParts = fullName.split(" ");
+    let fName = nameParts[0];
+    let lName = nameParts.length > 1 ? nameParts.slice(1).join(" ") : "Lead";
+
+    // ONLY MAIN DATA (Custom fields commented out as requested)
+    let data = {
+        firstName: fName,
+        lastName: lName,
+        email: localStorage.getItem("user_email"),
+        phone: localStorage.getItem("user_phone"),
+        locationId: MY_LOCATION_ID,
+        type: "Lead"
+        /* 
+        customFields: [
+            { key: "quiz_score", value: localStorage.getItem("quiz_score") }
+        ] 
+        */
+    };
+
+    console.log("📨 Sending Basic Data:", JSON.stringify(data, null, 2));
+
+    try {
+        let response = await fetch(url, {
+            method: "POST",
+            headers: {
+                "Authorization": "Bearer " + PIT_TOKEN,
+                "Content-Type": "application/json",
+                "Version": "2021-07-28",
+                "Accept": "application/json"
+            },
+            body: JSON.stringify(data)
+        });
+
+        console.log("📡 Status Code:", response.status);
+        let result = await response.json();
+        console.log("🔍 API Response:", result);
+
+        if (response.ok || response.status === 201) {
+            console.log("✅ Basic Contact Created!");
+            showThankYou();
+        } else {
+            console.error("❌ GHL Error:", result);
+            showThankYou(); 
+        }
+    } catch (error) {
+        console.error("❌ Network Error:", error);
+        showThankYou();
+    }
+}
+  function showThankYou() {
+    document.getElementById('qCard').innerHTML = `
+      <div class="result-wrap" style="padding: 40px 10px;">
+        <div class="result-icon icon-high">✓</div>
+        <h2 class="result-title">Success! Your request is in.</h2>
+        <p class="result-desc">Thank you <b>${localStorage.getItem("user_name")}</b>. We have received your details and our team will contact you at <b>${localStorage.getItem("user_email")}</b> within 24 hours to start your 10-day boost.</p>
+        <div class="divider"></div>
+        <p class="cta-sub">You can close this window now.</p>
+      </div>
+    `;
+  }
+
+  renderQuestion();
 </script>
-
-</body>
-
-</html>
